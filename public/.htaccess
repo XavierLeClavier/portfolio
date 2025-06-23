@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # If the request is for a file that exists, don't touch it
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # All other requests are routed to index.html
+    RewriteRule ^ index.html [QSA,L]
+</IfModule>

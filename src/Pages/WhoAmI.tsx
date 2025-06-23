@@ -19,7 +19,7 @@ export default function WhoAmI() {
           />
         </div>
         <h1 className="text-4xl font-bold mb-2 text-purple-400">
-          Xavier Clavier
+          Xavier Lacroix
         </h1>
         <p className="text-xl text-gray-100">
           Data Analyst & Aspiring Data Engineer
