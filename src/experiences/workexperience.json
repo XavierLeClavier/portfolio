@@ -1,0 +1,39 @@
+[
+  {
+    "title": "Data Analyst (Apprenticeship)",
+    "organization": "LYSARC - The Lymphoma Academic Research Organisation",
+    "period": "September 2025 - now",
+    "details": [
+      "Continued development of interactive dashboards and performance indicators in Power BI to support data-driven decision-making for medical professionals and pharmaceutical stakeholders",
+      "Gained hands-on experience in data engineering tasks, including data pipeline development and database management using SQL and Python",
+      "Collaborated with cross-functional teams to enhance data quality and implement best practices in data handling and analysis",
+      "Used text mining and natural language processing (NLP) techniques to extract insights from unstructured medical data, improving the comprehensiveness of analyses"
+    ],
+    "note": "This apprenticeship is part of my Bachelor's degree in Computer Science at IUT Lyon 1, focusing on advanced data analysis and engineering skills."
+  },
+  {
+    "title": "Data Analyst (Internship)",
+    "organization": "LYSARC - The Lymphoma Academic Research Organisation",
+    "period": "April 2024 - July 2024",
+    "details": [
+      "Extracted, transformed and cleaned complex healthcare data using SAS and SQL, ensuring high data quality and consistency",
+      "Designed and developed interactive dashboards and performance indicators in Power BI to support data-driven decision-making for medical professionals and pharmaceutical stakeholders",
+      "Worked with a longitudinal database tracking over 5000 patients all over France",
+      "Collaborated with multidisciplinary teams to translate medical and scientific needs into actionnable insights and visual analytics",
+      "Ensured compliance with data privacy and healthcare regulations of sensitive patient information"
+    ],
+    "note": "This internship was part of my Bachelor's degree in Computer Science at IUT Lyon 1, focusing on data analysis on sensitive data."
+  },
+  {
+    "title": "Sailing Instructor",
+    "organization": "Multiple sailing clubs in Corsica and the south of France",
+    "period": "2021 - 2025 (2 months every year)",
+    "details": [
+      "Teaching catamaran and dinghy sailing courses at various levels",
+      "Participating in the training of new instructors",
+      "Multilingual skills: courses taught in French, English, and Spanish",
+      "Ensuring safety and enjoyment with up to 12 boats",
+      "Participating in the training of new instructors"
+    ]
+  }
+]

@@ -1,0 +1,166 @@
+{
+  "profile": {
+    "description": "This is your personal profile node.",
+    "projects": []
+  },
+  "Data Science & Analysis": {
+    "description": "Technologies and tools for data analysis, machine learning, and business intelligence.",
+    "projects": []
+  },
+  "Frontend": {
+    "description": "Technologies for building user interfaces and web applications.",
+    "projects": []
+  },
+  "Backend": {
+    "description": "Technologies for server-side development and APIs.",
+    "projects": []
+  },
+  "DevOps & Infrastructure": {
+    "description": "Tools and platforms for deployment, automation, and infrastructure management.",
+    "projects": []
+  },
+  "Tools & Specialized Libraries": {
+    "description": "Specialized libraries and tools for advanced use cases.",
+    "projects": []
+  },
+  "Languages": {
+    "description": "Programming and spoken languages you know.",
+    "projects": []
+  },
+  "Python": {
+    "description": "A versatile programming language widely used for data science, web development, and automation.",
+    "projects": ["Didactypo", "Breast Cancer Detector"]
+  },
+  "Jupyter": {
+    "description": "An interactive computing environment for creating notebooks with code, visualizations, and text.",
+    "projects": ["Breast Cancer Detector"]
+  },
+  "Power BI": {
+    "description": "A business analytics tool for visualizing and sharing insights from data.",
+    "projects": ["DESCAR T"]
+  },
+  "Looker": {
+    "description": "A modern data platform for business intelligence and analytics.",
+    "projects": []
+  },
+  "AI/ML": {
+    "description": "Artificial Intelligence and Machine Learning technologies and frameworks.",
+    "projects": ["Breast Cancer Detector", "Self tracker"]
+  },
+  "SAS": {
+    "description": "A software suite for advanced analytics, business intelligence, and data management.",
+    "projects": ["DESCAR T"]
+  },
+  "SQL": {
+    "description": "Structured Query Language for managing and querying relational databases.",
+    "projects": ["DESCAR T", "Fou2Food"]
+  },
+  "React": {
+    "description": "A JavaScript library for building user interfaces.",
+    "projects": ["Didactypo", "Self tracker", "Codeco", "My Portfolio", "Shared Coffee Project"]
+  },
+  "TypeScript": {
+    "description": "A typed superset of JavaScript that compiles to plain JavaScript.",
+    "projects": ["Didactypo", "My Portfolio"]
+  },
+  "JavaScript": {
+    "description": "The programming language of the web, used for interactive and dynamic web pages.",
+    "projects": ["Codeco", "Fou2Food"]
+  },
+  "CSS": {
+    "description": "Cascading Style Sheets for styling web pages.",
+    "projects": ["Didactypo", "Fou2Food"]
+  },
+  "Tailwind": {
+    "description": "A utility-first CSS framework for rapid UI development.",
+    "projects": ["Codeco", "My Portfolio", "Shared Coffee Project"]
+  },
+  "PostgreSQL": {
+    "description": "A powerful open-source relational database system.",
+    "projects": ["Self tracker"]
+  },
+  "NodeJS": {
+    "description": "A JavaScript runtime for building fast and scalable server-side applications.",
+    "projects": ["Codeco", "Fou2Food", "Didactypo", "My Portfolio", "Shared Coffee Project", "Self tracker"]
+  },
+  "FastAPI": {
+    "description": "A modern, fast web framework for building APIs with Python.",
+    "projects": ["Didactypo"]
+  },
+  "PHP": {
+    "description": "A popular server-side scripting language for web development.",
+    "projects": ["Fou2Food", "Home server"]
+  },
+  "Java": {
+    "description": "A widely-used programming language for enterprise and mobile applications.",
+    "projects": ["Secured Air Enforcer"]
+  },
+  "MySQL": {
+    "description": "A popular open-source relational database management system.",
+    "projects": ["Fou2Food", "Home server"]
+  },
+  "Firebase": {
+    "description": "A platform for building mobile and web applications with real-time databases and authentication.",
+    "projects": ["Didactypo"]
+  },
+  "Express": {
+    "description": "A minimal and flexible Node.js web application framework.",
+    "projects": ["Self tracker"]
+  },
+  "Linux": {
+    "description": "An open-source operating system used for servers, desktops, and embedded systems.",
+    "projects": ["Home server"]
+  },
+  "Git": {
+    "description": "A distributed version control system for tracking changes in source code.",
+    "projects": ["Breast Cancer Detector", "Codeco", "Didactypo", "Fou2Food", "My Portfolio", "Secured Air Enforcer", "Self tracker", "Shared Coffee Project"]
+  },
+  "Docker": {
+    "description": "A platform for developing, shipping, and running applications in containers.",
+    "projects": ["Self tracker", "Home server"]
+  },
+  "Apache Server": {
+    "description": "A widely-used open-source web server software.",
+    "projects": ["Home server"]
+  },
+  "phpMyAdmin": {
+    "description": "A web-based tool for managing MySQL databases.",
+    "projects": ["Fou2Food", "Home server"]
+  },
+  "JSON": {
+    "description": "A lightweight data-interchange format, easy for humans to read and write.",
+    "projects": ["My Portfolio"]
+  },
+  "GraphStream": {
+    "description": "A Java library for dynamic graph analysis and visualization.",
+    "projects": ["Secured Air Enforcer"]
+  },
+  "OpenStreetMap": {
+    "description": "A collaborative project to create a free editable map of the world.",
+    "projects": ["Secured Air Enforcer"]
+  },
+  "Scrum": {
+    "description": "An agile framework for managing complex projects.",
+    "projects": ["Didactypo"]
+  },
+  "UML": {
+    "description": "Unified Modeling Language for specifying, visualizing, and documenting software systems.",
+    "projects": ["Didactypo", "Secured Air Enforcer"]
+  },
+  "🇫🇷 French - Native": {
+    "description": "Native proficiency in French language.",
+    "projects": []
+  },
+  "🇦🇺 English - Native": {
+    "description": "Native proficiency in English language.",
+    "projects": []
+  },
+  "🇪🇸 Spanish - B1": {
+    "description": "Intermediate proficiency in Spanish language.",
+    "projects": []
+  },
+  "🇹🇼 Chinese - HSK 2": {
+    "description": "Basic proficiency in Chinese language (HSK 2 level).",
+    "projects": []
+  }
+}

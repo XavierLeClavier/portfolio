@@ -243,7 +243,7 @@ export default function Skills() {
                 </div>
                 
                 {/* Tools & Other */}
-                <div className="bg-gray-900 p-6 rounded-xl border border-gray-700 md:col-span-2">
+                <div className="bg-gray-900 p-6 rounded-xl border border-gray-700 ">
                     <h3 className="text-xl font-semibold text-purple-300 mb-4">Tools & Specialized Libraries</h3>
                     <div className="flex flex-wrap gap-4">
                         {['JSON', 'GraphStream', 'OpenStreetMap', 'Scrum', 'UML'].map(tech => (
@@ -254,7 +254,22 @@ export default function Skills() {
                         ))}
                     </div>
                 </div>
+
+                {/* Languages */}
+                <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
+                    <h3 className="text-xl font-semibold text-purple-300 mb-4">Languages</h3>
+                    <div className="flex flex-wrap gap-4">
+                        {['🇫🇷 French - Native', '🇦🇺 English - Native', '🇪🇸 Spanish - B1', '🇹🇼 Chinese - HSK 2'].map(lang => (
+                            <div key={lang} className="flex items-center bg-gray-800 px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                                <span className="text-gray-200">{lang}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
+            <Link to="/technologies" className="mt-6 inline-block text-purple-400 hover:text-purple-300 hover:underline">
+                See my full tech stack & tools (demo) →
+            </Link>
         </div>
 
       <p className="text-center text-gray-300 pb-8 max-w-3xl mx-auto">

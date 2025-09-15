@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Sailing",
+    "description": "I've been sailing before I even walked! Its a passion that I love transmitting to other people, and there's no place I'd rather be than sailing through the sea, except maybe behind my keyboard ;).",
+    "image": "xavoile.jpg"
+  },
+  {
+    "title": "Hackathons",
+    "description": "I love participating in hackathons with friends where we solve challenges under pressure. These intense coding marathons improve my problem-solving skills and teach me new technologies.",
+    "image": "nuitinfo.jpg"
+  },
+  {
+    "title": "Volunteering",
+    "description": "As much as I love being behind my keyboard, I also need to take a break in nature every now and again. Since high school I've devoted much of my weekends and holidays allowing less-fortunate kids a breath of fresh air.",
+    "image": "xavchef.jpg"
+  }
+]

@@ -1,12 +1,56 @@
+type WorkExperience = {
+  title: string;
+  organization: string;
+  period: string;
+  details: string[];
+  note?: string;
+};
+
+type VolunteerExperience = {
+  title: string;
+  organization: string;
+  period: string;
+  details: string[];
+};
+
+type Hobby = {
+  title: string;
+  description: string;
+  image: string;
+};
 import { FaBriefcase, FaHeart } from "react-icons/fa";
 import { TbStarsFilled } from "react-icons/tb";
-
+import workExperience from "../experiences/workexperience.json";
+import React, { useState } from "react";
+import volunteerExperience from "../experiences/volunteerexperience.json";
+import hobbies from "../experiences/hobbies.json";
 import xavchef from "../img/xavchef.jpg";
 import xavoile from "../img/xavoile.jpg";
 import xavsupersympose from "../img/xavsupersympose.jpg";
 import nuitinfo from "../img/nuitinfo.jpg";
 
 export default function WhoAmI() {
+  const [collapsed, setCollapsed] = useState({
+    work: true,
+    volunteer: true,
+    hobbies: true,
+  });
+
+  const allCollapsed = collapsed.work && collapsed.volunteer && collapsed.hobbies;
+  const allExpanded = !collapsed.work && !collapsed.volunteer && !collapsed.hobbies;
+
+  const handleToggleAll = () => {
+    if (allCollapsed || !allExpanded) {
+      setCollapsed({ work: false, volunteer: false, hobbies: false });
+    } else {
+      setCollapsed({ work: true, volunteer: true, hobbies: true });
+    }
+  };
+
+  const handleToggle = (key: "work" | "volunteer" | "hobbies") => {
+    setCollapsed((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
   return (
     <div className="bg-gray-900 text-white min-h-screen p-8">
       {/* Header section with photo, name and description */}
@@ -34,221 +78,119 @@ export default function WhoAmI() {
         </div>
       </div>
 
+      {/* Expand/Collapse All Button */}
+      <div className="flex justify-end mb-6">
+        <button
+          className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded shadow"
+          onClick={handleToggleAll}
+        >
+          {allCollapsed ? "Expand All" : "Collapse All"}
+        </button>
+      </div>
+
       {/* Work Experience */}
       <div className="max-w-4xl mx-auto mb-12">
-        <h2 className="text-2xl font-bold mb-6 flex items-center">
-          <FaBriefcase className="text-purple-500 mr-3" />
-          <span className="border-b-2 border-purple-500 pb-1">
-            Work Experience
-          </span>
-        </h2>
-        <div className="mb-8">
-          <div className="flex flex-col md:flex-row justify-between mb-1">
-            <h3 className="text-xl font-semibold text-purple-300">
-              Data Analyst (Apprenticeship)
-            </h3>
-            <span className="text-gray-400">
-              September 2025 - now (
-              {(() => {
-                const start = new Date(2025, 8); // September is month 8 (0-based)
-                const now = new Date();
-                const months =
-                  (now.getFullYear() - start.getFullYear()) * 12 +
-                  (now.getMonth() - start.getMonth()) + 1;
-                return months > 0 ? months : 0;
-              })()} months)
-            </span>
-          </div>
-          <div className="text-gray-500 mb-2">
-            LYSARC - The Lymphoma Academic Research Organisation
-          </div>
-          <ul className="text-gray-100 list-disc pl-5 space-y-2">
-            <li>
-              Continued development of interactive dashboards and performance
-              indicators in Power BI to support data-driven decision-making for
-              medical professionals and pharmaceutical stakeholders
-            </li>
-            <li>
-              Gained hands-on experience in data engineering tasks, including
-              data pipeline development and database management using SQL and
-              Python
-            </li>
-            <li>
-              Collaborated with cross-functional teams to enhance data quality
-              and implement best practices in data handling and analysis
-            </li>
-            <li>
-              Used text mining and natural language processing (NLP) techniques to
-              extract insights from unstructured medical data, improving the
-              comprehensiveness of analyses
-            </li>
-            <li>
-              Ensured compliance with data privacy and healthcare regulations of
-              sensitive patient information
-            </li>
-          </ul>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-bold flex items-center">
+            <FaBriefcase className="text-purple-500 mr-3" />
+            <span className="border-b-2 border-purple-500 pb-1">Work Experience</span>
+          </h2>
+          <button
+            className="bg-gray-800 hover:bg-gray-700 text-purple-400 px-3 py-1 rounded"
+            onClick={() => handleToggle("work")}
+          >
+            {collapsed.work ? "Expand" : "Collapse"}
+          </button>
         </div>
-        <div className="mb-8">
-          <div className="flex flex-col md:flex-row justify-between mb-1">
-            <h3 className="text-xl font-semibold text-purple-300">
-              Data Analyst (Internship)
-            </h3>
-            <span className="text-gray-400">April 2024 - July 2024 (3 months)</span>
-          </div>
-          <div className="text-gray-500 mb-2">
-            LYSARC - The Lymphoma Academic Research Organisation
-          </div>
-          <ul className="text-gray-100 list-disc pl-5 space-y-2">
-            <li>
-              Extracted, transformed and cleaned complex healthcare data using
-              SAS and SQL, ensuring high data quality and consistency
-            </li>
-            <li>
-              Designed and developed interactive dashboards and performance
-              indicators in Power BI to support data-driven decision-making for
-              medical professionals and pharmaceutical stakeholders
-            </li>
-            <li>
-              Worked with a longitudinal database tracking over 5000 patients
-              all over France
-            </li>
-            <li>
-              Collaborated with multidisciplinary teams to translate medical and
-              scientific needs into actionnable insights and visual analytics
-            </li>
-            <li>
-              Ensured compliance with data privacy and healthcare regulations of
-              sensitive patient information
-            </li>
-          </ul>
-        </div>
-
-        <div className="mb-8">
-          <div className="flex flex-col md:flex-row justify-between mb-1">
-            <h3 className="text-xl font-semibold text-purple-300">
-              Sailing Instructor
-            </h3>
-            <span className="text-gray-400">
-              2021 - 2025 (2 months every year)
-            </span>
-          </div>
-          <div className="text-gray-500 mb-2">
-            Multiple sailing clubs in Corsica and the south of France
-          </div>
-          <ul className="text-gray-100 list-disc pl-5 space-y-2">
-            <li>Teaching catamaran and dinghy sailing courses at various levels</li>
-            <li>Participating in the training of new instructors</li>
-            <li>Multilingual skills: courses taught in French, English, and Spanish</li>
-            <li>Ensuring safety and enjoyment with up to 12 boats</li>
-            <li>Participating in the training of new instructors</li>
-          </ul>
+        <div
+          className={`transition-all duration-500 overflow-hidden ${collapsed.work ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'}`}
+        >
+          {(workExperience as WorkExperience[]).map((exp, idx) => (
+            <div className="mb-8" key={idx}>
+              <div className="flex flex-col md:flex-row justify-between mb-1">
+                <h3 className="text-xl font-semibold text-purple-300">{exp.title}</h3>
+                <span className="text-gray-400">{exp.period}</span>
+              </div>
+              <div className="text-gray-500 mb-2">{exp.organization}</div>
+              <ul className="text-gray-100 list-disc pl-5 space-y-2">
+                {exp.details.map((d: string, i: number) => (
+                  <li key={i}>{d}</li>
+                ))}
+                {exp.note && <p className="font-bold">{exp.note}</p>}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
-      {/* Volunteer work */}
-    {/* Volunteer Work */}
-    <div className="max-w-4xl mx-auto mb-12">
-        <h2 className="text-2xl font-bold mb-6 flex items-center">
+
+      {/* Volunteer Work */}
+      <div className="max-w-4xl mx-auto mb-12">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-bold flex items-center">
             <FaHeart className="text-purple-500 mr-3" />
-            <span className="border-b-2 border-purple-500 pb-1">
-                Volunteer Work
-            </span>
-        </h2>
-
-        <div className="mb-8">
-            <div className="flex flex-col md:flex-row justify-between mb-1">
-                <h3 className="text-xl font-semibold text-purple-300">
-                    Camp Director
-                </h3>
-                <span className="text-gray-400">2022 - now</span>
-            </div>
-            <div className="text-gray-500 mb-2">
-                Scouts et Guides de France
-            </div>
-            <ul className="text-gray-100 list-disc pl-5 space-y-2">
-                <li>Managed multiple scout camps for children aged 8 to 14</li>
-                <li>Supported and coordinated a team of 6 animators aged 17 to 21</li>
-                <li>Supervised youth activities ensuring safety and positive experiences</li>
-                <li>Developed and implemented annual educational projects tailored to children's needs, possibilities, and desires</li>
-                <li>Created engaging outdoor programs focused on personal development and team building</li>
-            </ul>
+            <span className="border-b-2 border-purple-500 pb-1">Volunteer Work</span>
+          </h2>
+          <button
+            className="bg-gray-800 hover:bg-gray-700 text-purple-400 px-3 py-1 rounded"
+            onClick={() => handleToggle("volunteer")}
+          >
+            {collapsed.volunteer ? "Expand" : "Collapse"}
+          </button>
         </div>
-
-        <div className="mb-8">
-            <div className="flex flex-col md:flex-row justify-between mb-1">
-                <h3 className="text-xl font-semibold text-purple-300">
-                    Measurement Technician
-                </h3>
-                <span className="text-gray-400">July 2024 - August 2024</span>
+        <div
+          className={`transition-all duration-500 overflow-hidden ${collapsed.volunteer ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'}`}
+        >
+          {(volunteerExperience as VolunteerExperience[]).map((exp, idx) => (
+            <div className="mb-8" key={idx}>
+              <div className="flex flex-col md:flex-row justify-between mb-1">
+                <h3 className="text-xl font-semibold text-purple-300">{exp.title}</h3>
+                <span className="text-gray-400">{exp.period}</span>
+              </div>
+              <div className="text-gray-500 mb-2">{exp.organization}</div>
+              <ul className="text-gray-100 list-disc pl-5 space-y-2">
+                {exp.details.map((d: string, i: number) => (
+                  <li key={i}>{d}</li>
+                ))}
+              </ul>
             </div>
-            <div className="text-gray-500 mb-2">
-                Paris 2024 Olympic Games (@ Marseille)
-            </div>
-            <ul className="text-gray-100 list-disc pl-5 space-y-2">
-                <li>Deployed and operated technical equipment to measure wind speed, direction, and wave conditions for Olympic sailing events</li>
-                <li>Collaborated with international race officials to ensure accurate course measurements and buoy placements</li>
-                <li>Monitored real-time meteorological data to provide critical information for race management decisions</li>
-                <li>Maintained and calibrated sensitive measurement instruments in challenging marine environments</li>
-                </ul>
+          ))}
         </div>
-    </div>
+      </div>
 
       {/* Hobbies and Passions */}
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6 flex items-center">
-          <TbStarsFilled className="text-purple-500 mr-3" />
-          <span className="border-b-2 border-purple-500 pb-1">
-            Hobbies & Passions
-          </span>
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors border-l-4 border-purple-500 flex flex-col justify-between">
-            <h3 className="text-xl font-semibold text-purple-300 mb-2">
-              Sailing
-            </h3>
-            <p className="text-gray-400">
-              I've been sailing before I even walked ! Its a passion that I love
-              transmitting to other people, and there's no place I'd rather be
-              than sailing through the sea, except maybe behind my keyboard ;).
-            </p>
-            <img
-              src={xavoile}
-              alt="Me giving a sailing course"
-              className="mt-4 rounded-lg w-full h-48 object-cover"
-            />
-          </div>
-
-          <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors border-l-4 border-purple-500 flex flex-col justify-between">
-            <h3 className="text-xl font-semibold text-purple-300 mb-2">
-              Hackathons
-            </h3>
-            <p className="text-gray-400">
-              I love participating in hackathons with friends where we solve
-              challenges under pressure. These intense coding marathons improve
-              my problem-solving skills and teach me new technologies.
-            </p>
-            <img
-              src={nuitinfo}
-              alt="Me receivin my black belt"
-              className="mt-4 rounded-lg w-full h-48 object-cover"
-            />
-          </div>
-
-          <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors border-l-4 border-purple-500 flex flex-col justify-between">
-            <h3 className="text-xl font-semibold text-purple-300 mb-2">
-              Volunteering
-            </h3>
-            <p className="text-gray-400">
-              As much as I love being behind my keyboard, I also need to take a
-              break in nature every now and again. Since high school I've devoted much of my
-              weekends and holidays allowing less-fortunate kids a breath of
-              fresh air.
-            </p>
-            <img
-              src={xavchef}
-              alt="Sailing"
-              className="mt-4 rounded-lg w-full h-48 object-cover"
-            />
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-bold flex items-center">
+            <TbStarsFilled className="text-purple-500 mr-3" />
+            <span className="border-b-2 border-purple-500 pb-1">Hobbies & Passions</span>
+          </h2>
+          <button
+            className="bg-gray-800 hover:bg-gray-700 text-purple-400 px-3 py-1 rounded"
+            onClick={() => handleToggle("hobbies")}
+          >
+            {collapsed.hobbies ? "Expand" : "Collapse"}
+          </button>
+        </div>
+        <div
+          className={`transition-all duration-500 overflow-hidden ${collapsed.hobbies ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'}`}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {(hobbies as Hobby[]).map((hobby, idx) => {
+              const imgSrc = hobby.image === "xavchef.jpg" ? xavchef : hobby.image === "xavoile.jpg" ? xavoile : hobby.image === "nuitinfo.jpg" ? nuitinfo : undefined;
+              return (
+                <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors border-l-4 border-purple-500 flex flex-col justify-between" key={idx}>
+                  <h3 className="text-xl font-semibold text-purple-300 mb-2">{hobby.title}</h3>
+                  <p className="text-gray-400">{hobby.description}</p>
+                  {imgSrc && (
+                    <img
+                      src={imgSrc}
+                      alt={hobby.title}
+                      className="mt-4 rounded-lg w-full h-48 object-cover"
+                    />
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
