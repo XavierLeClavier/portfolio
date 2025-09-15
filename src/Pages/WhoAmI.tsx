@@ -1,3 +1,15 @@
+import { FaBriefcase, FaHeart } from "react-icons/fa";
+import { TbStarsFilled } from "react-icons/tb";
+import workExperience from "../experiences/workexperience.json";
+import { useState } from "react";
+import volunteerExperience from "../experiences/volunteerexperience.json";
+import hobbies from "../experiences/hobbies.json";
+import xavchef from "../img/xavchef.jpg";
+import xavoile from "../img/xavoile.jpg";
+import xavsupersympose from "../img/xavsupersympose.jpg";
+import nuitinfo from "../img/nuitinfo.jpg";
+
+
 type WorkExperience = {
   title: string;
   organization: string;
@@ -18,16 +30,6 @@ type Hobby = {
   description: string;
   image: string;
 };
-import { FaBriefcase, FaHeart } from "react-icons/fa";
-import { TbStarsFilled } from "react-icons/tb";
-import workExperience from "../experiences/workexperience.json";
-import React, { useState } from "react";
-import volunteerExperience from "../experiences/volunteerexperience.json";
-import hobbies from "../experiences/hobbies.json";
-import xavchef from "../img/xavchef.jpg";
-import xavoile from "../img/xavoile.jpg";
-import xavsupersympose from "../img/xavsupersympose.jpg";
-import nuitinfo from "../img/nuitinfo.jpg";
 
 export default function WhoAmI() {
   const [collapsed, setCollapsed] = useState({
