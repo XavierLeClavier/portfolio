@@ -42,13 +42,58 @@ export default function WhoAmI() {
             Work Experience
           </span>
         </h2>
-
         <div className="mb-8">
           <div className="flex flex-col md:flex-row justify-between mb-1">
             <h3 className="text-xl font-semibold text-purple-300">
-              Data Analyst
+              Data Analyst (Apprenticeship)
             </h3>
-            <span className="text-gray-400">April 2024 - Present</span>
+            <span className="text-gray-400">
+              September 2025 - now (
+              {(() => {
+                const start = new Date(2025, 8); // September is month 8 (0-based)
+                const now = new Date();
+                const months =
+                  (now.getFullYear() - start.getFullYear()) * 12 +
+                  (now.getMonth() - start.getMonth()) + 1;
+                return months > 0 ? months : 0;
+              })()} months)
+            </span>
+          </div>
+          <div className="text-gray-500 mb-2">
+            LYSARC - The Lymphoma Academic Research Organisation
+          </div>
+          <ul className="text-gray-100 list-disc pl-5 space-y-2">
+            <li>
+              Continued development of interactive dashboards and performance
+              indicators in Power BI to support data-driven decision-making for
+              medical professionals and pharmaceutical stakeholders
+            </li>
+            <li>
+              Gained hands-on experience in data engineering tasks, including
+              data pipeline development and database management using SQL and
+              Python
+            </li>
+            <li>
+              Collaborated with cross-functional teams to enhance data quality
+              and implement best practices in data handling and analysis
+            </li>
+            <li>
+              Used text mining and natural language processing (NLP) techniques to
+              extract insights from unstructured medical data, improving the
+              comprehensiveness of analyses
+            </li>
+            <li>
+              Ensured compliance with data privacy and healthcare regulations of
+              sensitive patient information
+            </li>
+          </ul>
+        </div>
+        <div className="mb-8">
+          <div className="flex flex-col md:flex-row justify-between mb-1">
+            <h3 className="text-xl font-semibold text-purple-300">
+              Data Analyst (Internship)
+            </h3>
+            <span className="text-gray-400">April 2024 - July 2024 (3 months)</span>
           </div>
           <div className="text-gray-500 mb-2">
             LYSARC - The Lymphoma Academic Research Organisation
@@ -84,7 +129,7 @@ export default function WhoAmI() {
               Sailing Instructor
             </h3>
             <span className="text-gray-400">
-              2016 - 2025 (2 months every year)
+              2021 - 2025 (2 months every year)
             </span>
           </div>
           <div className="text-gray-500 mb-2">

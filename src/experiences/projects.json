@@ -9,14 +9,14 @@
         "implication":"Didactypo was a 4-person project where I was one of 2 developers working on the backend. We worked with a Scrum work method and I took on the role of scrum master. I helped construct the database structure and integrated the chat rooms on my own (with Firebase). What started as just a school project quickly became a full-on passion project which we decided to maintain several months after. The whole school would play the weekly challenges, proving that we surpassed the original point.",
         "startDate" : "September 2024",
         "endDate" : "May 2025",
-        "technologies": ["React", "TypeScript", "FastAPI", "Firebase", "Python", "CSS"],
+        "technologies": ["React", "TypeScript", "FastAPI", "Firebase", "Python", "CSS", "Scrum"],
         "keywords": ["fullstack", "education", "typing", "gamification"]
     },
     {
         "name": "DESCAR T",
         "subtitle": "Professional project",
         "url": "https://experts-recherche-lymphome.org/lysa/parcourir-les-etudes-cliniques-en-cours/descar-t/",
-        "image": "https://experts-recherche-lymphome.org/wp-content/uploads/documents-prives/lysa/Etudes-LYSA/DESCAR-T/descar-t_logo_bleu-gris.png",
+        "image": "https://experts-recherche-lymphome.org/wp-content/uploads/lysa/Etudes-Lysa/DESCAR-T/descart-t.png.webp",
         "github": "",
         "description": "DESCAR-T is a massive medical database with countless ammounts of patient data in constant evolution.",
         "implication":"I developed comprehensive Power BI solutions for biostatisticians, project managers, and pharmaceutical lab representatives to analyze the DESCAR-T medical data. I extracted, transformed, and cleaned complex healthcare data using SAS and SQL, ensuring high data quality and consistency for a longitudinal database tracking over 5000 patients across France. I designed interactive dashboards and performance indicators in Power BI that supported data-driven decision-making for medical professionals and pharmaceutical stakeholders. Working closely with multidisciplinary teams, I translated medical and scientific requirements into actionable insights and visual analytics while maintaining strict compliance with data privacy regulations for sensitive patient information.",
@@ -37,6 +37,19 @@
         "endDate" : "",
         "technologies": ["Jupyter", "Python", "SkLearn", "AI/ML"],
         "keywords": ["AI", "ML", "K-Nearest Neighbours", "classification"]
+    },
+    {
+        "name": "Self tracker",
+        "subtitle": "Personal project",
+        "url": "https://self.gamberge.org",
+        "image": "https://imgs.search.brave.com/xG4QAnXrlBOSf1NvJkYDbXMEAGtKs_iHQf_eRY4ixUs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTE3/ODA3NjM3NS9waG90/by9zbWFydHBob25l/LXBob3RvLW9mLWRl/bGljaW91cy1mb29k/LndlYnA_YT0xJmI9/MSZzPTYxMng2MTIm/dz0wJms9MjAmYz1X/RkUxRTZ4OGxvck1l/VG9PNm5SbnBnWVUy/R19KbmdobXhJRXZU/VUhzYklVPQ",
+        "github": "https://github.com/XavierLeClavier/self-tracker",
+        "description": "Selft Tracker is a web app designed to track the meals of my colleagues and I during our workdays. It allows users to log their meals and provides statistics and rankings based on the logged data. The meal's calory, protein and fat content are also automatically determined through AI. The app is build with a React frontend and Express backend, and uses PostgreSQL for data storage.",
+        "implication":"I built this app from scratch in a couple of weeks to help my colleagues and I track our meals during workdays. It was a fun project where I learned a lot about AI integration and database management. This was mostly to fammiliarize myself with Express, PostgreSQL and AI integration.",
+        "startDate" : "September 2025",
+        "endDate" : "now",
+        "technologies": ["React", "Express", "PostgreSQL", "AI/ML", "Docker"],
+        "keywords": ["fullstack", "AI", "database", "tracking", "statistics"]
     },
     {
         "name" : "Home server",

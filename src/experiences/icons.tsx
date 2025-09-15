@@ -1,6 +1,6 @@
 import {JSX} from 'react';
 import { FaReact, FaNodeJs, FaPython, FaCss3Alt, FaPhp, FaJava, FaDatabase, FaLinux, FaDocker, FaGitAlt } from 'react-icons/fa';
-import { SiJavascript, SiTypescript, SiFastapi, SiJupyter, SiPhpmyadmin, SiMysql, SiTailwindcss, SiOpenstreetmap, SiApachemaven, SiLooker } from 'react-icons/si';
+import { SiJavascript, SiTypescript, SiFastapi, SiJupyter, SiPhpmyadmin, SiMysql, SiTailwindcss, SiOpenstreetmap, SiApachemaven, SiLooker, SiPostgresql, SiExpress } from 'react-icons/si';
 import { IoLogoFirebase } from 'react-icons/io5';
 import { PiGraph } from 'react-icons/pi';
 import { BsBarChartFill, BsFiletypeJson } from 'react-icons/bs';
@@ -36,4 +36,6 @@ export const techIcons: { [key: string]: JSX.Element } = {
     Git: <FaGitAlt className="text-orange-500 w-6 h-6" />,
     UML: <MdOutlineSchema className="text-yellow-500 w-6 h-6" />,
     "AI/ML": <LuBrainCircuit className="text-green-500 w-6 h-6" />,
+    "Express": <SiExpress className="text-green-700 w-6 h-6" />,
+    "PostgreSQL": <SiPostgresql className="text-blue-500 w-6 h-6" />,   
 };

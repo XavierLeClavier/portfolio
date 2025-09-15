@@ -36,7 +36,7 @@ export default function Skills() {
       frName: "Administrer",
       description:
         "I have experience in managing and deploying applications using modern DevOps practices. This includes setting up CI/CD pipelines, managing cloud resources, and ensuring application reliability.",
-      projects: ["Home server", "Didactypo"],
+      projects: ["Home server", "Self tracker", "Didactypo"],
       improvements: ["MLOps", "Kubernetes", "Docker"],
       proExperience: ["Data Analyst Intern at LYSARC"],
       level: 60,
@@ -220,7 +220,7 @@ export default function Skills() {
                 <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
                     <h3 className="text-xl font-semibold text-purple-300 mb-4">Backend</h3>
                     <div className="flex flex-wrap gap-4">
-                        {['NodeJS', 'FastAPI', 'PHP', 'Java', 'SQL', 'MySQL', 'Firebase'].map(tech => (
+                        {['PostgreSQL', 'NodeJS', 'FastAPI', 'PHP', 'Java', 'SQL', 'MySQL', 'Firebase', 'Express'].map(tech => (
                             <div key={tech} className="flex items-center bg-gray-800 px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
                                 <span className="mr-2">{techIcons[tech]}</span>
                                 <span className="text-gray-200">{tech}</span>
