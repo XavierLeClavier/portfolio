@@ -7,6 +7,8 @@ import { BsBarChartFill, BsFiletypeJson } from 'react-icons/bs';
 import { DiScrum } from "react-icons/di";
 import { MdOutlineSchema } from "react-icons/md";
 import { LuBrainCircuit } from "react-icons/lu";
+import { TbCircleLetterCFilled } from "react-icons/tb";
+
 
 export const techIcons: { [key: string]: JSX.Element } = {
     React: <FaReact className="text-blue-500 w-6 h-6" />,
@@ -37,5 +39,6 @@ export const techIcons: { [key: string]: JSX.Element } = {
     UML: <MdOutlineSchema className="text-yellow-500 w-6 h-6" />,
     "AI/ML": <LuBrainCircuit className="text-green-500 w-6 h-6" />,
     "Express": <SiExpress className="text-green-700 w-6 h-6" />,
-    "PostgreSQL": <SiPostgresql className="text-blue-500 w-6 h-6" />,   
+    "PostgreSQL": <SiPostgresql className="text-blue-500 w-6 h-6" />,
+    "Cronitor": <TbCircleLetterCFilled className="text-green-500 w-6 h-6" />,
 };

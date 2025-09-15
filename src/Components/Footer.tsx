@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
     return (
         <footer className="bg-gray-900 text-white py-8 relative z-10">
@@ -23,7 +25,7 @@ export default function Footer() {
                 
                 <div className="mt-6 text-center text-gray-400 text-sm">
                     <p>&copy; {new Date().getFullYear()} Xavier Lacroix. All rights reserved.</p>
-                    <p className="mt-1">Made with all my ❤️</p>
+                    <Link to="/version-log" className="hover:text-gray-200 underline">Changelog</Link>
                 </div>
             </div>
         </footer>

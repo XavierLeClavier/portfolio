@@ -93,15 +93,15 @@
     {
         "name": "My Portfolio",
         "subtitle": "Personal project",
-        "url": "",
-        "image": "",
+        "url": "/version-log",
+        "image": "https://avatars.githubusercontent.com/u/146034833?v=4",
         "github": "https://github.com/XavierLeClavier/Portfolio",
-        "description": "This portfolio showcases my projects and skills. It is built using React TS and Tailwind CSS, the design is responsive and user-friendly, allowing visitors to easily navigate through my work.",
-        "implication" : "This is the site you're on right now ! I didn't spend too much time making this, but I did had a lot of fun, especially when testing out new features of React.",
+        "description": "This portfolio showcases my projects and skills. It is built using React TS and Tailwind CSS, the design is responsive and user-friendly, allowing visitors to easily navigate through my work. I use JSON files to store and manage my project data, making it easy to update and maintain the portfolio as I complete new projects. I also track visitor statistics using Cronitor.",
+        "implication" : "This is the site you're on right now ! I've had a lot of fun building it and I still update it regularly to add new projects and features.",
         "startDate" : "March 2025",
         "endDate" : "now",
-        "technologies": ["React", "TypeScript", "Tailwind", "JSON"],
-        "keywords": ["frontend", "portfolio", "design"]
+        "technologies": ["React", "TypeScript", "Tailwind", "JSON", "Cronitor"],
+        "keywords": ["frontend", "portfolio", "design", "tracking"]
     },
     {
         "name": "Secured Air Enforcer",
