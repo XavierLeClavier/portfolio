@@ -101,7 +101,7 @@ export default function BurgerHeader() {
                 className="block px-4 py-3 rounded-md hover:bg-gray-800 hover:text-purple-400 transition-colors duration-200"
                 onClick={() => { if (isMobile) setIsOpen(false); }}
               >
-                My tech stack (demo)
+                My tech stack
               </NavLink>
             </li>
           </ul>

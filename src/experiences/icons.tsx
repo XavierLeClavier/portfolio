@@ -1,13 +1,16 @@
 import {JSX} from 'react';
+
 import { FaReact, FaNodeJs, FaPython, FaCss3Alt, FaPhp, FaJava, FaDatabase, FaLinux, FaDocker, FaGitAlt, FaHtml5 } from 'react-icons/fa';
-import { SiJavascript, SiTypescript, SiFastapi, SiJupyter, SiPhpmyadmin, SiMysql, SiTailwindcss, SiOpenstreetmap, SiApachemaven, SiLooker, SiPostgresql, SiExpress } from 'react-icons/si';
+import { SiJavascript, SiTypescript, SiFastapi, SiJupyter, SiPhpmyadmin, SiMysql, SiTailwindcss, SiOpenstreetmap, SiApachemaven, SiLooker, SiPostgresql, SiExpress, SiFoodpanda } from 'react-icons/si';
 import { IoLogoFirebase } from 'react-icons/io5';
 import { PiGraph } from 'react-icons/pi';
 import { BsBarChartFill, BsFiletypeJson } from 'react-icons/bs';
 import { DiScrum } from "react-icons/di";
 import { MdOutlineSchema } from "react-icons/md";
 import { LuBrainCircuit } from "react-icons/lu";
-import { TbCircleLetterCFilled } from "react-icons/tb";
+import { TbCircleLetterCFilled, TbCircleLetterS } from "react-icons/tb";
+import { GiCroissant, GiKangaroo, GiMaracas } from "react-icons/gi";
+
 
 
 export const techIcons: { [key: string]: JSX.Element } = {
@@ -29,7 +32,7 @@ export const techIcons: { [key: string]: JSX.Element } = {
     OpenStreetMap: <SiOpenstreetmap color="#22c55e" size={24} />,
     "Power BI": <BsBarChartFill color="#fde047" size={24} />,
     SQL: <FaDatabase color="#a855f7" size={24} />,
-    Linux: <FaLinux color="#000000" size={24} />,
+    Linux: <FaLinux color="#ffffff" size={24} />,
     "Apache Server": <SiApachemaven color="#ef4444" size={24} />,
     Docker: <FaDocker color="#3b82f6" size={24} />,
     JSON: <BsFiletypeJson color="#fde047" size={24} />,
@@ -42,4 +45,9 @@ export const techIcons: { [key: string]: JSX.Element } = {
     "PostgreSQL": <SiPostgresql color="#3b82f6" size={24} />,
     "Cronitor": <TbCircleLetterCFilled color="#22c55e" size={24} />,
     HTML: <FaHtml5 color="#f97316" size={24} />,
+    SAS: <TbCircleLetterS color="#2563eb" size={24} />,
+    French: <GiCroissant color="#2563eb" size={24} />,
+    English: <GiKangaroo color="#fde047" size={24} />,
+    Spanish: <GiMaracas color="#fb923c" size={24} />,
+    Chinese: <SiFoodpanda color="#de2910" size={24} />,
 };

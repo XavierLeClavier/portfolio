@@ -43,10 +43,10 @@
       { "id": "Scrum", "type": "tool", "label": "Scrum" },
       { "id": "UML", "type": "tool", "label": "UML" },
     
-      { "id": "🇫🇷 French - Native", "type": "tool", "label": "🇫🇷 French" },
-      { "id": "🇦🇺 English - Native", "type": "tool", "label": "🇦🇺 English" },
-      { "id": "🇪🇸 Spanish - B1", "type": "tool", "label": "🇪🇸 Spanish" },
-      { "id": "🇹🇼 Chinese - HSK 2", "type": "tool", "label": "🇹🇼 Chinese" }
+      { "id": "French", "type": "tool", "label": "French" },
+      { "id": "English", "type": "tool", "label": "English" },
+      { "id": "Spanish", "type": "tool", "label": "Spanish" },
+      { "id": "Chinese", "type": "tool", "label": "Chinese" }
     ],
     "links": [
       { "source": "profile", "target": "Data Science & Analysis" },
@@ -91,10 +91,10 @@
       { "source": "Tools & Specialized Libraries", "target": "Scrum" },
       { "source": "Tools & Specialized Libraries", "target": "UML" },
     
-      { "source": "Languages", "target": "🇫🇷 French - Native" },
-      { "source": "Languages", "target": "🇦🇺 English - Native" },
-      { "source": "Languages", "target": "🇪🇸 Spanish - B1" },
-      { "source": "Languages", "target": "🇹🇼 Chinese - HSK 2" },
+      { "source": "Languages", "target": "French" },
+      { "source": "Languages", "target": "English" },
+      { "source": "Languages", "target": "Spanish" },
+      { "source": "Languages", "target": "Chinese" },
     
       { "source": "Python", "target": "Didactypo" },
       { "source": "Python", "target": "Breast Cancer Detector" },

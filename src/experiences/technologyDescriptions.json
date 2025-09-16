@@ -24,7 +24,7 @@
     "projects": []
   },
   "Languages": {
-    "description": "Programming and spoken languages you know.",
+    "description": "Languages I know (like uhm actual spoken languages, not programming languages).",
     "projects": []
   },
   "Python": {
@@ -147,20 +147,20 @@
     "description": "Unified Modeling Language for specifying, visualizing, and documenting software systems.",
     "projects": ["Didactypo", "Secured Air Enforcer"]
   },
-  "🇫🇷 French - Native": {
-    "description": "Native proficiency in French language.",
+  "French": {
+    "description": "Native proficiency in French language, I've lived in France most of my life.",
     "projects": []
   },
-  "🇦🇺 English - Native": {
-    "description": "Native proficiency in English language.",
+  "English": {
+    "description": "Native english speaker through my culture and bilingual upbringing, aussie aussie aussie oi oi oi !",
     "projects": []
   },
-  "🇪🇸 Spanish - B1": {
-    "description": "Intermediate proficiency in Spanish language.",
+  "Spanish": {
+    "description": "B1 spanish proficiency, able to hold conversations and understand written texts. Learned spanish mostly to be able to speak with my south american friends.",
     "projects": []
   },
-  "🇹🇼 Chinese - HSK 2": {
-    "description": "Basic proficiency in Chinese language (HSK 2 level).",
+  "Chinese": {
+    "description": "HSK2 proficiency in Mandarin Chinese, I started learning Chinese as a kid out of cultural curiosity.",
     "projects": []
   }
 }
