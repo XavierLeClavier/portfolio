@@ -25,7 +25,7 @@ export default function Footer() {
                 
                 <div className="mt-6 text-center text-gray-400 text-sm">
                     <p>&copy; {new Date().getFullYear()} Xavier Lacroix. All rights reserved.</p>
-                    <div className="mt-2">
+                    <div className="mt-2 flex flex-col sm:flex-row justify-center items-center gap-2">
                         <Link to="/version-log" className="hover:text-gray-200 underline">Changelog</Link>
                         <Link to="/" className="hover:text-gray-200 underline ml-4">Home</Link>
                     </div>

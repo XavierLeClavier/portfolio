@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import GithubStats from "../Components/GitHubStats";
+import Loading from "../Components/Loading";
+import React, { Suspense } from "react";
+
+const GithubStats = React.lazy(() => import("../Components/GitHubStats"));
+const LatestGithubRepos = React.lazy(() => import("../Components/LatestGithubRepos"));
 
 export default function Home() {
   const [profileScale, setProfileScale] = useState(1);
@@ -23,24 +27,43 @@ export default function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const [showRest, setShowRest] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  // Render bottom half after top section is visually complete (e.g., after first paint)
+  useEffect(() => {
+    // Use requestAnimationFrame to wait for first paint
+    requestAnimationFrame(() => {
+      setLoading(false);
+      setShowRest(true);
+    });
+  }, []);
+
   return (
     <>
-      <div className="flex justify-center items-center flex-col w-screen pb-32 md:pb-0">
-        <div className="min-h-screen bg-gray-800 w-screen flex justify-center items-center flex-col gap-8">
-          <div
-            className="flex items-center gap-6 relative"
-            style={{
-              height: `${profileScale * 100}vh`,
-              transition: "height 0.8s cubic-bezier(0.4,0,0.2,1)",
-            }}
-          >
+      <div className="flex justify-center items-center flex-col w-screen pb-32 md:pb-0 min-h-screen bg-gray-800 gap-8">
+        <div className="">
+            <div
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 relative"
+            style={
+              window.innerWidth >= 640
+              ? {
+                height: `${profileScale * 100}vh`,
+                transition: "height 0.8s cubic-bezier(0.4,0,0.2,1)",
+                }
+              : {
+                height: "100vh",
+                transition: "none",
+                }
+            }
+            >
             <img
               src="https://avatars.githubusercontent.com/u/146034833?v=4"
               alt="Xavier Lacroix"
-              className="rounded-full w-48 h-48 border-4 border-gray-300 shadow-lg"
+              className="rounded-full max-w-48 max-h-48 w-screen h-auto border-4 border-gray-300 shadow-lg"
               style={{ transition: "transform 0.4s cubic-bezier(0.4,0,0.2,1)" }}
             />
-            <div className="text-white">
+            <div className="text-white flex flex-col items-center sm:items-start">
               <h1 className="text-4xl font-bold">Xavier Lacroix</h1>
               <em className="text-xl text-gray-300">your data guy</em>
             </div>
@@ -137,8 +160,24 @@ export default function Home() {
               <span className="text-lg group-hover:text-purple-100 group-hover:scale-105 transition-all duration-300">Visualize my tech stack (demo)</span>
             </Link>
           </div>
-          <div className="my-12">
-            <GithubStats />
+          {/* Bottom half, loaded after first top */}
+          <div>
+            {loading ? (
+              <div className="my-12">
+                <Loading fullscreen={false} />
+              </div>
+            ) : (
+              showRest && (
+                <Suspense fallback={<Loading fullscreen={false} />}>
+                  <div className="my-12">
+                    <GithubStats />
+                  </div>
+                  <div>
+                    <LatestGithubRepos />
+                  </div>
+                </Suspense>
+              )
+            )}
           </div>
         </div>
       </div>

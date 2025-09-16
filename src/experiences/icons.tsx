@@ -1,5 +1,5 @@
 import {JSX} from 'react';
-import { FaReact, FaNodeJs, FaPython, FaCss3Alt, FaPhp, FaJava, FaDatabase, FaLinux, FaDocker, FaGitAlt } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaPython, FaCss3Alt, FaPhp, FaJava, FaDatabase, FaLinux, FaDocker, FaGitAlt, FaHtml5 } from 'react-icons/fa';
 import { SiJavascript, SiTypescript, SiFastapi, SiJupyter, SiPhpmyadmin, SiMysql, SiTailwindcss, SiOpenstreetmap, SiApachemaven, SiLooker, SiPostgresql, SiExpress } from 'react-icons/si';
 import { IoLogoFirebase } from 'react-icons/io5';
 import { PiGraph } from 'react-icons/pi';
@@ -41,4 +41,5 @@ export const techIcons: { [key: string]: JSX.Element } = {
     "Express": <SiExpress color="#15803d" size={24} />,
     "PostgreSQL": <SiPostgresql color="#3b82f6" size={24} />,
     "Cronitor": <TbCircleLetterCFilled color="#22c55e" size={24} />,
+    HTML: <FaHtml5 color="#f97316" size={24} />,
 };
