@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../Components/Loading";
 import React, { Suspense } from "react";
+import { motion } from "framer-motion";
 
 const GithubStats = React.lazy(() => import("../Components/GitHubStats"));
 const LatestGithubRepos = React.lazy(() => import("../Components/LatestGithubRepos"));
@@ -43,25 +44,24 @@ export default function Home() {
     <>
       <div className="flex justify-center items-center flex-col w-screen pb-32 md:pb-0 min-h-screen bg-gray-800 gap-8">
         <div className="">
-            <div
+          <div
             className="flex flex-col sm:flex-row items-center justify-center gap-6 relative"
             style={
               window.innerWidth >= 640
-              ? {
-                height: `${profileScale * 100}vh`,
-                transition: "height 0.8s cubic-bezier(0.4,0,0.2,1)",
+                ? {
+                  height: `${profileScale * 100}vh`,
+                  transition: "height 0.8s cubic-bezier(0.4,0,0.2,1)",
                 }
-              : {
-                height: "100vh",
-                transition: "none",
+                : {
+                  height: "100vh",
+                  transition: "none",
                 }
             }
-            >
+          >
             <img
               src="https://avatars.githubusercontent.com/u/146034833?v=4"
               alt="Xavier Lacroix"
               className="rounded-full max-w-48 max-h-48 w-screen h-auto border-4 border-gray-300 shadow-lg"
-              style={{ transition: "transform 0.4s cubic-bezier(0.4,0,0.2,1)" }}
             />
             <div className="text-white flex flex-col items-center sm:items-start">
               <h1 className="text-4xl font-bold">Xavier Lacroix</h1>
@@ -168,14 +168,28 @@ export default function Home() {
               </div>
             ) : (
               showRest && (
-                <Suspense fallback={<Loading fullscreen={false} />}>
-                  <div className="my-12">
-                    <GithubStats />
-                  </div>
-                  <div>
-                    <LatestGithubRepos />
-                  </div>
-                </Suspense>
+                <>
+                  <Suspense fallback={<Loading fullscreen={false} />}>
+                    <motion.div
+                      className="my-12"
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+                    >
+                      <GithubStats />
+                    </motion.div>
+                  </Suspense>
+                  <Suspense fallback={<Loading fullscreen={false} />}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
+                    >
+                      <LatestGithubRepos />
+                    </motion.div>
+                  </Suspense>
+                </>
+
               )
             )}
           </div>

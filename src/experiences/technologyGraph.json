@@ -1,6 +1,6 @@
 {
     "nodes": [
-      { "id": "profile", "type": "profile", "img": "https://avatars.githubusercontent.com/u/146034833?v=4", "label": "Xavier Lacroix" },
+      { "id": "profile", "type": "profile", "img": "/vite.svg", "label": "Xavier Lacroix" },
       { "id": "Data Science & Analysis", "type": "category", "label": "Data Science & Analysis" },
       { "id": "Frontend", "type": "category", "label": "Frontend" },
       { "id": "Backend", "type": "category", "label": "Backend" },

@@ -19,31 +19,14 @@ import * as Cronitor from '@cronitorio/cronitor-rum';
 
 
 function App() {
-  const [showLoading, setShowLoading] = React.useState(true);
-
-
-  // Only load Cronitor after Loading is hidden
+  // Only load Cronitor after app is mounted
   useEffect(() => {
-    if (!showLoading) {
-      Cronitor.load(import.meta.env.VITE_CRONITOR_API_KEY, {
-        debug: false,
-        trackMode: 'off',
-      });
-    }
-  }, [showLoading]);
-
-  // When Loading is mounted, switch to main app
-  useEffect(() => {
-    if (showLoading) {
-      // Use requestAnimationFrame to ensure Loading is rendered first
-      requestAnimationFrame(() => setShowLoading(false));
-    }
-  }, [showLoading]);
-
-  if (showLoading) {
-    return <Loading fullscreen={true} />;
-  }
-
+    Cronitor.load(import.meta.env.VITE_CRONITOR_API_KEY, {
+      debug: false,
+      trackMode: 'off',
+    });
+  }, []);
+  
   return (
     <BrowserRouter>
       <BurgerHeader />

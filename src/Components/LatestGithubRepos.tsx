@@ -1,3 +1,4 @@
+import { getTechIcon } from "../experiences/getTechIcon";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 import { techIcons } from "../experiences/icons";
@@ -248,8 +249,8 @@ export default function LatestGithubRepos() {
                   {repo.languages.length > 0 ? (
                     repo.languages.map((lang) => (
                       <span key={lang} className="flex items-center gap-1 bg-purple-700 text-white px-2 py-1 rounded text-xs">
-                        {techIcons[lang] ? (
-                          <span className="inline-block align-middle">{techIcons[lang]}</span>
+                        {getTechIcon(lang) ? (
+                          <span className="inline-block align-middle">{getTechIcon(lang)}</span>
                         ) : null}
                         {lang}
                       </span>

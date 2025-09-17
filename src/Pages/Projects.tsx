@@ -1,3 +1,6 @@
+
+import { useState, useEffect } from "react";
+import Loading from "../Components/Loading";
 import Project from "../Components/Project"
 import projectsData from "../experiences/projects.json"
 
@@ -13,6 +16,17 @@ interface ProjectData {
 }
 
 export default function Projects() {
+        const [loading, setLoading] = useState(true);
+
+        useEffect(() => {
+                const timer = setTimeout(() => setLoading(false), 500);
+                return () => clearTimeout(timer);
+        }, []);
+
+        if (loading) {
+                return <Loading fullscreen={true} />;
+        }
+
         return (
                 <div className="flex flex-col items-center bg-gray-800 ">
                         <h1 className="text-4xl font-bold text-white mt-8 mb-2">My projects</h1>
@@ -34,5 +48,5 @@ export default function Projects() {
                                 ))}
                         </div>
                 </div>
-        )
+        );
 }

@@ -54,7 +54,7 @@ function buildThreeLevelGraph(rawGraph: typeof techGraph) {
   return { nodes, links };
 }
 import techDescriptions from "../experiences/technologyDescriptions.json";
-import { techIcons } from "../experiences/icons";
+import { getTechIcon } from "../experiences/getTechIcon";
 import ReactDOMServer from "react-dom/server";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import Panel from "../Components/Panel";
@@ -179,12 +179,13 @@ export default function Technologies() {
                 ctx.save();
                 let radius = 18;
                 if (node.type === "category") radius = 14;
-                if (node.type === "tool") radius = techIcons[node.label] ? 12 : 10;
+                if (node.type === "tool") radius = getTechIcon(node.label) ? 12 : 10;
                 // For tool nodes, only draw the icon, no background or outline
-                if (node.type === "tool" && techIcons[node.label]) {
+                const icon = getTechIcon(node.label);
+                if (node.type === "tool" && icon) {
                   let img = iconImageCache.current[node.label];
                   if (!img) {
-                    const svgString = ReactDOMServer.renderToStaticMarkup(techIcons[node.label]);
+                    const svgString = ReactDOMServer.renderToStaticMarkup(icon);
                     const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='${radius * 2}' height='${radius * 2}' viewBox='0 0 24 24'>${svgString}</svg>`;
                     const url = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svg)))}`;
                     img = new window.Image();
@@ -241,7 +242,7 @@ export default function Technologies() {
               ) {
                 let radius = 18;
                 if (node.type === "category") radius = 14;
-                if (node.type === "tool" && techIcons[node.label]) {
+                if (node.type === "tool" && getTechIcon(node.label)) {
                   // For tool nodes with icons, pointer area is just the icon bounding box
                   ctx.beginPath();
                   ctx.rect(node.x - radius, node.y - radius, radius * 2, radius * 2);
@@ -286,7 +287,7 @@ export default function Technologies() {
       {/* Info Box Overlay */}
       {/* Always-visible arrow button, fixed to right edge, centered vertically */}
       <button
-        className={`fixed right-2 ${infoBoxVisible ? "top-24" : "top-1/2 -translate-y-1/2"} bg-gray-700 rounded-full p-2 shadow-lg hover:bg-gray-600 transition-all duration-500 z-50`}
+        className={`fixed right-2 ${infoBoxVisible ? "top-24" : "top-1/2 -translate-y-1/2"} bg-gray-700 rounded-full p-2 shadow-lg hover:bg-gray-600 transition-all duration-500 z-20`}
         style={{ display: infoBoxVisible ? "none" : "block" }}
         onClick={() => setInfoBoxVisible(true)}
         aria-label="Show info box"
@@ -294,12 +295,12 @@ export default function Technologies() {
         <FaChevronLeft size={24} />
       </button>
       <div
-        className={`fixed top-24 right-2 z-50 transition-all duration-500 ${infoBoxVisible ? "translate-x-0 opacity-100" : "translate-x-96 opacity-0 pointer-events-none"}`}
+        className={`fixed top-24 right-2 z-20 transition-all duration-500 ${infoBoxVisible ? "translate-x-0 opacity-100" : "translate-x-96 opacity-0 pointer-events-none"}`}
         style={{ width: "360px", maxWidth: "90vw" }}
       >
         <div className="relative">
           <button
-            className={`absolute -left-8 top-1/2 -translate-y-1/2 bg-gray-700 rounded-full p-2 shadow-lg hover:bg-gray-600 transition-colors transition-all duration-500 ${infoBoxVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+            className={`absolute -left-8 top-1/2 -translate-y-1/2 bg-gray-700 rounded-full p-2 shadow-lg hover:bg-gray-600 transition-all duration-500 ${infoBoxVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
             onClick={() => setInfoBoxVisible(false)}
             aria-label="Hide info box"
             style={{ transition: "opacity 0.5s, left 0.5s", left: infoBoxVisible ? "-2rem" : "-2rem" }}

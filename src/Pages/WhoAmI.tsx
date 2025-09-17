@@ -1,7 +1,9 @@
 import { FaBriefcase, FaHeart } from "react-icons/fa";
 import { TbStarsFilled } from "react-icons/tb";
 import workExperience from "../experiences/workexperience.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ImageWithPlaceholder from "../Components/ImageWithPlaceholder";
+import Loading from "../Components/Loading";
 import volunteerExperience from "../experiences/volunteerexperience.json";
 import hobbies from "../experiences/hobbies.json";
 import xavchef from "../img/xavchef.jpg";
@@ -53,16 +55,51 @@ export default function WhoAmI() {
     setCollapsed((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
+  // Staged loading state, now controlled by image load events and effects
+  const [loaded, setLoaded] = useState({
+    header: false,
+    work: false,
+    volunteer: false,
+    hobbies: false,
+  });
+
+  // Track when last work/volunteer item is rendered
+  const [workRendered, setWorkRendered] = useState(false);
+  const [volunteerRendered, setVolunteerRendered] = useState(false);
+
+  // Handler for header image load
+  const handleHeaderLoaded = () => {
+    setLoaded((prev) => ({ ...prev, header: true, work: true }));
+  };
+
+  // Trigger volunteer section when work section is rendered
+  useEffect(() => {
+    if (workRendered && loaded.work && !loaded.volunteer) {
+      setLoaded((prev) => ({ ...prev, volunteer: true }));
+    }
+  }, [workRendered, loaded.work, loaded.volunteer]);
+
+  // Trigger hobbies section when volunteer section is rendered
+  useEffect(() => {
+    if (volunteerRendered && loaded.volunteer && !loaded.hobbies) {
+      setLoaded((prev) => ({ ...prev, hobbies: true }));
+    }
+  }, [volunteerRendered, loaded.volunteer, loaded.hobbies]);
+
   return (
     <div className="bg-gray-900 text-white min-h-screen p-8">
       {/* Header section with photo, name and description */}
       <div className="max-w-4xl mx-auto mb-12 text-center">
-        <div className="mb-6">
-          <img
-            src={xavsupersympose}
-            alt="Xavier's Image"
-            className="w-48 h-48 rounded-full mx-auto border-4 border-purple-500 object-cover"
-          />
+        <div className="mb-6 relative w-48 h-48 mx-auto">
+            <ImageWithPlaceholder
+              src={xavsupersympose}
+              alt="Xavier's Image"
+              className="w-48 h-48 mx-auto border-4 border-purple-500 object-cover"
+              shape="circle"
+              // Only trigger staged loading after image is loaded
+              placeholder="/placeholder.svg"
+              onLoad={handleHeaderLoaded}
+            />
         </div>
         <h1 className="text-4xl font-bold mb-2 text-purple-400">
           Xavier Lacroix
@@ -104,25 +141,33 @@ export default function WhoAmI() {
             {collapsed.work ? "Expand" : "Collapse"}
           </button>
         </div>
-        <div
-          className={`transition-all duration-500 overflow-hidden ${collapsed.work ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'}`}
-        >
-          {(workExperience as WorkExperience[]).map((exp, idx) => (
-            <div className="mb-8" key={idx}>
-              <div className="flex flex-col md:flex-row justify-between mb-1">
-                <h3 className="text-xl font-semibold text-purple-300">{exp.title}</h3>
-                <span className="text-gray-400">{exp.period}</span>
+        {!loaded.work ? (
+          <Loading />
+        ) : (
+          <div
+            className={`transition-all duration-500 overflow-hidden ${collapsed.work ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'}`}
+          >
+            {(workExperience as WorkExperience[]).map((exp, idx, arr) => (
+              <div className="mb-8" key={idx}>
+                <div className="flex flex-col md:flex-row justify-between mb-1">
+                  <h3 className="text-xl font-semibold text-purple-300">{exp.title}</h3>
+                  <span className="text-gray-400">{exp.period}</span>
+                </div>
+                <div className="text-gray-500 mb-2">{exp.organization}</div>
+                <ul className="text-gray-100 list-disc pl-5 space-y-2">
+                  {exp.details.map((d: string, i: number) => (
+                    <li key={i}>{d}</li>
+                  ))}
+                  {exp.note && <p className="font-bold">{exp.note}</p>}
+                </ul>
+                {/* When last work item is rendered, set workRendered */}
+                {idx === arr.length - 1 && !workRendered && (
+                  (() => { setWorkRendered(true); return null; })()
+                )}
               </div>
-              <div className="text-gray-500 mb-2">{exp.organization}</div>
-              <ul className="text-gray-100 list-disc pl-5 space-y-2">
-                {exp.details.map((d: string, i: number) => (
-                  <li key={i}>{d}</li>
-                ))}
-                {exp.note && <p className="font-bold">{exp.note}</p>}
-              </ul>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Volunteer Work */}
@@ -139,24 +184,32 @@ export default function WhoAmI() {
             {collapsed.volunteer ? "Expand" : "Collapse"}
           </button>
         </div>
-        <div
-          className={`transition-all duration-500 overflow-hidden ${collapsed.volunteer ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'}`}
-        >
-          {(volunteerExperience as VolunteerExperience[]).map((exp, idx) => (
-            <div className="mb-8" key={idx}>
-              <div className="flex flex-col md:flex-row justify-between mb-1">
-                <h3 className="text-xl font-semibold text-purple-300">{exp.title}</h3>
-                <span className="text-gray-400">{exp.period}</span>
+        {!loaded.volunteer ? (
+          <Loading />
+        ) : (
+          <div
+            className={`transition-all duration-500 overflow-hidden ${collapsed.volunteer ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'}`}
+          >
+            {(volunteerExperience as VolunteerExperience[]).map((exp, idx, arr) => (
+              <div className="mb-8" key={idx}>
+                <div className="flex flex-col md:flex-row justify-between mb-1">
+                  <h3 className="text-xl font-semibold text-purple-300">{exp.title}</h3>
+                  <span className="text-gray-400">{exp.period}</span>
+                </div>
+                <div className="text-gray-500 mb-2">{exp.organization}</div>
+                <ul className="text-gray-100 list-disc pl-5 space-y-2">
+                  {exp.details.map((d: string, i: number) => (
+                    <li key={i}>{d}</li>
+                  ))}
+                </ul>
+                {/* When last volunteer item is rendered, set volunteerRendered */}
+                {idx === arr.length - 1 && !volunteerRendered && (
+                  (() => { setVolunteerRendered(true); return null; })()
+                )}
               </div>
-              <div className="text-gray-500 mb-2">{exp.organization}</div>
-              <ul className="text-gray-100 list-disc pl-5 space-y-2">
-                {exp.details.map((d: string, i: number) => (
-                  <li key={i}>{d}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Hobbies and Passions */}
@@ -173,28 +226,33 @@ export default function WhoAmI() {
             {collapsed.hobbies ? "Expand" : "Collapse"}
           </button>
         </div>
-        <div
-          className={`transition-all duration-500 overflow-hidden ${collapsed.hobbies ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'}`}
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {(hobbies as Hobby[]).map((hobby, idx) => {
-              const imgSrc = hobby.image === "xavchef.jpg" ? xavchef : hobby.image === "xavoile.jpg" ? xavoile : hobby.image === "nuitinfo.jpg" ? nuitinfo : undefined;
-              return (
-                <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors border-l-4 border-purple-500 flex flex-col justify-between" key={idx}>
-                  <h3 className="text-xl font-semibold text-purple-300 mb-2">{hobby.title}</h3>
-                  <p className="text-gray-400">{hobby.description}</p>
-                  {imgSrc && (
-                    <img
-                      src={imgSrc}
-                      alt={hobby.title}
-                      className="mt-4 rounded-lg w-full h-48 object-cover"
-                    />
-                  )}
-                </div>
-              );
-            })}
+        {!loaded.hobbies ? (
+          <Loading />
+        ) : (
+          <div
+            className={`transition-all duration-500 overflow-hidden ${collapsed.hobbies ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'}`}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {(hobbies as Hobby[]).map((hobby, idx) => {
+                const imgSrc = hobby.image === "xavchef.jpg" ? xavchef : hobby.image === "xavoile.jpg" ? xavoile : hobby.image === "nuitinfo.jpg" ? nuitinfo : undefined;
+                return (
+                  <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors border-l-4 border-purple-500 flex flex-col justify-between" key={idx}>
+                    <h3 className="text-xl font-semibold text-purple-300 mb-2">{hobby.title}</h3>
+                    <p className="text-gray-400">{hobby.description}</p>
+                    {imgSrc && (
+                      <ImageWithPlaceholder
+                        src={imgSrc}
+                        alt={hobby.title}
+                        className="mt-4 w-full h-48 object-cover"
+                        shape="rounded"
+                      />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

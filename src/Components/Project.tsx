@@ -1,6 +1,7 @@
 import { techIcons } from "../experiences/icons";
 import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ImageWithPlaceholder from "./ImageWithPlaceholder";
 
 interface ProjectProps {
     name: string;
@@ -20,17 +21,22 @@ export default function Project({ name, subtitle, url, image, github, descriptio
     return (
         <div className="w-sm rounded-lg overflow-hidden shadow-lg bg-gray-800 border border-gray-700">
             <div className="bg-gray-900">
-            <Link to={projectNameToSlug(name)} className="bg-gray-900">
-            <img className="w-full h-48 object-cover" src={image} alt={name} />
-            <div className="px-6 py-4">
-                <h2 className="font-bold text-xl mb-2 text-white">{name}</h2>
-                {subtitle && <h3 className="text-gray-300 text-base mb-2">{subtitle}</h3>}
-                <p className="text-gray-300 text-base line-clamp-3 overflow-hidden">
-                    {description.length > 100 ? `${description.substring(0, 100)}... ` : description}
-                    {description.length > 100 && <span className="text-purple-400 italic">Click to read more</span>}
-                </p>
-            </div>
-            </Link>
+                <Link to={projectNameToSlug(name)} className="bg-gray-900">
+                    <ImageWithPlaceholder
+                        src={image}
+                        alt={name}
+                        className="w-full h-48 object-cover"
+                        shape="rounded"
+                    />
+                    <div className="px-6 py-4">
+                        <h2 className="font-bold text-xl mb-2 text-white">{name}</h2>
+                        {subtitle && <h3 className="text-gray-300 text-base mb-2">{subtitle}</h3>}
+                        <p className="text-gray-300 text-base line-clamp-3 overflow-hidden">
+                            {description.length > 100 ? `${description.substring(0, 100)}... ` : description}
+                            {description.length > 100 && <span className="text-purple-400 italic">Click to read more</span>}
+                        </p>
+                    </div>
+                </Link>
             </div>
             <div className="px-6 pt-4 pb-2 flex gap-4">
                 {url && (
