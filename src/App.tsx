@@ -14,6 +14,7 @@ const Skills = React.lazy(() => import("./Pages/Skills"));
 const ProjectDetailedView = React.lazy(() => import("./Pages/ProjectDetailedView"));
 const VersionLog = React.lazy(() => import("./Pages/VersionLog"));
 const Technologies = React.lazy(() => import("./Pages/Technologies"));
+const ExtraComponent = React.lazy(() => import("./Pages/ExtraComponent"));
 
 import * as Cronitor from '@cronitorio/cronitor-rum';
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="/projects/:projectName" element={<ProjectDetailedView />} />
           <Route path="/version-log" element={<VersionLog />} />
           <Route path="/technologies" element={<Technologies />} />
+          <Route path="/extra" element={<ExtraComponent />} />
         </Routes>
       </React.Suspense>
       <Footer />
