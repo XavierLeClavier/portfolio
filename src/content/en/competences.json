@@ -1,11 +1,11 @@
 {
   "title": "Skills portfolio",
-  "intro": "The BUT Informatique is built around six competency blocks from the French national framework. For each, I set out the level targeted in the final year, the evidence drawn from my work and projects, the progression between the S4 internship and the S6 apprenticeship, and a short reflective note.",
+  "intro": "The BUT Informatique is organised around six competency blocks from the French national framework. For each block: the level targeted in the final year, evidence from my work and projects, how things changed between the internship and the apprenticeship, and a personal note.",
   "evidenceLabel": "Evidence",
   "projectsLabel": "Related projects",
-  "progressionLabel": "Skill progression (S4 → S6)",
-  "reflectionLabel": "Reflective note",
-  "axesLabel": "Areas for improvement",
+  "progressionLabel": "From internship to apprenticeship",
+  "reflectionLabel": "What I take from it",
+  "axesLabel": "What I want to improve",
   "acLabel": "Critical learning outcomes",
   "todoNote": "Level titles and critical learning outcomes are to be aligned with the exact wording of the AGED framework (marked \"to be confirmed\").",
   "blocs": {
@@ -13,17 +13,17 @@
       "nom": "Develop an application",
       "niveauLibelle": "Adapt applications across a range of platforms and business needs (to be confirmed)",
       "apprentissagesCritiques": [
-        "Evolve an application to make it safer, more reliable and easier to maintain (to be confirmed)",
+        "Evolve an application to make it more reliable and easier to maintain (to be confirmed)",
         "Design and implement an application's tests (to be confirmed)",
-        "Develop complex software applications (to be confirmed)"
+        "Develop complex applications (to be confirmed)"
       ],
-      "description": "On the apprenticeship, \"developing\" mostly meant building decision-support indicators and well-tooled Python applications. I carried projects from requirements through to deployment, with an emphasis on maintainability: externalised configuration, tests, documentation, packaging.",
-      "preuves": "The DESCAR-T decision-support platform (DAX indicators, semantic model) and above all QC Report Builder — a desktop application in MVC architecture, tested with pytest, distributed as a Python package and a standalone executable. Outside the apprenticeship, Didactypo and Self Tracker cover full-stack web development.",
-      "progression": "In S4 I built dashboards from specifications. In S6 I design the application architecture and own the full lifecycle, tests and maintenance documentation included.",
-      "noteReflexive": "I've learned that \"developing\" doesn't stop at code that works: the value of an internal tool is in whether someone else can pick it up. That's what made me systematise external configuration and technical documentation.",
+      "description": "On the apprenticeship, developing mostly meant building decision-support indicators and well-tooled Python applications. I carried projects from the need to deployment, with external configuration, tests and documentation.",
+      "preuves": "The DESCAR-T decision-support platform (DAX indicators, data model) and above all QC Report Builder, a desktop application in MVC, tested with pytest, distributed as a package and an executable. Outside the apprenticeship: Didactypo and Self Tracker for full-stack web.",
+      "progression": "On the internship I built dashboards from instructions. On the apprenticeship I design the architecture and own the whole lifecycle, tests and documentation included.",
+      "noteReflexive": "The value of an internal tool is in whether someone else can pick it up. That is what made me systematise external configuration and documentation.",
       "axesProgression": [
         "Continuous integration and automated testing",
-        "Peer code review, absent on my role",
+        "Peer code review, which I did not have in my role",
         "Working on larger codebases"
       ]
     },
@@ -32,16 +32,16 @@
       "niveauLibelle": "Analyse and optimise applications against measurable criteria (to be confirmed)",
       "apprentissagesCritiques": [
         "Analyse a problem methodically: break it down, measure, compare (to be confirmed)",
-        "Compare algorithmic solutions and pick the one best suited to the context and constraints (to be confirmed)",
+        "Compare solutions and pick the one best suited to the context (to be confirmed)",
         "Assess the impact of a change on performance and reliability (to be confirmed)"
       ],
-      "description": "Optimisation in my work was less about the speed of an algorithm than the efficiency of a process: replacing weekly Excel manipulation with a model that refreshes itself, or a one-hour manual quality check with automatic generation. The choice of star-schema modelling is itself an optimisation decision, driven by the shape of the queries.",
-      "preuves": "The Python quality-control tools, which automate repetitive manual work; the decision-support platform, whose model was designed for query performance and definition harmonisation; on the AI POC, the choice of models that can run locally under a response-time constraint. Outside the apprenticeship, the graph algorithms in Secured Air Enforcer.",
-      "progression": "In S4 I optimised the rendering of existing dashboards. In S6 I made architecture decisions (star schema, indicator granularity) and model choices, arguing the trade-offs.",
-      "noteReflexive": "My optimisation instinct is still stronger on processes than on code itself. The AI POC showed me how hard a system's robustness and response time are to hold, and that's an area I want to go deeper on.",
+      "description": "For me, optimising was less about the speed of an algorithm than the efficiency of a process: replacing an Excel workbook rebuilt every week with a model that updates itself, or a one-hour quality check with automatic generation.",
+      "preuves": "The Python quality-control tools, which automate manual work. The star schema of the platform, designed for query performance. On the POC, the choice of models that can run locally under a response-time constraint. Outside the apprenticeship: the graph algorithms in Secured Air Enforcer.",
+      "progression": "On the internship I optimised the rendering of existing dashboards. On the apprenticeship I made architecture and model choices, explaining the trade-offs.",
+      "noteReflexive": "My optimisation instinct is stronger on processes than on code. The POC showed me how hard a system's robustness and response time are to hold.",
       "axesProgression": [
         "Profiling and fine-grained code optimisation",
-        "Choosing and tuning machine-learning and LLM models",
+        "Choosing and tuning ML and LLM models",
         "MLOps practices"
       ]
     },
@@ -53,29 +53,29 @@
         "Secure services and data: permissions, partitioning, compliance (to be confirmed)",
         "Install and configure a workstation and its runtime environment (to be confirmed)"
       ],
-      "description": "My relationship with system administration came through deploying and distributing tools — publishing to Power BI Cloud, packaging standalone executables, setting up a local environment for running language models — and through treating data partitioning as a native constraint of the model, not a layer bolted on at reporting time.",
-      "preuves": "Distributing QC Report Builder (package and executable for machines without a development environment), the local infrastructure of the AI POC, and the security framing of the decision-support platform with the CIO and the DPO: export frequency, anonymisation, storage. Outside the apprenticeship, my homelab (Docker, Traefik, self-hosted services, monitoring).",
-      "progression": "In S4 deployment wasn't my concern. In S6 I handled publishing, distribution and local execution of my deliverables, and took part in security and GDPR-compliance decisions.",
-      "noteReflexive": "This is the block where my experience is most fragmented: plenty of deployment and application security, less system administration proper. My homelab is my best learning ground on that front.",
+      "description": "My experience of system administration comes through deploying tools (Power BI Cloud, standalone executables, a local environment for language models) and through handling data partitioning from the model onwards, not at reporting time.",
+      "preuves": "Distributing QC Report Builder, the local infrastructure of the POC, and the security framing of the platform with the CIO and the DPO. Outside the apprenticeship: my homelab (Docker, Traefik, self-hosted services, monitoring).",
+      "progression": "On the internship, deployment was not my concern. On the apprenticeship I handled publishing and running my deliverables and took part in security and GDPR decisions.",
+      "noteReflexive": "This is the block where my experience is most scattered: a lot of deployment and application security, little system administration proper. My homelab is my best learning ground.",
       "axesProgression": [
         "Containerisation and orchestration: advanced Docker, Kubernetes",
         "Deployment automation (CI/CD)",
-        "Network administration and observability"
+        "Network administration and monitoring"
       ]
     },
     "gerer-donnees": {
       "nom": "Manage information data",
-      "niveauLibelle": "Design and implement a decision-support information system while guaranteeing data quality and security (to be confirmed)",
+      "niveauLibelle": "Design a decision-support information system while guaranteeing data quality and security (to be confirmed)",
       "apprentissagesCritiques": [
         "Design a data model suited to a use case: transactional, decision-support, longitudinal (to be confirmed)",
         "Implement an extract, transform and load chain (to be confirmed)",
         "Guarantee the quality, traceability and confidentiality of data (to be confirmed)",
         "Exploit data for decision-making (to be confirmed)"
       ],
-      "description": "This is the heart of my apprenticeship and of the AGED track. I worked on a real-world national clinical registry: an evolving schema (around thirty case-report-form versions), a conditional schema (variables that only apply to certain patient subsets), a longitudinal structure (each item collected around twenty times per patient), strict partitioning between partners. Designing a decision-support model on that basis means handling granularity and the meaning of missing values explicitly.",
-      "preuves": "The DESCAR-T decision-support platform: star-schema semantic model, SAS and Power Query chain, indicator verification against the reference extractions, work under MR-004. The AI POC, with an ETL into a dedicated SQLite database and SQL generation. Outside the apprenticeship, the breast cancer dataset and the Fou2Food database.",
-      "progression": "In S4 I extracted and cleaned data with SAS and SQL against a defined plan. In S6 I design the data model, weigh up indicator granularity and own the quality and confidentiality approach end to end.",
-      "noteReflexive": "This registry taught me that the difficulty of a data project is almost never volume: it's structure, history and veracity. Distinguishing \"not recorded\", \"not applicable to this pathology\" and \"not applicable to this form version\" before any aggregation has become a reflex.",
+      "description": "This is the heart of my apprenticeship and of the AGED track. I worked on a real-world clinical registry: a schema that has changed a lot, variables that apply to some patients only, each item collected many times, strict partitioning between partners. Designing a decision-support model on that basis means handling granularity and missing values explicitly.",
+      "preuves": "The DESCAR-T platform: star schema, SAS and Power Query chain, indicator verification, work under MR-004. The POC, with an ETL into a SQLite database and SQL generation. Outside the apprenticeship: the breast cancer dataset and the Fou2Food database.",
+      "progression": "On the internship I extracted and cleaned data against a defined plan. On the apprenticeship I design the model, weigh up indicator granularity and own the quality and confidentiality approach.",
+      "noteReflexive": "The difficulty of a data project is almost never volume. It is structure, history and data reliability. Telling apart \"not recorded\", \"not applicable\" and \"not in this form version\" before any aggregation has become a reflex.",
       "axesProgression": [
         "Industrialising pipelines: orchestration, data tests",
         "Data modelling at larger scale",
@@ -91,10 +91,10 @@
         "Prioritise and make trade-offs based on value and constraints (to be confirmed)",
         "Ensure a project's tracking, documentation and closure (to be confirmed)"
       ],
-      "description": "I led three projects in parallel, on different timelines, with no dedicated project manager on my scope. My method was consistent: requirements workshops, a validated mockup or functional version, a deliberately early production release, then weekly iteration on usage feedback, and closure with documentation and training.",
-      "preuves": "The decision-support platform (workshops with four project managers, a validated mockup, iteration over several months, a regulatory framing meeting), the Python tools (the same approach repeated four times), and the AI POC — framed as exploratory and stopped with an owned conclusion when the organisation's priorities changed. Outside the apprenticeship, Didactypo, where I was scrum master.",
-      "progression": "In S4 I contributed to a project framed by others. In S6 I frame the need, plan, prioritise between competing projects and own the decision to pause a project.",
-      "noteReflexive": "I've learned that an early, imperfect delivery, owned as such, beats a perfect deliverable shipped too late: it turns the user into a source of feedback rather than just a recipient. Accepting the AI POC being stopped was also a lesson: a project can be a success without going to production, if its conclusion is clear.",
+      "description": "I led three projects in parallel, on different rhythms, with no project manager on my scope. My method: requirements workshops, a validated mockup or working version, ship early, iterate on feedback, close with documentation and training.",
+      "preuves": "The decision-support platform (workshops with four project managers, a mockup, iteration over several months). The Python tools, with the same approach repeated. The POC, framed as exploratory and stopped with a clear conclusion. Outside the apprenticeship: Didactypo, where I was scrum master.",
+      "progression": "On the internship I contributed to a project framed by others. On the apprenticeship I frame the need, plan, prioritise between projects and own pausing a project.",
+      "noteReflexive": "An early, imperfect delivery beats a perfect one shipped too late: it turns the user into a source of feedback. And a project can be a success without going to production, if its conclusion is clear.",
       "axesProgression": [
         "Project-management and formal tracking tools",
         "Working with less technical stakeholders",
@@ -105,15 +105,15 @@
       "nom": "Work within an IT team",
       "niveauLibelle": "Integrate into, contribute to and help evolve the practices of an IT team (to be confirmed)",
       "apprentissagesCritiques": [
-        "Adapt communication to stakeholders from different fields and technical levels (to be confirmed)",
+        "Adapt communication to people from different fields and technical levels (to be confirmed)",
         "Share knowledge and support others' upskilling (to be confirmed)",
         "Contribute to evolving the team's tools and practices (to be confirmed)",
         "Carry out and share technology watch (to be confirmed)"
       ],
-      "description": "As the only person in my role, I mostly \"worked in a team\" cross-functionally: with data managers, SAS programmers, biostatisticians, project managers, a project lead, a doctor, the CIO and the DPO. Moving from a biostatistician audience to a project-manager audience on the same data was the most formative communication exercise. I also helped evolve the team's practices.",
-      "preuves": "The decision-support platform, with two distinct audiences and a presentation at a scientific café; supporting the rollout of Visual Studio Code and Git, the training and best-practice guides; contributing to the IT team's new BI documentation standard by documenting my own indicators to it first; internal talks and webinars on AI, standardisation and automation. Outside the apprenticeship, the scrum-master role on Didactypo.",
-      "progression": "In S4 I integrated into a team and reported back. In S6 I trained colleagues, spread practices and contributed to team standards.",
-      "noteReflexive": "Having no peer on my role forced me to make my choices understandable and assessable by people who aren't specialists in my tools. That constraint made teaching a core skill, one I also draw on in my volunteering.",
+      "description": "As the only person in my role, I mostly worked cross-functionally: with data managers, SAS programmers, biostatisticians, project managers, a doctor, the CIO and the DPO. Moving from a biostatistician audience to a project-manager audience on the same data was the most formative communication exercise.",
+      "preuves": "The decision-support platform and its two audiences, presented at a science café. Supporting the team on Visual Studio Code and Git, the training and guides. The contribution to the IT team's documentation standard. Outside the apprenticeship: the scrum-master role on Didactypo.",
+      "progression": "On the internship I integrated and reported back. On the apprenticeship I trained colleagues, spread practices and contributed to team standards.",
+      "noteReflexive": "Having no peer in my role forced me to make my choices understandable to non-specialists. That made teaching a core skill, one I also draw on in my volunteering.",
       "axesProgression": [
         "Working in a developer team with established rituals",
         "Code review and pair programming",
@@ -123,22 +123,22 @@
   },
   "stackTechnique": {
     "title": "Technical stack",
-    "intro": "The technologies I use, grouped by area. The AGED competencies are exercised mostly on the first groups; the rest comes from my personal and academic projects.",
+    "intro": "The technologies I use, by area. The AGED competencies are exercised mostly on the first groups, the rest comes from my projects.",
     "categories": [
-      { "title": "Business intelligence & visualisation", "techs": ["Power BI", "Power Query", "DAX", "Looker"] },
-      { "title": "Data & statistical programming", "techs": ["SAS", "SQL", "Star schema"] },
+      { "title": "Business intelligence and visualisation", "techs": ["Power BI", "Power Query", "DAX", "Looker"] },
+      { "title": "Data and statistical programming", "techs": ["SAS", "SQL", "Star schema"] },
       { "title": "Programming languages", "techs": ["Python", "TypeScript", "JavaScript", "Java", "PHP"] },
       { "title": "Application development", "techs": ["PySide6", "pytest", "FastAPI", "Express", "NodeJS"] },
       { "title": "Web development", "techs": ["React", "Tailwind", "CSS"] },
-      { "title": "AI / LLM", "techs": ["Ollama", "LangChain", "AI/ML"] },
+      { "title": "AI and LLM", "techs": ["Ollama", "LangChain", "AI/ML"] },
       { "title": "Databases", "techs": ["PostgreSQL", "MySQL", "SQLite", "Firebase"] },
-      { "title": "Tooling & methods", "techs": ["Git", "GitHub", "VS Code", "Docker", "Linux", "Scrum", "UML"] }
+      { "title": "Tooling and methods", "techs": ["Git", "GitHub", "VS Code", "Docker", "Linux", "Scrum", "UML"] }
     ],
     "languesTitle": "Languages",
     "langues": [
       { "nom": "French", "niveau": "Native" },
       { "nom": "English", "niveau": "Bilingual" },
-      { "nom": "Spanish", "niveau": "B1 — conversational" },
+      { "nom": "Spanish", "niveau": "B1, conversational" },
       { "nom": "Mandarin", "niveau": "HSK 2" }
     ]
   }

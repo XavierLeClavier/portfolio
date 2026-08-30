@@ -2,31 +2,31 @@
   "header": {
     "name": "Xavier Lacroix",
     "role": "Étudiant en informatique à l'INSA Lyon",
-    "bio": "Je suis étudiant en informatique à l'INSA Lyon depuis septembre 2026. Avant ça : trois ans de BUT Informatique à l'IUT Lyon 1 (parcours AGED), dont une année d'alternance comme Data Analyst chez Lysarc, sur un registre clinique national. En parallèle, je construis beaucoup de projets personnels — des sites web, un homelab, des agents IA. Ce qui m'intéresse : la donnée, les systèmes, et transformer une idée en quelque chose qui tourne vraiment. Mon cap : les métiers de Data Engineer et d'AI Engineer."
+    "bio": "Je suis étudiant en informatique à l'INSA Lyon depuis septembre 2026. Avant ça, trois ans de BUT Informatique à l'IUT Lyon 1 (parcours AGED), dont une année d'alternance comme Data Analyst chez Lysarc sur un registre clinique national. En parallèle, je construis beaucoup de projets personnels : des sites web, un homelab, des agents IA. Ce qui m'intéresse : la donnée, les systèmes, et transformer une idée en quelque chose qui tourne. Mon objectif : les métiers de Data Engineer et d'AI Engineer."
   },
   "lysarc": {
     "title": "L'entreprise : Lysarc",
     "body": [
-      "Lysarc (The Lymphoma Academic Research Organisation) est une association loi 1901, bras armé de la recherche académique du réseau Lysa, dédié aux lymphomes, à la leucémie lymphoïde chronique et à la maladie de Waldenström. C'est la plus grande structure de recherche académique au monde consacrée aux lymphomes, basée au CHU Lyon Sud. Elle lance chaque année quatre à six nouveaux essais cliniques, en parallèle d'une cinquantaine d'études en cours.",
-      "Pendant mon alternance, l'organisation a connu un changement de direction et une réorganisation structurelle : nouvelle feuille de route stratégique, création d'un hub d'innovation et d'un département dédié à l'ingénierie et à la programmation des données cliniques. C'est cette réorganisation qui a fait évoluer mes missions au fil de l'année.",
-      "J'étais le seul Data Analyst de la structure : pas de pair sur le poste, pas de méthodologie établie à reprendre, pas de référent technique sur ma propre chaîne d'outils. Cette autonomie a été un moteur — elle m'a imposé de choisir, documenter et justifier chaque décision, et c'est la raison pour laquelle la documentation et la formation accompagnent chacun de mes livrables."
+      "Lysarc est une association qui coordonne la recherche académique sur les lymphomes. Elle est basée au CHU Lyon Sud et lance chaque année quelques nouveaux essais cliniques, en plus d'une cinquantaine d'études en cours.",
+      "Pendant mon alternance, l'organisation a changé de direction et s'est réorganisée : nouvelle feuille de route, création d'un hub d'innovation et d'un département dédié à l'ingénierie des données cliniques. C'est ce qui a fait évoluer mes missions au fil de l'année.",
+      "J'étais le seul Data Analyst de la structure. Pas de collègue sur le même poste, pas de méthode à reprendre, pas de référent sur mes outils. Cette autonomie m'a obligé à documenter et justifier chaque choix, et c'est pour ça que la documentation et la formation accompagnent chacun de mes livrables."
     ]
   },
   "environnement": {
     "title": "Environnement technique",
-    "intro": "Les données du registre ne posent pas de problème de volume : elles tiennent sur un poste de travail. Le travail s'organise autour de deux chaînes de rafraîchissement, à deux cadences et deux niveaux de fiabilité.",
+    "intro": "Les données du registre tiennent sur un poste de travail, ce n'est pas un problème de volume. Le travail s'organise autour de deux chaînes de rafraîchissement, à deux rythmes.",
     "items": [
-      "Un export brut hebdomadaire depuis l'outil de saisie clinique (Ennov), non dérivé — il alimente les tableaux de bord Power BI et le pilotage opérationnel.",
-      "Une chaîne de dérivations et d'exclusions sous SAS, sur un rythme d'environ six mois — elle produit les jeux d'analyse pour les rapports statistiques officiels.",
-      "Poste Windows, SAS et Power BI Desktop pour l'analyse, Power BI Cloud pour la diffusion, Visual Studio Code et Git pour le développement Python, et une infrastructure interne pour l'exécution locale de modèles de langage.",
-      "Une part importante de mon travail de documentation et de formation a consisté à rendre explicite la distinction entre ces deux chaînes, pour que les chiffres opérationnels ne soient jamais confondus avec les chiffres statistiques officiels."
+      "Un export hebdomadaire depuis l'outil de saisie clinique, qui alimente les tableaux de bord Power BI et le pilotage opérationnel.",
+      "Une chaîne de traitements sous SAS, tous les six mois environ, qui produit les jeux de données pour les rapports statistiques officiels.",
+      "Poste Windows, SAS et Power BI pour l'analyse, Power BI Cloud pour la diffusion, Visual Studio Code et Git pour Python, une infrastructure interne pour exécuter des modèles de langage en local.",
+      "Une partie de mon travail de documentation a servi à bien distinguer ces deux chaînes, pour que les chiffres opérationnels ne soient jamais confondus avec les chiffres officiels."
     ]
   },
   "formation": {
     "title": "Formation",
     "steps": [
-      { "period": "Depuis 2026", "label": "INSA Lyon — école d'ingénieur, spécialité informatique" },
-      { "period": "2023 – 2026", "label": "BUT Informatique — IUT Lyon 1, parcours AGED" }
+      { "period": "Depuis 2026", "label": "INSA Lyon, école d'ingénieur, spécialité informatique" },
+      { "period": "2023-2026", "label": "BUT Informatique, IUT Lyon 1, parcours AGED" }
     ]
   },
   "sections": {
@@ -38,37 +38,37 @@
     "items": {
       "lysarc-alternance": {
         "title": "Data Analyst (alternance)",
-        "organization": "Lysarc — The Lymphoma Academic Research Organisation",
+        "organization": "Lysarc",
         "period": "Depuis septembre 2025",
         "details": [
-          "Conception et développement d'une solution décisionnelle Power BI de bout en bout sur la qualité des données et l'activité du registre national DESCAR-T",
-          "Développement de quatre applications Python (architecture MVC, tests, documentation, exécutables autonomes) pour automatiser les contrôles qualité des analyses statistiques",
-          "Prototype d'agent conversationnel exécuté entièrement sur l'infrastructure interne (Ollama, LangChain, SQLite) pour transformer une question en langage naturel en analyse",
-          "Accompagnement de l'équipe : déploiement de Visual Studio Code et Git, formations et guides de bonnes pratiques, adoption du standard de documentation BI de la DSI"
+          "Conception et développement d'une solution décisionnelle Power BI sur la qualité et l'activité du registre national DESCAR-T",
+          "Développement de quatre applications Python pour automatiser les contrôles qualité des analyses statistiques",
+          "Prototype d'agent conversationnel exécuté sur l'infrastructure interne (Ollama, LangChain, SQLite)",
+          "Accompagnement de l'équipe sur Visual Studio Code, Git et les standards de documentation"
         ],
-        "note": "Alternance dans le cadre de la 3e année de BUT Informatique, parcours AGED, à l'IUT Lyon 1."
+        "note": "Alternance de 3e année de BUT Informatique, parcours AGED, IUT Lyon 1."
       },
       "lysarc-stage": {
         "title": "Data Analyst (stage)",
-        "organization": "Lysarc — The Lymphoma Academic Research Organisation",
-        "period": "Avril – juillet 2024",
+        "organization": "Lysarc",
+        "period": "Avril à juillet 2024",
         "details": [
-          "Extraction, transformation et nettoyage de données de santé complexes sous SAS et SQL, avec un objectif de qualité et de cohérence élevé",
-          "Conception et développement de tableaux de bord et d'indicateurs de performance sous Power BI pour les professionnels médicaux et les partenaires pharmaceutiques",
-          "Travail sur une base longitudinale de plus de 5 000 patients suivis dans toute la France",
-          "Respect strict des règles de confidentialité et de la réglementation applicable aux données de santé sensibles"
+          "Extraction, transformation et nettoyage de données de santé sous SAS et SQL",
+          "Développement de tableaux de bord et d'indicateurs sous Power BI pour les équipes médicales et les partenaires pharmaceutiques",
+          "Travail sur une base de plus de 5 000 patients suivis dans toute la France",
+          "Respect strict des règles de confidentialité des données de santé"
         ],
-        "note": "Stage de 2e année de BUT Informatique, parcours AGED, à l'IUT Lyon 1."
+        "note": "Stage de 2e année de BUT Informatique, parcours AGED, IUT Lyon 1."
       },
       "sailing-instructor": {
         "title": "Moniteur de voile",
         "organization": "YCGM (La Grande-Motte), Sète Agglopôle Méditerranée, CESM Saint-Florent",
-        "period": "Étés 2021 – 2025",
+        "period": "Étés 2021 à 2025",
         "details": [
-          "Encadrement de cours de catamaran et de dériveur, tous niveaux",
+          "Cours de catamaran et de dériveur, tous niveaux",
           "Participation à la formation de nouveaux moniteurs",
-          "Cours dispensés en français, en anglais et en espagnol",
-          "Sécurité et animation d'une flotte pouvant aller jusqu'à douze bateaux"
+          "Cours en français, en anglais et en espagnol",
+          "Sécurité et animation d'une flotte allant jusqu'à douze bateaux"
         ]
       }
     }
@@ -80,21 +80,21 @@
         "organization": "Scouts et Guides de France",
         "period": "Depuis 2022",
         "details": [
-          "Direction de camps scouts pour des enfants de 8 à 14 ans",
-          "Encadrement et coordination d'une équipe de six animateurs de 17 à 21 ans",
-          "Supervision des activités dans le respect de la sécurité et du bien-être des jeunes",
-          "Conception et mise en œuvre de projets pédagogiques annuels adaptés aux besoins et aux envies des enfants"
+          "Direction de camps pour des enfants de 8 à 14 ans",
+          "Coordination d'une équipe de six animateurs de 17 à 21 ans",
+          "Responsabilité de la sécurité et du bien-être des jeunes",
+          "Conception d'un projet pédagogique adapté au groupe chaque année"
         ]
       },
       "paris-2024": {
         "title": "Technicien de mesure",
-        "organization": "Jeux olympiques de Paris 2024 (à Marseille)",
-        "period": "Juillet – août 2024",
+        "organization": "Jeux olympiques de Paris 2024, à Marseille",
+        "period": "Juillet à août 2024",
         "details": [
-          "Déploiement et exploitation d'équipements de mesure du vent et de l'état de la mer pour les épreuves olympiques de voile",
-          "Collaboration avec les officiels de course internationaux pour le placement des bouées et la mesure des parcours",
-          "Suivi des données météorologiques en temps réel pour les décisions de direction de course",
-          "Maintenance et étalonnage d'instruments de mesure sensibles en environnement marin"
+          "Déploiement et exploitation des équipements de mesure du vent et de la mer pour les épreuves de voile",
+          "Travail avec les officiels de course internationaux sur le placement des bouées",
+          "Suivi des données météo en temps réel pour la direction de course",
+          "Maintenance et étalonnage d'instruments de mesure en milieu marin"
         ]
       }
     }
@@ -103,15 +103,15 @@
     "items": {
       "voile": {
         "title": "La voile",
-        "description": "Je navigue depuis avant même de savoir marcher. C'est une passion que j'aime transmettre — et il n'y a pas beaucoup d'endroits où je préfère être qu'en mer, sauf peut-être derrière mon clavier ;)."
+        "description": "Je navigue depuis avant de savoir marcher. C'est une passion que j'aime transmettre. Il n'y a pas beaucoup d'endroits où je préfère être qu'en mer, sauf peut-être derrière mon clavier."
       },
       "hackathons": {
         "title": "Les hackathons",
-        "description": "J'aime participer à des hackathons entre amis, où l'on résout des défis sous pression. Ces marathons intenses affûtent mon sens de la résolution de problèmes et me font découvrir de nouvelles technologies."
+        "description": "J'aime participer à des hackathons entre amis, où l'on résout des défis sous pression. Ça affûte le sens de la résolution de problèmes et fait découvrir de nouvelles technologies."
       },
       "benevolat": {
         "title": "Le bénévolat",
-        "description": "Autant j'aime être derrière mon clavier, autant j'ai besoin de coupures en pleine nature. Depuis le lycée, je consacre une grande partie de mes week-ends et de mes vacances à offrir un bol d'air à des enfants qui en ont moins la possibilité."
+        "description": "J'ai besoin de coupures en pleine nature. Depuis le lycée, je consacre une grande partie de mes week-ends et de mes vacances à offrir un bol d'air à des enfants qui en ont moins la possibilité."
       }
     }
   }

@@ -40,12 +40,12 @@
   },
   "loading": "Loading…",
   "pageTitles": {
-    "home": "Xavier Lacroix — Computer science student",
-    "parcours": "Background — Xavier Lacroix",
-    "projects": "Work & projects — Xavier Lacroix",
-    "projectDetail": "{name} — Xavier Lacroix",
-    "competences": "Skills — Xavier Lacroix",
-    "bilan": "Apprenticeship review — Xavier Lacroix",
-    "versionLog": "Changelog — Xavier Lacroix"
+    "home": "Xavier Lacroix · Computer science student",
+    "parcours": "Background · Xavier Lacroix",
+    "projects": "Work & projects · Xavier Lacroix",
+    "projectDetail": "{name} · Xavier Lacroix",
+    "competences": "Skills · Xavier Lacroix",
+    "bilan": "Apprenticeship review · Xavier Lacroix",
+    "versionLog": "Changelog · Xavier Lacroix"
   }
 }

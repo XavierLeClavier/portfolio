@@ -1,7 +1,7 @@
 [
   {
     "id": "realiser",
-    "code": "RNCP35477BC01",
+    "code": "Réaliser",
     "niveauVise": "Niveau 3",
     "niveauAutoEval": 85,
     "order": 1,
@@ -9,7 +9,7 @@
   },
   {
     "id": "optimiser",
-    "code": "RNCP35477BC02",
+    "code": "Optimiser",
     "niveauVise": "Niveau 3",
     "niveauAutoEval": 65,
     "order": 2,
@@ -17,7 +17,7 @@
   },
   {
     "id": "administrer",
-    "code": "RNCP35477BC03",
+    "code": "Administrer",
     "niveauVise": "Niveau 3",
     "niveauAutoEval": 60,
     "order": 3,
@@ -25,7 +25,7 @@
   },
   {
     "id": "gerer-donnees",
-    "code": "RNCP35477BC04",
+    "code": "Gérer",
     "niveauVise": "Niveau 3",
     "niveauAutoEval": 85,
     "order": 4,
@@ -33,7 +33,7 @@
   },
   {
     "id": "conduire",
-    "code": "RNCP35477BC05",
+    "code": "Conduire",
     "niveauVise": "Niveau 3",
     "niveauAutoEval": 80,
     "order": 5,
@@ -41,7 +41,7 @@
   },
   {
     "id": "equipe",
-    "code": "RNCP35477BC06",
+    "code": "Collaborer",
     "niveauVise": "Niveau 3",
     "niveauAutoEval": 85,
     "order": 6,

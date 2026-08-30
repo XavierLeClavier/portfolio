@@ -40,12 +40,12 @@
   },
   "loading": "Chargement…",
   "pageTitles": {
-    "home": "Xavier Lacroix — Étudiant en informatique",
-    "parcours": "Parcours — Xavier Lacroix",
-    "projects": "Missions & projets — Xavier Lacroix",
-    "projectDetail": "{name} — Xavier Lacroix",
-    "competences": "Compétences — Xavier Lacroix",
-    "bilan": "Bilan d'alternance — Xavier Lacroix",
-    "versionLog": "Journal des versions — Xavier Lacroix"
+    "home": "Xavier Lacroix · Étudiant en informatique",
+    "parcours": "Parcours · Xavier Lacroix",
+    "projects": "Missions & projets · Xavier Lacroix",
+    "projectDetail": "{name} · Xavier Lacroix",
+    "competences": "Compétences · Xavier Lacroix",
+    "bilan": "Bilan d'alternance · Xavier Lacroix",
+    "versionLog": "Journal des versions · Xavier Lacroix"
   }
 }

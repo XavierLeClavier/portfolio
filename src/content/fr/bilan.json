@@ -1,38 +1,38 @@
 {
   "title": "Bilan d'alternance",
-  "intro": "Mon alternance chez Lysarc s'est construite autour d'un fil conducteur : une mission née dans la business intelligence qui a progressivement glissé vers l'ingénierie de la donnée et le développement logiciel. Ce bilan revient sur ce que j'en retire, sur les plans technique, professionnel et humain.",
+  "intro": "Mon alternance chez Lysarc a suivi un fil : une mission née dans la business intelligence qui a glissé vers l'ingénierie de la donnée et le développement logiciel. Voici ce que j'en retiens, sur le plan technique, professionnel et humain.",
   "sections": [
     {
       "title": "Bilan technique",
       "body": [
-        "J'ai couvert une chaîne large : modélisation dimensionnelle et développement d'indicateurs décisionnels, transformation de données sous SAS, développement d'applications Python structurées (MVC, tests, empaquetage), et exploration d'une architecture d'IA entièrement locale. Le point commun de ces travaux est la donnée de vie réelle : imparfaite, évolutive, structurée en relations un-à-plusieurs, et soumise à des contraintes de confidentialité fortes.",
-        "Ma principale montée en compétence a été de passer de l'exécution à la conception : choisir une architecture, la justifier, la documenter, et la faire vivre dans la durée plutôt que de livrer un artefact figé.",
-        "Mes axes de progression restent la mise en production d'outils d'IA (robustesse, temps de réponse, MLOps) et l'industrialisation des pipelines de données."
+        "J'ai couvert une chaîne large : modélisation de données et indicateurs décisionnels, traitement de données sous SAS, développement d'applications Python (MVC, tests, empaquetage), et une exploration d'architecture d'IA entièrement locale. Le point commun : de la donnée de vie réelle, imparfaite et sous contraintes de confidentialité.",
+        "Ma principale progression a été de passer de l'exécution à la conception : choisir une architecture, la justifier, la documenter, et la faire vivre dans la durée.",
+        "Ce que je veux encore progresser : la mise en production d'outils d'IA et l'industrialisation des pipelines de données."
       ]
     },
     {
       "title": "Bilan professionnel",
       "body": [
-        "J'étais le seul Data Analyst de la structure. Cette autonomie m'a obligé à formaliser mes choix pour un public non spécialiste de mes outils, et à faire de la documentation et de la formation une partie intégrante de chaque livrable, pas une étape finale.",
-        "J'ai appris à mener trois projets en parallèle sur des temporalités qui ne s'alignaient pas, à arbitrer entre nouvelles fonctionnalités et stabilisation, et à accepter qu'un projet soit mis en pause quand les priorités de l'organisation changent — ce qui est arrivé au POC d'IA.",
-        "J'ai travaillé avec des data managers, des programmeurs SAS, des biostatisticiens, des chefs de projet, un responsable de projet, un médecin, le DSI et le DPO. Adapter mon registre et mon vocabulaire à chaque interlocuteur a été une compétence exercée en permanence."
+        "J'étais le seul Data Analyst de la structure. Cette autonomie m'a obligé à formaliser mes choix pour un public non spécialiste, et à faire de la documentation et de la formation une partie de chaque livrable.",
+        "J'ai appris à mener trois projets en parallèle sur des rythmes différents, à arbitrer entre nouvelles fonctionnalités et stabilisation, et à accepter qu'un projet soit mis en pause quand les priorités changent.",
+        "J'ai travaillé avec des data managers, des programmeurs SAS, des biostatisticiens, des chefs de projet, un médecin, le DSI et le DPO. Adapter mon vocabulaire à chaque interlocuteur a été un exercice permanent."
       ]
     },
     {
       "title": "Bilan humain",
       "body": [
-        "Être le référent unique d'un poste, sans filet technique, a été exigeant mais formateur : j'ai gagné en confiance dans ma capacité à décider et à assumer mes choix.",
-        "Travailler sur des données de patients atteints de cancer donne un sens concret aux exigences de qualité et de confidentialité : ce ne sont pas des contraintes abstraites.",
-        "Mes engagements en parallèle — moniteur de voile, directeur de camp scout — nourrissent la même chose que mon travail : encadrer, transmettre, organiser."
+        "Être le seul référent d'un poste, sans filet technique, a été exigeant mais formateur. J'ai gagné en confiance dans ma capacité à décider et à assumer mes choix.",
+        "Travailler sur des données de patients atteints de cancer donne un sens concret aux exigences de qualité et de confidentialité.",
+        "Mes engagements en parallèle, moniteur de voile et directeur de camp scout, nourrissent la même chose que mon travail : encadrer, transmettre, organiser."
       ]
     }
   ],
   "devenu": {
     "title": "Le professionnel que je suis devenu",
-    "body": "Je suis arrivé en stage comme un étudiant qui exécutait des tâches d'analyse ; je termine mon alternance en ayant conçu et défendu une méthodologie, une architecture de données et une petite suite d'outils, et en ayant accompagné une équipe dans l'adoption de nouvelles pratiques. Je me situe aujourd'hui à la frontière entre l'analyse de données, l'ingénierie de la donnée et le développement logiciel."
+    "body": "Je suis arrivé en stage comme un étudiant qui exécutait des tâches d'analyse. Je termine mon alternance en ayant conçu et défendu une méthode, une architecture de données et une petite suite d'outils, et en ayant accompagné une équipe. Je me situe aujourd'hui entre l'analyse de données, l'ingénierie de la donnée et le développement logiciel."
   },
   "projetPostBut": {
     "title": "Et après le BUT",
-    "body": "Depuis septembre 2026, je suis en école d'ingénieur à l'INSA Lyon, avec pour objectif les métiers de Data Engineer et d'AI Engineer. L'industrialisation des traitements de données, l'administration système et l'architecture entièrement locale explorée sur le POC d'IA — et que je continue d'expérimenter sur mon homelab — sont exactement ce que je veux approfondir."
+    "body": "Depuis septembre 2026, je suis en école d'ingénieur à l'INSA Lyon, avec pour objectif les métiers de Data Engineer et d'AI Engineer. L'industrialisation des traitements de données, l'administration système et l'architecture locale que j'expérimente sur mon homelab sont exactement ce que je veux approfondir."
   }
 }

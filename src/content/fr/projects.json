@@ -1,14 +1,14 @@
 {
   "list": {
     "title": "Missions & projets",
-    "intro": "Je construis des projets depuis le lycée : des sites web, des outils, un homelab, des agents IA — et une année de missions data en alternance. En voici une sélection, des plus aboutis aux plus expérimentaux.",
-    "iconHint": "Survolez les icônes des technologies pour afficher leur nom",
-    "missionsHeading": "Missions d'alternance — Lysarc",
-    "missionsSubheading": "Trois axes menés en parallèle sur le registre clinique national DESCAR-T, de la business intelligence vers l'ingénierie de la donnée.",
-    "academicHeading": "Projets académiques — IUT Lyon 1",
-    "academicSubheading": "Projets d'équipe menés pendant les trois ans de BUT Informatique.",
+    "intro": "Je construis des projets depuis le lycée : des sites web, des outils, un homelab, des agents IA, et une année de missions data en alternance. En voici une sélection.",
+    "iconHint": "Survolez les icônes pour afficher le nom de la technologie",
+    "missionsHeading": "Missions d'alternance, Lysarc",
+    "missionsSubheading": "Trois axes menés en parallèle sur le registre clinique national DESCAR-T.",
+    "academicHeading": "Projets académiques, IUT Lyon 1",
+    "academicSubheading": "Projets d'équipe menés pendant le BUT Informatique.",
     "personalHeading": "Projets personnels",
-    "personalSubheading": "Ce que je construis sur mon temps libre, pour apprendre ou pour m'en servir au quotidien."
+    "personalSubheading": "Ce que je construis sur mon temps libre, pour apprendre ou pour m'en servir."
   },
   "card": {
     "readMore": "Lire la suite",
@@ -27,66 +27,66 @@
       "technologies": "Technologies",
       "role": "Mon rôle",
       "keywords": "Mots-clés",
-      "context": "Contexte & existant",
-      "objectives": "Objectifs",
-      "realisation": "Réalisation",
-      "projectManagement": "Gestion de projet",
-      "technical": "Maîtrise technique",
-      "outcome": "Bilan",
-      "progression": "Montée en compétence (S4 → S6)"
+      "context": "Contexte",
+      "objectives": "Objectif",
+      "realisation": "Ce que j'ai fait",
+      "projectManagement": "Méthode de travail",
+      "technical": "Technique",
+      "outcome": "Résultat",
+      "progression": "Du stage à l'alternance"
     }
   },
   "items": {
     "plateforme-decisionnelle": {
       "name": "Plateforme décisionnelle sur registre clinique",
-      "subtitle": "Mission d'alternance — Lysarc, registre national DESCAR-T",
-      "summary": "Une solution de business intelligence de bout en bout sur la qualité des données et l'activité du registre national DESCAR-T, au service de deux publics : les biostatisticiens et les chefs de projet.",
-      "context": "DESCAR-T est le registre national français des patients éligibles à la thérapie cellulaire CAR-T, porté par Lysarc — un registre de vie réelle qui vise l'exhaustivité, et non une cohorte d'essai clinique. Il regroupe plus de 7 000 patients suivis dans plus de 40 centres, sur trois familles de pathologies, avec un suivi prévu sur quinze ans. Sa difficulté n'est pas le volume — les données tiennent sur un poste de travail — mais sa structure : le cahier d'observation a connu une trentaine de versions successives, de nombreuses variables ne sont renseignées que pour certains sous-groupes de patients, et chaque information est collectée à de multiples reprises au fil des visites. Côté restitution, les biostatisticiens recevaient les indicateurs de qualité sous forme de tableaux de chiffres statiques, et les chefs de projet maintenaient à la main un classeur Excel d'une trentaine d'onglets à partir des exports bruts : aucune interactivité, aucun partage en temps réel, un risque d'erreur manuelle élevé, la même analyse reconstruite chaque semaine. Les scores de qualité des données du registre ont été conçus par l'équipe projet ; ma mission a consisté à en construire la couche d'exploitation analytique.",
-      "objectives": "Donner aux deux publics une lecture autonome, fiable et partagée de la qualité des données et de l'activité du registre : produire des vues à la demande sans intermédiaire technique, réduire le temps de préparation des réunions, harmoniser les définitions d'indicateurs entre les équipes.",
-      "realisation": "Montée en autonomie sur le score de qualité et les structures de données du registre, puis reprise et rétro-ingénierie des indicateurs existants. Ateliers de recueil du besoin avec chaque public — quatre chefs de projet interrogés côté pilotage — puis maquette fonctionnelle validée : arborescence des écrans, filtres essentiels, visuels prioritaires. Conception d'un modèle sémantique en étoile : une table de faits sur les événements et mesures patient, des tables de dimensions pour le centre, la pathologie et le produit CAR-T. Développement des indicateurs en DAX, transformation des données en amont sous SAS et Power Query, publication sur Power BI Cloud. Chaque indicateur a été vérifié face aux extractions SAS de référence avant mise en production, et l'ensemble documenté selon le nouveau standard de documentation BI de la DSI, avec des sessions de formation pratique.",
-      "projectManagement": "Livraison itérative et centrée utilisateur : une version fonctionnelle a été publiée volontairement tôt, dans un état incomplet, puis itérée chaque semaine pendant plusieurs mois sur la base des retours d'usage réels, avant la validation en production. Le cadrage réglementaire a fait l'objet d'une réunion dédiée avec le DSI, le DPO et le responsable du projet DESCAR-T : fréquence des exports, règles d'anonymisation, stockage sécurisé. Toutes les données sont pseudonymisées et le travail est mené sous la méthodologie de référence MR-004 de la CNIL.",
-      "technical": "SAS pour la transformation en amont, Power Query pour l'ETL, Power BI Desktop pour la modélisation et les visuels, DAX pour les indicateurs, Power BI Cloud pour la diffusion. Le choix d'une modélisation dimensionnelle en étoile répond à la structure un-à-plusieurs du registre : il rend explicite la granularité — patient, traitement ou événement — de chaque indicateur, ce qui est indispensable quand une même donnée est collectée une vingtaine de fois par patient.",
-      "outcome": "Les utilisateurs produisent désormais leurs propres vues ad hoc sans intermédiaire technique ; le temps de préparation des réunions est nettement réduit et les indicateurs peuvent être produits en direct. Les définitions d'indicateurs sont harmonisées entre équipes et la manipulation manuelle sous Excel a largement disparu. L'adoption dans la durée est suivie via un tableau de bord d'usage que j'ai moi-même construit. La mission a aussi mis en évidence un manque organisationnel — l'absence d'espace sécurisé de partage de données patient en temps réel — que j'ai continué à instruire avec le DSI et le DPO. Le travail a été présenté en interne lors d'un café scientifique, les indicateurs Power BI étant crédités à mon alternance.",
-      "progression": "En stage de S4, j'ai découvert le registre et réalisé mes premiers tableaux de bord Power BI, en exécutant des extractions et transformations SAS et SQL sous la conduite de l'équipe. En alternance de S6, j'ai pris la responsabilité complète de la démarche : conception de la méthodologie et du modèle de données, cadrage réglementaire, vérification des indicateurs, documentation et formation des utilisateurs. Je suis passé de la production de tableaux de bord à la conception d'une solution décisionnelle.",
-      "keywords": ["décisionnel", "modélisation en étoile", "qualité des données", "données de santé", "RGPD / MR-004", "Power BI"]
+      "subtitle": "Alternance Lysarc, registre national DESCAR-T",
+      "summary": "Une solution Power BI sur la qualité des données et l'activité du registre clinique national DESCAR-T, pour deux publics : biostatisticiens et chefs de projet.",
+      "context": "DESCAR-T est le registre national des patients traités par cellules CAR-T. Sa difficulté n'est pas le volume mais la structure : un cahier d'observation qui a beaucoup changé, des variables valables seulement pour certains patients, et chaque donnée collectée de nombreuses fois. Avant, les indicateurs de qualité étaient des tableaux figés et un gros classeur Excel refait à la main chaque semaine. Les scores de qualité existaient déjà ; mon travail était de les rendre exploitables.",
+      "objectives": "Donner aux deux publics une lecture autonome et fiable de la qualité et de l'activité du registre, sans passer par un intermédiaire technique.",
+      "realisation": "Ateliers de recueil du besoin avec chaque public. Maquette validée, puis modèle de données en étoile, indicateurs en DAX, transformation en amont sous SAS et Power Query, publication sur Power BI Cloud. Chaque indicateur vérifié face aux extractions de référence. Documentation et formation des utilisateurs à la fin.",
+      "projectManagement": "Livraison itérative. Une première version incomplète mise en ligne tôt, puis améliorée chaque semaine sur les retours d'usage. Cadrage de la sécurité et de la confidentialité avec le DSI et le DPO. Données pseudonymisées, travail sous méthodologie MR-004.",
+      "technical": "SAS, Power Query, Power BI Desktop, DAX, Power BI Cloud. Le modèle en étoile rend explicite la granularité de chaque indicateur (patient, traitement ou événement), ce qui est indispensable vu la structure du registre.",
+      "outcome": "Les utilisateurs produisent leurs propres vues sans intermédiaire. Le temps de préparation des réunions a baissé et les définitions d'indicateurs sont harmonisées. Le travail a été présenté en interne lors d'un café scientifique.",
+      "progression": "En stage, je réalisais des tableaux de bord à partir de consignes. En alternance, j'ai pris toute la démarche en main : méthode, modèle de données, cadrage réglementaire, formation. Je suis passé de la production de tableaux de bord à la conception d'une solution.",
+      "keywords": ["décisionnel", "modélisation en étoile", "qualité des données", "données de santé", "RGPD"]
     },
     "outils-qualite-python": {
       "name": "Outils Python de contrôle qualité",
-      "subtitle": "Mission d'alternance — Lysarc, département de biostatistique",
-      "summary": "Quatre applications Python pour automatiser des tâches manuelles répétitives des programmeurs et biostatisticiens, dont un générateur de rapports de contrôle qualité utilisé en production.",
-      "context": "Le contrôle qualité de chaque livraison d'analyse statistique imposait un travail manuel long et peu valorisant : parcourir l'arborescence de l'étude, localiser les fichiers, lire les logs d'exécution à la main, retrouver les programmes appelés via %INCLUDE, puis mettre en forme un rapport qualité standardisé. D'autres tâches consommaient également un temps important : remplir à la main le dictionnaire des tables et variables d'une analyse (DDS), ou repérer les doublons dans une base de plus de 500 macros SAS réparties sur seize sous-répertoires.",
-      "objectives": "Rendre ces contrôles reproductibles et rapides, et libérer du temps aux équipes pour des tâches à plus forte valeur ajoutée.",
-      "realisation": "QC Report Builder, l'outil le plus abouti, est une application de bureau structurée en MVC : sélection des programmes un à un, depuis un fichier ou par parcours récursif d'un répertoire ; analyse automatique des logs, détection des erreurs et avertissements, résolution des dépendances %INCLUDE ; génération automatique du commentaire de rapport ; sortie sous forme d'un document Word conforme au modèle du service. Un système de configuration permet de réutiliser l'outil d'une étude à l'autre sans toucher au code, et l'application est distribuée à la fois comme paquet Python et comme exécutable autonome pour les collègues sans environnement de développement. Deux autres outils complètent l'ensemble : un remplisseur automatique de DDS qui analyse les programmes SAS existants pour en extraire les tables et variables produites, et un scanner de macros qui signale les noms dupliqués et les cas où deux macros de même nom diffèrent par leur contenu.",
-      "projectManagement": "Même méthode pour chaque application : recueil du besoin, version fonctionnelle livrée tôt aux utilisateurs, puis cycles d'amélioration successifs jusqu'à stabilisation. Chaque livraison s'accompagne d'une documentation technique de maintenance.",
-      "technical": "Python, PySide6 pour les interfaces, python-docx pour la génération Word, pathlib et os pour le parcours de fichiers, dataclasses et typing pour les structures de données, pytest pour la validation, dotenv pour la configuration, empaquetage en exécutable autonome, architecture MVC, analyse de logs et de sources SAS. J'ai porté l'ensemble du cycle de vie logiciel : besoin, architecture, développement, tests, documentation, déploiement, maintenance.",
-      "outcome": "QC Report Builder est éprouvé en usage de production et rend les contrôles reproductibles d'une étude à l'autre. Les outils DDS et scanner de macros sont validés sur un premier périmètre de test, en attente d'un déploiement plus large.",
+      "subtitle": "Alternance Lysarc, département de biostatistique",
+      "summary": "Quatre applications Python pour automatiser des tâches manuelles répétitives de l'équipe. La principale, un générateur de rapports de contrôle qualité, est utilisée en production.",
+      "context": "Le contrôle qualité de chaque livraison d'analyse se faisait à la main : parcourir l'arborescence, lire les logs, retrouver les programmes appelés, mettre en forme un rapport standardisé. D'autres tâches proches prenaient aussi du temps, comme remplir un dictionnaire de tables et variables ou repérer les doublons dans plus de 500 macros SAS.",
+      "objectives": "Rendre ces contrôles rapides et reproductibles, et libérer du temps aux programmeurs et aux biostatisticiens.",
+      "realisation": "QC Report Builder est une application de bureau en architecture MVC. Elle lit les logs, détecte les erreurs, résout les dépendances entre programmes et génère un rapport Word au format du service. Une configuration permet de la réutiliser d'une étude à l'autre. Elle est distribuée en paquet Python et en exécutable autonome. Deux autres outils complètent l'ensemble : un remplisseur de dictionnaire et un scanner de doublons de macros.",
+      "projectManagement": "Même méthode pour chaque outil : recueil du besoin, version livrée tôt, cycles d'amélioration jusqu'à stabilisation, documentation de maintenance.",
+      "technical": "Python, PySide6 pour les interfaces, python-docx, pytest, empaquetage en exécutable, architecture MVC, analyse de logs et de sources SAS. J'ai porté tout le cycle de vie : besoin, architecture, développement, tests, documentation, déploiement, maintenance.",
+      "outcome": "QC Report Builder est éprouvé en production. Les deux autres outils sont validés sur un premier périmètre. J'ai appris à concevoir un outil interne pour qu'il soit repris par d'autres, pas seulement pour qu'il marche.",
       "keywords": ["automatisation", "architecture MVC", "cycle de vie logiciel", "contrôle qualité", "Python"]
     },
     "poc-agent-conversationnel": {
       "name": "POC d'agent conversationnel local",
-      "subtitle": "Mission d'alternance — Lysarc, appui à l'innovation",
-      "summary": "Un prototype transformant une question en langage naturel en analyse automatisée sur les données du registre, exécuté entièrement sur l'infrastructure interne de Lysarc.",
-      "context": "Même avec des tableaux de bord en place, les questions analytiques ponctuelles nécessitaient toujours l'intervention d'un biostatisticien ou d'un développeur. Le POC visait à explorer l'automatisation de ce cheminement, d'une demande en langage naturel jusqu'à une analyse.",
-      "objectives": "Évaluer la faisabilité d'un pipeline « interprétation de la demande → identification des variables pertinentes → génération d'une requête SQL adaptée », sous une contrainte forte : aucune donnée ne devait sortir de l'infrastructure de Lysarc.",
-      "realisation": "Conception de l'architecture et des premiers composants du prototype. Les données ont été préparées via un processus ETL vers une base SQLite dédiée à l'expérimentation. L'ensemble des traitements et des modèles s'exécute localement — déploiement de modèles de langage avec Ollama, orchestration avec LangChain — sans aucun transfert vers un service externe. Cette contrainte de confidentialité a structuré toute l'architecture.",
-      "projectManagement": "Cadrage explicite comme une preuve de concept exploratoire, avec une conclusion attendue plutôt qu'un produit. Le POC a été arrêté lorsque le hub d'innovation de Lysarc a lancé son propre appel à projets IA, qui a redéfini les priorités et les financements ; ses conclusions restent une référence pour les futurs travaux d'intégration d'IA.",
-      "technical": "Python, Ollama pour le déploiement local de modèles de langage, LangChain pour l'orchestration, SQLite, génération de SQL. L'architecture entièrement locale est le point différenciant, directement pertinent pour un profil orienté ingénierie de la donnée et IA.",
-      "outcome": "POC assumé comme exploratoire, avec une conclusion claire : la compréhension des données et la génération de requêtes sont prometteuses, mais la robustesse — fiabilité des modèles, temps de réponse, complexité des couches techniques — reste le point bloquant, et une mise en production aurait demandé des ressources hors de portée de l'expérimentation. En parallèle, j'ai accompagné le déploiement de Visual Studio Code et de Git dans l'équipe, animé des formations, rédigé des guides de bonnes pratiques et contribué à l'adoption du nouveau standard de documentation BI de la DSI.",
+      "subtitle": "Alternance Lysarc, appui à l'innovation",
+      "summary": "Un prototype qui transforme une question en langage naturel en analyse sur les données du registre. Tout s'exécute sur l'infrastructure interne de Lysarc.",
+      "context": "Même avec les tableaux de bord en place, les questions ponctuelles demandaient toujours un biostatisticien ou un développeur. Le POC devait tester si on pouvait automatiser ce chemin.",
+      "objectives": "Évaluer la faisabilité d'un pipeline : comprendre la demande, trouver les bonnes variables, générer une requête SQL. Contrainte forte : aucune donnée ne sort de l'infrastructure de Lysarc.",
+      "realisation": "Conception de l'architecture et des premiers composants. Données préparées par ETL vers une base SQLite d'expérimentation. Modèles de langage déployés en local avec Ollama, orchestration avec LangChain, aucun appel à un service externe.",
+      "projectManagement": "Cadré comme une preuve de concept, avec une conclusion attendue plutôt qu'un produit. Le POC a été arrêté quand le hub d'innovation a lancé son propre appel à projets IA et redéfini les priorités.",
+      "technical": "Python, Ollama, LangChain, SQLite, génération de SQL. L'architecture entièrement locale est le point clé, imposé par la confidentialité.",
+      "outcome": "La compréhension des données et la génération de requêtes sont prometteuses. La robustesse et le temps de réponse restent le point bloquant. En parallèle, j'ai accompagné l'équipe sur Visual Studio Code et Git et animé des formations. J'ai appris à assumer l'arrêt d'un projet quand sa conclusion est claire.",
       "keywords": ["preuve de concept", "LLM local", "prompt-to-SQL", "ETL", "confidentialité"]
     },
     "didactypo": {
       "name": "Didactypo",
-      "subtitle": "Projet d'équipe — BUT Informatique",
-      "summary": "Un site libre et open-source pour apprendre la dactylographie aux élèves de primaire, de façon ludique.",
-      "description": "Didactypo propose des leçons structurées suivies d'exercices interactifs pour améliorer vitesse et précision de frappe. Les enseignants créent des classes, suivent la progression des élèves et attribuent des cours. Le site propose aussi des défis hebdomadaires avec classements et badges.",
-      "role": "Projet à quatre, dont deux développeurs back-end — j'étais l'un d'eux et scrum master de l'équipe. J'ai participé à la conception de la base de données et intégré seul la messagerie (Firebase). Un projet d'école devenu projet passion, maintenu plusieurs mois après la fin des cours : toute l'école jouait les défis hebdomadaires.",
+      "subtitle": "Projet d'équipe, BUT Informatique",
+      "summary": "Un site libre et open source pour apprendre la dactylographie aux élèves de primaire, de façon ludique.",
+      "description": "Des leçons suivies d'exercices interactifs pour la vitesse et la précision de frappe. Les enseignants créent des classes et suivent la progression des élèves. Le site propose aussi des défis hebdomadaires avec classements et badges.",
+      "role": "Projet à quatre, deux développeurs back-end dont moi, et j'étais scrum master. J'ai participé à la base de données et intégré seul la messagerie avec Firebase. Un projet d'école devenu projet passion : toute l'école jouait les défis.",
       "keywords": ["fullstack", "éducation", "dactylographie", "gamification"]
     },
     "self-tracker": {
       "name": "Self Tracker",
       "subtitle": "Projet personnel",
-      "summary": "Une application web pour suivre les repas de mes collègues et moi pendant nos journées de travail, avec analyse nutritionnelle par IA.",
-      "description": "Les utilisateurs enregistrent leurs repas ; l'application fournit statistiques et classements. Les apports en calories, protéines et lipides sont estimés automatiquement par IA. Front React, back Express, stockage PostgreSQL.",
+      "summary": "Une application web pour suivre les repas de mes collègues et moi pendant les journées de travail, avec analyse nutritionnelle par IA.",
+      "description": "Les utilisateurs enregistrent leurs repas, l'application fournit statistiques et classements. Les calories, protéines et lipides sont estimés automatiquement par IA. Front React, back Express, stockage PostgreSQL.",
       "role": "Construit de zéro en quelques semaines, surtout pour me familiariser avec Express, PostgreSQL et l'intégration d'IA.",
       "keywords": ["fullstack", "IA", "base de données", "suivi", "statistiques"]
     },
@@ -100,58 +100,58 @@
     },
     "home-server": {
       "name": "Homelab",
-      "subtitle": "Projet personnel — deux serveurs auto-hébergés",
+      "subtitle": "Projet personnel, deux serveurs auto-hébergés",
       "summary": "Deux serveurs auto-hébergés, d'un Raspberry Pi en LAMP à un serveur Ubuntu conteneurisé qui fait tourner mes photos, mes fichiers, un agent IA et sa supervision.",
       "description": [
-        "Tout a commencé en première année de BUT avec un Raspberry Pi 3B transformé en petit serveur web : configuration LAMP pour héberger mes sites (dont une première version de ce portfolio) et mon calendrier, accès distant sécurisé par SSH et VPN.",
-        "Il est depuis rejoint par un vrai serveur sous Ubuntu, cette fois entièrement conteneurisé : Docker pour les services, Traefik en reverse proxy pour le routage et les certificats TLS, et du Node.js pour la logique maison.",
-        "Le serveur Ubuntu héberge aujourd'hui un Immich (galerie photo auto-hébergée), un Nextcloud (fichiers et agenda), mon agent Hermes, et sert de serveur à tout faire. Une stack Grafana assure la supervision — état des conteneurs, ressources, disponibilité des services."
+        "Ça a commencé en première année de BUT avec un Raspberry Pi 3B en serveur web. Configuration LAMP pour héberger mes sites et mon calendrier, accès distant par SSH et VPN.",
+        "Il a été rejoint par un serveur sous Ubuntu, cette fois conteneurisé. Docker pour les services, Traefik en reverse proxy pour le routage et les certificats TLS, du Node.js pour la logique maison.",
+        "Le serveur Ubuntu héberge un Immich pour les photos, un Nextcloud pour les fichiers, mon agent Hermes, et sert de serveur à tout faire. Une stack Grafana suit l'état des conteneurs et des services."
       ],
       "role": [
         "J'ai tout mis en place et je maintiens l'ensemble : choix des services, configuration de Traefik et des réseaux Docker, sauvegardes, mises à jour, supervision.",
-        "Hermes est un agent personnel que je fais tourner sur le serveur. Il s'appuie sur un modèle exécuté localement avec Ollama pour les tâches courantes et pour tout ce qui doit rester privé, et bascule vers l'API OpenRouter quand une requête demande un modèle plus puissant. C'est mon terrain d'expérimentation sur l'orchestration de modèles et le compromis local / API.",
-        "Ce homelab est mon principal terrain d'apprentissage sur l'administration système, la conteneurisation et la supervision — les sujets que je veux approfondir à l'INSA."
+        "Hermes est un agent personnel qui tourne sur le serveur. Il utilise un modèle local avec Ollama pour le quotidien et ce qui doit rester privé, et bascule vers l'API OpenRouter quand une requête demande un modèle plus gros.",
+        "Ce homelab est mon terrain d'apprentissage sur l'administration système, la conteneurisation et la supervision."
       ],
       "keywords": ["auto-hébergement", "Docker", "reverse proxy", "supervision", "agent IA", "LAMP"]
     },
     "codeco": {
       "name": "Codeco",
       "subtitle": "Projet personnel",
-      "summary": "Un site pour décoder et créer des messages secrets — jeux de piste, chasses au trésor et animations de groupe.",
+      "summary": "Un site pour décoder et créer des messages secrets, pour les jeux de piste et les animations de groupe.",
       "description": "Un outil pour les passionnés de codes et d'énigmes : chiffrer, déchiffrer, préparer des activités autour des messages secrets.",
-      "role": "Construit en une semaine de vacances entre deux semestres de première année, sans connaissance préalable des frameworks JS. Je m'en sers encore régulièrement comme chef scout pour préparer des activités.",
+      "role": "Construit en une semaine de vacances entre deux semestres de première année, sans connaître les frameworks JS. Je m'en sers encore comme chef scout pour préparer des activités.",
       "keywords": ["front-end", "décodage", "énigmes"]
     },
     "fou2food": {
       "name": "Fou2Food",
-      "subtitle": "Projet d'école — BUT Informatique",
-      "summary": "Un blog dédié aux passionnés de cuisine, pour partager avis et expériences sur les restaurants.",
-      "description": "Création de compte, rédaction d'avis, interactions entre utilisateurs : l'objectif était une communauté de gourmets qui échangent conseils et recommandations.",
-      "role": "Projet à trois pour le cours de PHP de deuxième année. J'ai conçu la structure de la base de données et travaillé surtout sur le CRUD.",
+      "subtitle": "Projet d'école, BUT Informatique",
+      "summary": "Un blog pour les passionnés de cuisine, pour partager des avis sur les restaurants.",
+      "description": "Création de compte, rédaction d'avis, interactions entre utilisateurs. L'idée était une petite communauté qui échange conseils et recommandations.",
+      "role": "Projet à trois pour le cours de PHP de deuxième année. J'ai conçu la base de données et travaillé surtout sur le CRUD.",
       "keywords": ["fullstack", "cuisine", "blog", "communauté", "CRUD"]
     },
     "secured-air-enforcer": {
       "name": "Secured Air Enforcer",
-      "subtitle": "Projet d'école — BUT Informatique",
-      "summary": "Une simulation de gestion du trafic aérien au-dessus de la France, en Java, axée sécurité et efficacité.",
+      "subtitle": "Projet d'école, BUT Informatique",
+      "summary": "Une simulation de gestion du trafic aérien au-dessus de la France, en Java.",
       "description": "Le projet utilise les bibliothèques GraphStream et OpenStreetMap pour représenter les routes aériennes au-dessus de la France.",
-      "role": "Le plus gros projet de ma première année de BUT. J'ai travaillé sur les algorithmes de coloration de graphe et de plus courts chemins, essentiels pour optimiser l'usage de l'espace aérien. Nos algorithmes ont figuré parmi les meilleurs d'un concours inter-écoles.",
+      "role": "Le plus gros projet de ma première année. J'ai travaillé sur les algorithmes de coloration de graphe et de plus courts chemins. Nos algorithmes ont figuré parmi les meilleurs d'un concours inter-écoles.",
       "keywords": ["graphes", "algorithmique", "application"]
     },
     "shared-coffee-project": {
       "name": "Shared Coffee Project",
-      "subtitle": "Projet d'école — projet d'anglais",
-      "summary": "Une campagne étudiante pour offrir un café et un abri au chaud aux personnes dans le besoin, sur le modèle du « café suspendu ».",
-      "description": "On peut payer un café pour quelqu'un qui ne peut pas se le permettre ; le site propose aussi une carte des cafés participants.",
-      "role": "Réalisé en quelques jours dans le cadre d'un projet d'anglais simulant l'organisation d'un événement caritatif.",
+      "subtitle": "Projet d'école, cours d'anglais",
+      "summary": "Une campagne étudiante pour offrir un café et un abri au chaud aux personnes dans le besoin, sur le modèle du café suspendu.",
+      "description": "On peut payer un café pour quelqu'un qui ne peut pas se le permettre. Le site propose aussi une carte des cafés participants.",
+      "role": "Réalisé en quelques jours pour un projet d'anglais qui simulait l'organisation d'un événement caritatif.",
       "keywords": ["UX/UI", "design", "communauté"]
     },
     "mon-portfolio": {
       "name": "Ce portfolio",
       "subtitle": "Projet personnel",
-      "summary": "Le site sur lequel vous êtes. React, TypeScript, Tailwind, bilingue français / anglais.",
-      "description": "Design responsive et sombre. Tout le contenu vit dans des fichiers JSON par langue, lus par une petite couche d'internationalisation maison — ce qui rend les mises à jour et la traduction triviales. Suivi de fréquentation avec Cronitor.",
-      "role": "Projet que je fais évoluer régulièrement pour ajouter projets, contenu et fonctionnalités.",
+      "summary": "Le site sur lequel vous êtes. React, TypeScript, Tailwind, bilingue français et anglais.",
+      "description": "Design responsive et sombre. Tout le contenu vit dans des fichiers JSON par langue, lus par une petite couche d'internationalisation maison. Suivi de fréquentation avec Cronitor.",
+      "role": "Un projet que je fais évoluer régulièrement pour ajouter projets et fonctionnalités.",
       "keywords": ["front-end", "portfolio", "design", "i18n"]
     }
   }
