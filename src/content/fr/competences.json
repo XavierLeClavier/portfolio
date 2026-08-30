@@ -1,4 +1,145 @@
 {
   "title": "Portefeuille de compétences",
-  "intro": "Contenu en cours de rédaction."
+  "intro": "Le BUT Informatique est structuré autour de six blocs de compétences du référentiel national. Pour chacun, je situe le niveau visé en 3e année, les preuves tirées de mes missions et projets, la montée en compétence entre le stage de S4 et l'alternance de S6, et une courte note réflexive.",
+  "evidenceLabel": "Preuves",
+  "projectsLabel": "Projets associés",
+  "progressionLabel": "Montée en compétence (S4 → S6)",
+  "reflectionLabel": "Note réflexive",
+  "axesLabel": "Axes de progression",
+  "acLabel": "Apprentissages critiques",
+  "todoNote": "Les intitulés de niveau et les apprentissages critiques sont à aligner sur le libellé exact du référentiel AGED (marqués « à confirmer »).",
+  "blocs": {
+    "realiser": {
+      "nom": "Réaliser un développement d'application",
+      "niveauLibelle": "Adapter des applications sur un ensemble de supports et de besoins métier (à confirmer)",
+      "apprentissagesCritiques": [
+        "Faire évoluer une application pour la rendre plus sûre, plus fiable et plus simple à maintenir (à confirmer)",
+        "Élaborer et mettre en œuvre les tests d'une application (à confirmer)",
+        "Développer des applications informatiques complexes (à confirmer)"
+      ],
+      "description": "En alternance, « réaliser » a pris la forme d'un développement d'indicateurs décisionnels et d'applications Python outillées. J'ai porté des projets du besoin jusqu'au déploiement, avec une exigence de maintenabilité : configuration externalisée, tests, documentation, empaquetage.",
+      "preuves": "La plateforme décisionnelle DESCAR-T (indicateurs DAX, modèle sémantique) et surtout QC Report Builder — une application de bureau en architecture MVC, testée avec pytest, distribuée en paquet Python et en exécutable autonome. En dehors de l'alternance, Didactypo et Self Tracker couvrent le développement web full-stack.",
+      "progression": "En S4, je développais des tableaux de bord à partir de spécifications. En S6, je conçois l'architecture applicative et j'assume le cycle de vie complet, tests et documentation de maintenance compris.",
+      "noteReflexive": "J'ai compris que « réaliser » ne s'arrête pas à un code qui fonctionne : la valeur d'un outil interne se joue dans sa capacité à être repris par quelqu'un d'autre. C'est ce qui m'a fait systématiser la configuration externe et la documentation technique.",
+      "axesProgression": [
+        "Intégration continue et automatisation des tests",
+        "Revue de code entre pairs, absente sur mon poste",
+        "Travailler sur des bases de code plus volumineuses"
+      ]
+    },
+    "optimiser": {
+      "nom": "Optimiser des applications informatiques",
+      "niveauLibelle": "Analyser et optimiser des applications au regard de critères mesurables (à confirmer)",
+      "apprentissagesCritiques": [
+        "Analyser un problème avec méthode : découpage, mesure, comparaison (à confirmer)",
+        "Comparer des solutions algorithmiques et choisir la plus adaptée au contexte et aux contraintes (à confirmer)",
+        "Évaluer l'impact d'un changement sur la performance et la fiabilité (à confirmer)"
+      ],
+      "description": "L'optimisation dans mon travail a moins concerné la vitesse d'un algorithme que l'efficacité d'un processus : remplacer des manipulations Excel hebdomadaires par un modèle qui se rafraîchit seul, ou un contrôle qualité manuel d'une heure par une génération automatique. Le choix d'une modélisation en étoile est lui-même une décision d'optimisation, guidée par la structure des requêtes.",
+      "preuves": "Les outils Python de contrôle qualité, qui automatisent un travail manuel répétitif ; la plateforme décisionnelle, dont le modèle a été pensé pour la performance des requêtes et l'harmonisation des définitions ; sur le POC d'IA, le choix de modèles exécutables localement sous contrainte de temps de réponse. En dehors de l'alternance, les algorithmes de graphe de Secured Air Enforcer.",
+      "progression": "En S4, j'optimisais le rendu de tableaux de bord existants. En S6, j'ai porté des décisions d'architecture (modèle en étoile, granularité des indicateurs) et de choix de modèles, en argumentant les compromis.",
+      "noteReflexive": "Mon réflexe d'optimisation reste plus solide sur les processus que sur le code lui-même. Le POC d'IA m'a montré à quel point la robustesse et le temps de réponse d'un système sont difficiles à tenir, et c'est un domaine que je veux approfondir.",
+      "axesProgression": [
+        "Profilage et optimisation fine de code",
+        "Choix et paramétrage de modèles de machine learning et de LLM",
+        "Pratiques MLOps"
+      ]
+    },
+    "administrer": {
+      "nom": "Administrer des systèmes informatiques communicants complexes",
+      "niveauLibelle": "Déployer et sécuriser des services au sein d'un système d'information (à confirmer)",
+      "apprentissagesCritiques": [
+        "Concevoir et déployer un service dans un environnement contraint (à confirmer)",
+        "Sécuriser les services et les données : droits, cloisonnement, conformité (à confirmer)",
+        "Installer et configurer un poste et son environnement d'exécution (à confirmer)"
+      ],
+      "description": "Mon rapport à l'administration système est passé par le déploiement et la distribution d'outils — publication sur Power BI Cloud, empaquetage d'exécutables autonomes, mise en place d'un environnement local pour l'exécution de modèles de langage — et par la prise en compte du cloisonnement des données comme contrainte native du modèle, pas comme une couche ajoutée à la restitution.",
+      "preuves": "La distribution de QC Report Builder (paquet et exécutable pour des postes sans environnement de développement), l'infrastructure locale du POC d'IA, et le cadrage de sécurité de la plateforme décisionnelle avec le DSI et le DPO : fréquence d'export, anonymisation, stockage. En dehors de l'alternance, mon serveur maison (LAMP, SSH, VPN).",
+      "progression": "En S4, la question du déploiement ne m'incombait pas. En S6, j'ai géré la publication, la distribution et l'exécution locale de mes livrables, et participé aux décisions de sécurité et de conformité RGPD.",
+      "noteReflexive": "C'est le bloc où mon expérience est la plus fragmentée : beaucoup de déploiement et de sécurité applicative, peu d'administration de systèmes à proprement parler. Mon serveur personnel reste mon meilleur terrain d'apprentissage sur ce plan.",
+      "axesProgression": [
+        "Conteneurisation et orchestration : Docker avancé, Kubernetes",
+        "Automatisation du déploiement (CI/CD)",
+        "Administration réseau et supervision"
+      ]
+    },
+    "gerer-donnees": {
+      "nom": "Gérer des données de l'information",
+      "niveauLibelle": "Concevoir et mettre en place un système d'information décisionnel en garantissant la qualité et la sécurité des données (à confirmer)",
+      "apprentissagesCritiques": [
+        "Concevoir un modèle de données adapté à un usage : transactionnel, décisionnel, longitudinal (à confirmer)",
+        "Mettre en œuvre une chaîne d'extraction, de transformation et de chargement (à confirmer)",
+        "Garantir la qualité, la traçabilité et la confidentialité des données (à confirmer)",
+        "Exploiter les données pour la prise de décision (à confirmer)"
+      ],
+      "description": "C'est le cœur de mon alternance et de mon parcours AGED. J'ai travaillé sur un registre clinique national de vie réelle : schéma évolutif (une trentaine de versions de cahier d'observation), schéma conditionnel (variables valables pour certains sous-groupes seulement), structure longitudinale (chaque item collecté une vingtaine de fois par patient), cloisonnement strict entre partenaires. Concevoir un modèle décisionnel sur cette base impose de traiter explicitement la granularité et la signification des valeurs manquantes.",
+      "preuves": "La plateforme décisionnelle DESCAR-T : modèle sémantique en étoile, chaîne SAS et Power Query, vérification des indicateurs face aux extractions de référence, travail sous MR-004. Le POC d'IA, avec un ETL vers une base SQLite dédiée et une génération de SQL. En dehors de l'alternance, le jeu de données du détecteur de cancer du sein et la base de Fou2Food.",
+      "progression": "En S4, j'extrayais et nettoyais des données sous SAS et SQL selon un plan défini. En S6, je conçois le modèle de données, j'arbitre la granularité des indicateurs et je porte la démarche qualité et confidentialité de bout en bout.",
+      "noteReflexive": "Ce registre m'a appris que la difficulté d'un projet data n'est presque jamais le volume : c'est la structure, l'historique et la véracité des données. Distinguer « non renseigné », « non applicable à cette pathologie » et « non applicable à cette version du cahier d'observation » avant toute agrégation est devenu un réflexe.",
+      "axesProgression": [
+        "Industrialisation des pipelines : orchestration, tests de données",
+        "Modélisation de données à plus grande échelle",
+        "Gouvernance et catalogue de données"
+      ]
+    },
+    "conduire": {
+      "nom": "Conduire un projet",
+      "niveauLibelle": "Participer à la conception et à la mise en place d'un projet de système d'information (à confirmer)",
+      "apprentissagesCritiques": [
+        "Analyser un besoin et en évaluer la faisabilité (à confirmer)",
+        "Conduire une démarche itérative avec des livraisons régulières (à confirmer)",
+        "Prioriser et arbitrer en fonction de la valeur et des contraintes (à confirmer)",
+        "Assurer le suivi, la documentation et la clôture d'un projet (à confirmer)"
+      ],
+      "description": "J'ai conduit trois projets en parallèle, sur des temporalités différentes, sans chef de projet dédié sur mon périmètre. Ma méthode a été constante : ateliers de recueil du besoin, maquette ou version fonctionnelle validée, mise en production volontairement précoce, puis itérations hebdomadaires sur les retours d'usage, et clôture par de la documentation et de la formation.",
+      "preuves": "La plateforme décisionnelle (ateliers avec quatre chefs de projet, maquette validée, itération sur plusieurs mois, réunion de cadrage réglementaire), les outils Python (même démarche répétée quatre fois), et le POC d'IA — cadré comme exploratoire et arrêté avec une conclusion assumée quand les priorités de l'organisation ont changé. En dehors de l'alternance, Didactypo, où j'étais scrum master.",
+      "progression": "En S4, je contribuais à un projet cadré par d'autres. En S6, je cadre le besoin, je planifie, je priorise entre plusieurs projets concurrents et j'assume la décision de mettre un projet en pause.",
+      "noteReflexive": "J'ai appris qu'une livraison précoce et imparfaite, assumée comme telle, vaut mieux qu'un livrable parfait livré trop tard : elle transforme l'utilisateur en source de retours plutôt qu'en simple destinataire. Accepter l'arrêt du POC d'IA a aussi été une leçon : un projet peut être une réussite sans mise en production, si sa conclusion est claire.",
+      "axesProgression": [
+        "Outils de gestion de projet et suivi formalisé",
+        "Travailler avec des interlocuteurs moins techniques",
+        "Estimation et planification sur des projets longs"
+      ]
+    },
+    "equipe": {
+      "nom": "Travailler dans une équipe informatique",
+      "niveauLibelle": "S'intégrer, contribuer et faire évoluer les pratiques d'une équipe informatique (à confirmer)",
+      "apprentissagesCritiques": [
+        "Adapter sa communication à des interlocuteurs de métiers et de niveaux techniques différents (à confirmer)",
+        "Partager ses connaissances et accompagner la montée en compétence des autres (à confirmer)",
+        "Contribuer à faire évoluer les outils et les pratiques de l'équipe (à confirmer)",
+        "Assurer une veille technologique et la diffuser (à confirmer)"
+      ],
+      "description": "Seul sur mon poste, j'ai surtout travaillé en équipe de façon transverse : avec des data managers, des programmeurs SAS, des biostatisticiens, des chefs de projet, un responsable de projet, un médecin, le DSI et le DPO. Le passage d'un public de biostatisticiens à un public de chefs de projet sur les mêmes données a été l'exercice de communication le plus formateur. J'ai aussi contribué à faire évoluer les pratiques de l'équipe.",
+      "preuves": "La plateforme décisionnelle, avec deux publics distincts et une présentation en café scientifique ; l'accompagnement au déploiement de Visual Studio Code et Git, les formations et guides de bonnes pratiques ; la contribution au nouveau standard de documentation BI de la DSI, en documentant mes propres indicateurs en premier ; des présentations et webinaires internes sur l'IA, la standardisation et l'automatisation. En dehors de l'alternance, le rôle de scrum master sur Didactypo.",
+      "progression": "En S4, je m'intégrais dans une équipe et je rendais compte. En S6, j'ai formé des collègues, diffusé des pratiques et contribué à des standards d'équipe.",
+      "noteReflexive": "Ne pas avoir de pair sur mon poste m'a forcé à rendre mes choix compréhensibles et évaluables par des non-spécialistes de mes outils. Cette contrainte a fait de la pédagogie une compétence centrale, que je retrouve aussi dans mes engagements associatifs.",
+      "axesProgression": [
+        "Travailler dans une équipe de développeurs avec des rituels établis",
+        "Revue de code et pair programming",
+        "Présentation à des audiences dirigeantes"
+      ]
+    }
+  },
+  "stackTechnique": {
+    "title": "Stack technique",
+    "intro": "Les technologies que j'utilise, regroupées par domaine. Les compétences AGED s'exercent surtout sur les premiers groupes ; le reste vient de mes projets personnels et académiques.",
+    "categories": [
+      { "title": "Décisionnel & visualisation", "techs": ["Power BI", "Power Query", "DAX", "Looker"] },
+      { "title": "Données & programmation statistique", "techs": ["SAS", "SQL", "Star schema"] },
+      { "title": "Langages de programmation", "techs": ["Python", "TypeScript", "JavaScript", "Java", "PHP"] },
+      { "title": "Développement d'applications", "techs": ["PySide6", "pytest", "FastAPI", "Express", "NodeJS"] },
+      { "title": "Développement web", "techs": ["React", "Tailwind", "CSS"] },
+      { "title": "IA / LLM", "techs": ["Ollama", "LangChain", "AI/ML"] },
+      { "title": "Bases de données", "techs": ["PostgreSQL", "MySQL", "SQLite", "Firebase"] },
+      { "title": "Outillage & méthodes", "techs": ["Git", "GitHub", "VS Code", "Docker", "Linux", "Scrum", "UML"] }
+    ],
+    "languesTitle": "Langues",
+    "langues": [
+      { "nom": "Français", "niveau": "Langue maternelle" },
+      { "nom": "Anglais", "niveau": "Bilingue" },
+      { "nom": "Espagnol", "niveau": "B1 — conversation" },
+      { "nom": "Chinois", "niveau": "HSK 2" }
+    ]
+  }
 }
