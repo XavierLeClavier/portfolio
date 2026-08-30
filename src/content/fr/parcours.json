@@ -1,8 +1,8 @@
 {
   "header": {
     "name": "Xavier Lacroix",
-    "role": "Data Analyst en alternance — futur ingénieur",
-    "bio": "J'aime transformer des données complexes — ici, un registre clinique national — en outils de décision fiables. Mon année d'alternance chez Lysarc m'a fait glisser de la business intelligence vers l'ingénierie de la donnée et le développement logiciel : c'est ce qui motive ma poursuite d'études en école d'ingénieur, avec pour cap les métiers de Data Engineer et d'AI Engineer."
+    "role": "Étudiant en informatique à l'INSA Lyon",
+    "bio": "Je suis étudiant en informatique à l'INSA Lyon depuis septembre 2026. Avant ça : trois ans de BUT Informatique à l'IUT Lyon 1 (parcours AGED), dont une année d'alternance comme Data Analyst chez Lysarc, sur un registre clinique national. En parallèle, je construis beaucoup de projets personnels — des sites web, un homelab, des agents IA. Ce qui m'intéresse : la donnée, les systèmes, et transformer une idée en quelque chose qui tourne vraiment. Mon cap : les métiers de Data Engineer et d'AI Engineer."
   },
   "lysarc": {
     "title": "L'entreprise : Lysarc",
@@ -23,17 +23,27 @@
     ]
   },
   "frise": {
-    "title": "De la découverte à l'autonomie",
+    "title": "Mon parcours",
     "steps": [
       {
-        "period": "Avril – juillet 2024",
-        "label": "Stage de S4",
-        "text": "Stage de découverte. Première prise de contact avec le registre DESCAR-T : extraction, transformation et nettoyage des données sous SAS et SQL, premiers tableaux de bord Power BI, sous la conduite de l'équipe. Travail sur une base longitudinale de plus de 5 000 patients, dans le respect des règles de confidentialité des données de santé."
+        "period": "2023 – 2026",
+        "label": "BUT Informatique — IUT Lyon 1",
+        "text": "Trois ans en parcours AGED (administration, gestion et exploitation des données). Fondamentaux du développement, de l'algorithmique et des bases de données, et une série de projets d'équipe."
       },
       {
-        "period": "Depuis septembre 2025",
-        "label": "Alternance de S6",
-        "text": "Alternance, en pleine responsabilité. Conception de la méthodologie et de l'architecture décisionnelle, développement d'applications Python pour automatiser les contrôles qualité, POC d'agent conversationnel local, accompagnement de l'équipe sur l'outillage (VS Code, Git) et les standards de documentation. Passage de l'exécution à la conception."
+        "period": "Avril – juillet 2024",
+        "label": "Stage de S4 — Lysarc",
+        "text": "Stage de découverte. Première prise de contact avec le registre DESCAR-T : extraction, transformation et nettoyage des données sous SAS et SQL, premiers tableaux de bord Power BI, sous la conduite de l'équipe."
+      },
+      {
+        "period": "Septembre 2025 – 2026",
+        "label": "Alternance de S6 — Lysarc",
+        "text": "Alternance, en pleine responsabilité. Conception de la méthodologie et de l'architecture décisionnelle, développement d'applications Python pour automatiser les contrôles qualité, POC d'agent conversationnel local, accompagnement de l'équipe. Passage de l'exécution à la conception."
+      },
+      {
+        "period": "Depuis septembre 2026",
+        "label": "INSA Lyon",
+        "text": "Poursuite en école d'ingénieur, spécialité informatique. Objectif : élargir mes bases et approfondir l'ingénierie de la donnée, les systèmes et l'IA."
       }
     ]
   },

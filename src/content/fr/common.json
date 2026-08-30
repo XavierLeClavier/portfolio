@@ -1,8 +1,8 @@
 {
   "identity": {
     "name": "Xavier Lacroix",
-    "role": "Développeur Data Analyst",
-    "brandline": "votre gars de la data"
+    "role": "Étudiant en informatique",
+    "brandline": "INSA Lyon · IUT Lyon 1 · Lysarc"
   },
   "nav": [
     { "to": "/", "label": "Accueil" },
@@ -12,6 +12,11 @@
     { "to": "/bilan", "label": "Bilan" }
   ],
   "menu": { "label": "Menu" },
+  "language": {
+    "label": "Langue",
+    "fr": "Français",
+    "en": "English"
+  },
   "footer": {
     "github": "GitHub",
     "linkedin": "LinkedIn",
@@ -35,7 +40,7 @@
   },
   "loading": "Chargement…",
   "pageTitles": {
-    "home": "Xavier Lacroix — Développeur Data Analyst",
+    "home": "Xavier Lacroix — Étudiant en informatique",
     "parcours": "Parcours — Xavier Lacroix",
     "projects": "Missions & projets — Xavier Lacroix",
     "projectDetail": "{name} — Xavier Lacroix",

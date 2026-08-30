@@ -1,0 +1,51 @@
+{
+  "identity": {
+    "name": "Xavier Lacroix",
+    "role": "Computer science student",
+    "brandline": "INSA Lyon · IUT Lyon 1 · Lysarc"
+  },
+  "nav": [
+    { "to": "/", "label": "Home" },
+    { "to": "/me", "label": "Background" },
+    { "to": "/projects", "label": "Work & projects" },
+    { "to": "/competences", "label": "Skills" },
+    { "to": "/bilan", "label": "Review" }
+  ],
+  "menu": { "label": "Menu" },
+  "language": {
+    "label": "Language",
+    "fr": "Français",
+    "en": "English"
+  },
+  "footer": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "rights": "© {year} Xavier Lacroix. All rights reserved.",
+    "changelog": "Changelog",
+    "home": "Home"
+  },
+  "a11y": {
+    "portrait": "Photo of Xavier Lacroix",
+    "scrollDown": "Scroll down",
+    "imageLoading": "Loading…"
+  },
+  "buttons": {
+    "expandAll": "Expand all",
+    "collapseAll": "Collapse all",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "seeMore": "See more",
+    "back": "Back"
+  },
+  "loading": "Loading…",
+  "pageTitles": {
+    "home": "Xavier Lacroix — Computer science student",
+    "parcours": "Background — Xavier Lacroix",
+    "projects": "Work & projects — Xavier Lacroix",
+    "projectDetail": "{name} — Xavier Lacroix",
+    "competences": "Skills — Xavier Lacroix",
+    "bilan": "Apprenticeship review — Xavier Lacroix",
+    "versionLog": "Changelog — Xavier Lacroix"
+  }
+}

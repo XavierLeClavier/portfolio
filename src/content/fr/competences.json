@@ -54,9 +54,9 @@
         "Installer et configurer un poste et son environnement d'exécution (à confirmer)"
       ],
       "description": "Mon rapport à l'administration système est passé par le déploiement et la distribution d'outils — publication sur Power BI Cloud, empaquetage d'exécutables autonomes, mise en place d'un environnement local pour l'exécution de modèles de langage — et par la prise en compte du cloisonnement des données comme contrainte native du modèle, pas comme une couche ajoutée à la restitution.",
-      "preuves": "La distribution de QC Report Builder (paquet et exécutable pour des postes sans environnement de développement), l'infrastructure locale du POC d'IA, et le cadrage de sécurité de la plateforme décisionnelle avec le DSI et le DPO : fréquence d'export, anonymisation, stockage. En dehors de l'alternance, mon serveur maison (LAMP, SSH, VPN).",
+      "preuves": "La distribution de QC Report Builder (paquet et exécutable pour des postes sans environnement de développement), l'infrastructure locale du POC d'IA, et le cadrage de sécurité de la plateforme décisionnelle avec le DSI et le DPO : fréquence d'export, anonymisation, stockage. En dehors de l'alternance, mon homelab (Docker, Traefik, services auto-hébergés, supervision).",
       "progression": "En S4, la question du déploiement ne m'incombait pas. En S6, j'ai géré la publication, la distribution et l'exécution locale de mes livrables, et participé aux décisions de sécurité et de conformité RGPD.",
-      "noteReflexive": "C'est le bloc où mon expérience est la plus fragmentée : beaucoup de déploiement et de sécurité applicative, peu d'administration de systèmes à proprement parler. Mon serveur personnel reste mon meilleur terrain d'apprentissage sur ce plan.",
+      "noteReflexive": "C'est le bloc où mon expérience est la plus fragmentée : beaucoup de déploiement et de sécurité applicative, peu d'administration de systèmes à proprement parler. Mon homelab reste mon meilleur terrain d'apprentissage sur ce plan.",
       "axesProgression": [
         "Conteneurisation et orchestration : Docker avancé, Kubernetes",
         "Automatisation du déploiement (CI/CD)",

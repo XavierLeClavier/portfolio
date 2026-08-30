@@ -1,15 +1,17 @@
-# Phase 2 — French copy review
+# Phase 2 — copy review (FR + EN)
 
-The mechanism and a first French draft are in place. This phase is a
-**JSON-only** pass over `src/content/fr/*.json` (and `src/data/*.json` for facts)
-to tighten the wording. No component changes.
+The mechanism and a first draft in both languages are in place. This phase is a
+**JSON-only** pass over `src/content/{fr,en}/*.json` (and `src/data/*.json` for
+facts) to tighten the wording. No component changes.
 
 ## How to work
 
-1. Edit only `src/content/fr/*.json`.
-2. `pnpm dev`, read each page top to bottom.
-3. Keep keys stable. A key rename is the only thing that touches `.tsx`.
-4. `pnpm build && pnpm lint` before committing.
+1. Edit `src/content/fr/*.json` and the matching `src/content/en/*.json`.
+2. Keep keys identical between locales — a key that exists in `fr/` but not
+   `en/` (or vice versa) fails the `pnpm build` (via `en.ts satisfies Content`).
+3. `pnpm dev`, read each page top to bottom, toggle the flag switcher.
+4. Keep keys stable. A key rename touches `.tsx` and both locale files.
+5. `pnpm build && pnpm lint` before committing.
 
 ## Priorities
 

@@ -1,0 +1,136 @@
+{
+  "header": {
+    "name": "Xavier Lacroix",
+    "role": "Computer science student at INSA Lyon",
+    "bio": "I've been a computer science student at INSA Lyon since September 2026. Before that: three years of the BUT Informatique at IUT Lyon 1 (AGED track), including a one-year apprenticeship as a Data Analyst at Lysarc, working on a national clinical registry. Alongside that, I build a lot of personal projects — websites, a homelab, AI agents. What I'm into: data, systems, and turning an idea into something that actually runs. My aim: Data Engineer and AI Engineer roles."
+  },
+  "lysarc": {
+    "title": "The company: Lysarc",
+    "body": [
+      "Lysarc (The Lymphoma Academic Research Organisation) is a French non-profit, the academic research arm of the Lysa network — dedicated to lymphoma, chronic lymphocytic leukaemia and Waldenström's disease. It is the world's largest academic research structure focused on lymphomas, based at CHU Lyon Sud. It launches four to six new clinical trials a year alongside around fifty ongoing studies.",
+      "During my apprenticeship the organisation went through a leadership change and a structural reorganisation: a new strategic roadmap, the creation of an innovation hub and of a department dedicated to clinical data engineering and programming. That reorganisation is what made my missions shift over the year.",
+      "I was the only Data Analyst in the organisation: no peer in the role, no established methodology to inherit, no technical referent on my own toolchain. That autonomy was a driver — it forced me to choose, document and justify every decision, which is why documentation and training come attached to every one of my deliverables."
+    ]
+  },
+  "environnement": {
+    "title": "Technical environment",
+    "intro": "The registry's data is not a volume problem: it fits on a workstation. The work is organised around two refresh chains, at two cadences and two levels of reliability.",
+    "items": [
+      "A weekly raw export from the clinical data-capture tool (Ennov), underived — it feeds the Power BI dashboards and operational steering.",
+      "A chain of SAS derivations and exclusions, on a roughly six-month cadence — it produces the analysis datasets for the official statistical reports.",
+      "Windows workstation, SAS and Power BI Desktop for analysis, Power BI Cloud for distribution, Visual Studio Code and Git for Python development, and internal infrastructure for running language models locally.",
+      "A significant part of my documentation and training work was to make the distinction between these two chains explicit, so that operational figures are never confused with official statistical figures."
+    ]
+  },
+  "frise": {
+    "title": "My background",
+    "steps": [
+      {
+        "period": "2023 – 2026",
+        "label": "BUT Informatique — IUT Lyon 1",
+        "text": "Three years on the AGED track (data administration, management and exploitation). Fundamentals of development, algorithms and databases, and a series of team projects."
+      },
+      {
+        "period": "April – July 2024",
+        "label": "S4 internship — Lysarc",
+        "text": "A discovery internship. First contact with the DESCAR-T registry: extracting, transforming and cleaning data with SAS and SQL, first Power BI dashboards, under the team's guidance."
+      },
+      {
+        "period": "September 2025 – 2026",
+        "label": "S6 apprenticeship — Lysarc",
+        "text": "The apprenticeship, in full ownership. Designing the methodology and the BI architecture, building Python applications to automate quality control, a local conversational-agent POC, supporting the team. A shift from execution to design."
+      },
+      {
+        "period": "Since September 2026",
+        "label": "INSA Lyon",
+        "text": "Continuing into an engineering school, computer science specialism. The goal: broaden my foundations and go deeper into data engineering, systems and AI."
+      }
+    ]
+  },
+  "sections": {
+    "work": "Professional experience",
+    "volunteer": "Volunteering",
+    "hobbies": "Interests"
+  },
+  "work": {
+    "items": {
+      "lysarc-alternance": {
+        "title": "Data Analyst (apprenticeship)",
+        "organization": "Lysarc — The Lymphoma Academic Research Organisation",
+        "period": "September 2025 – 2026",
+        "details": [
+          "Designed and built an end-to-end Power BI decision-support solution on the data quality and activity of the national DESCAR-T registry",
+          "Built four Python applications (MVC architecture, tests, documentation, standalone executables) to automate quality control of statistical analyses",
+          "Prototyped a conversational agent running entirely on internal infrastructure (Ollama, LangChain, SQLite) to turn a natural-language question into an analysis",
+          "Supported the team: rollout of Visual Studio Code and Git, training and best-practice guides, adoption of the IT team's new BI documentation standard"
+        ],
+        "note": "Apprenticeship as part of the third year of the BUT Informatique, AGED track, at IUT Lyon 1."
+      },
+      "lysarc-stage": {
+        "title": "Data Analyst (internship)",
+        "organization": "Lysarc — The Lymphoma Academic Research Organisation",
+        "period": "April – July 2024",
+        "details": [
+          "Extracted, transformed and cleaned complex healthcare data with SAS and SQL, to a high standard of quality and consistency",
+          "Designed and built dashboards and performance indicators in Power BI for medical professionals and pharmaceutical partners",
+          "Worked on a longitudinal database tracking more than 5,000 patients across France",
+          "Strict compliance with confidentiality rules and the regulations covering sensitive healthcare data"
+        ],
+        "note": "Second-year internship of the BUT Informatique, AGED track, at IUT Lyon 1."
+      },
+      "sailing-instructor": {
+        "title": "Sailing instructor",
+        "organization": "Several sailing clubs in Corsica and the south of France",
+        "period": "2021 – 2025 (two months every summer)",
+        "details": [
+          "Taught catamaran and dinghy courses at every level",
+          "Helped train new instructors",
+          "Courses taught in French, English and Spanish",
+          "Safety and running a fleet of up to twelve boats"
+        ]
+      }
+    }
+  },
+  "volunteer": {
+    "items": {
+      "scouts-camp-director": {
+        "title": "Camp director",
+        "organization": "Scouts et Guides de France",
+        "period": "Since 2022",
+        "details": [
+          "Ran scout camps for children aged 8 to 14",
+          "Led and coordinated a team of six leaders aged 17 to 21",
+          "Supervised activities with safety and the children's wellbeing as the priority",
+          "Designed and delivered yearly educational projects tailored to the children's needs and wishes"
+        ]
+      },
+      "paris-2024": {
+        "title": "Measurement technician",
+        "organization": "Paris 2024 Olympic Games (in Marseille)",
+        "period": "July – August 2024",
+        "details": [
+          "Deployed and operated equipment measuring wind and sea state for the Olympic sailing events",
+          "Worked with international race officials on buoy placement and course measurement",
+          "Monitored real-time weather data for race-management decisions",
+          "Maintained and calibrated sensitive measurement instruments in a marine environment"
+        ]
+      }
+    }
+  },
+  "hobbies": {
+    "items": {
+      "voile": {
+        "title": "Sailing",
+        "description": "I've been sailing since before I could walk. It's a passion I love passing on — and there aren't many places I'd rather be than out on the water, except maybe behind my keyboard ;)."
+      },
+      "hackathons": {
+        "title": "Hackathons",
+        "description": "I love doing hackathons with friends, solving challenges under pressure. Those intense sprints sharpen my problem-solving and get me to try new technologies."
+      },
+      "benevolat": {
+        "title": "Volunteering",
+        "description": "As much as I love being behind my keyboard, I need to get out into nature too. Since secondary school I've spent a large share of my weekends and holidays giving a breath of fresh air to kids who get fewer chances at it."
+      }
+    }
+  }
+}

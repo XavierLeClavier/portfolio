@@ -88,9 +88,10 @@ export default function Home() {
               alt={a11y.portrait}
               className="rounded-full max-w-48 max-h-48 w-screen h-auto border-4 border-gray-300 shadow-lg"
             />
-            <div className="text-white flex flex-col items-center sm:items-start">
+            <div className="text-white flex flex-col items-center sm:items-start max-w-sm">
               <h1 className="text-4xl font-bold">{hero.name}</h1>
               <em className="text-xl text-gray-300">{hero.brandline}</em>
+              <p className="text-sm text-gray-400 mt-2 text-center sm:text-left">{hero.sub}</p>
             </div>
             <a
               href="#"

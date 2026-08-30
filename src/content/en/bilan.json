@@ -1,0 +1,38 @@
+{
+  "title": "Apprenticeship review",
+  "intro": "My apprenticeship at Lysarc was built around one through-line: a mission born in business intelligence that gradually shifted towards data engineering and software development. This review looks back at what I take from it, on the technical, professional and personal fronts.",
+  "sections": [
+    {
+      "title": "Technical review",
+      "body": [
+        "I covered a broad chain: dimensional modelling and decision-support indicator development, data transformation in SAS, building structured Python applications (MVC, tests, packaging), and exploring a fully local AI architecture. What these have in common is real-world data: imperfect, evolving, structured as one-to-many relationships, and under strong confidentiality constraints.",
+        "My main progression was moving from execution to design: choosing an architecture, justifying it, documenting it, and keeping it alive over time rather than shipping a fixed artefact.",
+        "My areas for improvement remain putting AI tools into production (robustness, response times, MLOps) and industrialising data pipelines."
+      ]
+    },
+    {
+      "title": "Professional review",
+      "body": [
+        "I was the only Data Analyst in the organisation. That autonomy forced me to formalise my choices for an audience that isn't specialist in my tools, and to make documentation and training an integral part of every deliverable, not a final step.",
+        "I learned to run three projects in parallel on timelines that didn't line up, to trade off between new features and stabilising existing ones, and to accept a project being paused when the organisation's priorities change — which is what happened to the AI POC.",
+        "I worked with data managers, SAS programmers, biostatisticians, project managers, a project lead, a doctor, the CIO and the DPO. Adapting my register and vocabulary to each person was a skill exercised constantly."
+      ]
+    },
+    {
+      "title": "Personal review",
+      "body": [
+        "Being the sole point of reference for a role, with no technical safety net, was demanding but formative: I gained confidence in my ability to decide and to own my choices.",
+        "Working on data about cancer patients gives concrete meaning to the demands of quality and confidentiality: they're not abstract constraints.",
+        "My commitments alongside — sailing instructor, scout camp director — feed the same things as my work: leading, passing on, organising."
+      ]
+    }
+  ],
+  "devenu": {
+    "title": "The professional I've become",
+    "body": "I arrived on the internship as a student running analysis tasks; I finish the apprenticeship having designed and defended a methodology, a data architecture and a small suite of tools, and having supported a team in adopting new practices. I now sit at the boundary between data analysis, data engineering and software development."
+  },
+  "projetPostBut": {
+    "title": "After the BUT",
+    "body": "Since September 2026 I've been at an engineering school, INSA Lyon, aiming for Data Engineer and AI Engineer roles. Industrialising data processing, system administration, and the fully local architecture I explored on the AI POC — and keep experimenting with on my homelab — are exactly what I want to go deeper on."
+  }
+}

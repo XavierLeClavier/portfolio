@@ -24,6 +24,8 @@ export const projects = (data as ProjectData[])
 
 export const featuredProjects = projects.filter((p) => p.featured);
 export const otherProjects = projects.filter((p) => !p.featured);
+export const academicProjects = otherProjects.filter((p) => p.category === "ecole");
+export const personalProjects = otherProjects.filter((p) => p.category === "perso");
 
 export const findProject = (id: string | undefined): ProjectData | undefined =>
   id ? projects.find((p) => p.id === id) : undefined;

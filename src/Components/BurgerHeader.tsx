@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useContent } from "../i18n";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function BurgerHeader() {
   const common = useContent("common");
@@ -60,7 +61,7 @@ export default function BurgerHeader() {
             transformOrigin: "top right",
           }}
         >
-          <ul className="flex flex-col p-5 space-y-4 text-gray-200">
+          <ul className="flex flex-col p-5 pb-2 space-y-4 text-gray-200">
             {common.nav.map((item) => (
               <li key={item.to}>
                 <NavLink
@@ -76,6 +77,9 @@ export default function BurgerHeader() {
               </li>
             ))}
           </ul>
+          <div className="mx-5 mb-3 pt-2 border-t border-gray-700/70">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </div>

@@ -5,19 +5,21 @@ import { getIcon } from "../data/icons";
 import { findProject } from "../data/projects";
 import { formatRange } from "../lib/dates";
 
+type Prose = string | string[];
+
 interface ProjectItem {
   name: string;
   subtitle?: string;
   summary?: string;
-  description?: string;
-  role?: string;
-  context?: string;
-  objectives?: string;
-  realisation?: string;
-  projectManagement?: string;
-  technical?: string;
-  outcome?: string;
-  progression?: string;
+  description?: Prose;
+  role?: Prose;
+  context?: Prose;
+  objectives?: Prose;
+  realisation?: Prose;
+  projectManagement?: Prose;
+  technical?: Prose;
+  outcome?: Prose;
+  progression?: Prose;
   keywords?: string[];
 }
 
@@ -59,7 +61,16 @@ export default function ProjectDetailedView() {
   const isExternalUrl = data.url ? /^https?:\/\//.test(data.url) : false;
   const dateLabel = formatRange(data.startDate, data.endDate, data.ongoing);
 
-  const para = (text: string) => <p className="text-gray-300 leading-relaxed whitespace-pre-line">{text}</p>;
+  const para = (text: Prose) =>
+    Array.isArray(text) ? (
+      <div className="space-y-3">
+        {text.map((p, i) => (
+          <p key={i} className="text-gray-300 leading-relaxed">{p}</p>
+        ))}
+      </div>
+    ) : (
+      <p className="text-gray-300 leading-relaxed whitespace-pre-line">{text}</p>
+    );
 
   return (
     <div className="bg-gray-800 text-white min-h-screen">

@@ -88,7 +88,7 @@
     "startDate": "2023-11",
     "endDate": "",
     "ongoing": true,
-    "technologies": ["Linux", "Apache Server", "MySQL", "PHP", "Docker"]
+    "technologies": ["Linux", "Ubuntu", "Docker", "Traefik", "NodeJS", "Grafana", "Ollama", "Nextcloud", "Immich", "OpenRouter", "Apache Server"]
   },
   {
     "id": "codeco",

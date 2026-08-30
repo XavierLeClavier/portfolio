@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "name": "Xavier Lacroix",
+    "brandline": "computer science student at INSA Lyon",
+    "sub": "Three years at IUT Lyon 1, a data apprenticeship at Lysarc, and a lot of side projects."
+  },
+  "links": [
+    { "to": "/me", "label": "See my background", "icon": "user" },
+    { "to": "/projects", "label": "Browse my work & projects", "icon": "projects" },
+    { "to": "/competences", "label": "Explore my skills portfolio", "icon": "skills" },
+    { "to": "/bilan", "label": "Read my apprenticeship review", "icon": "report" }
+  ],
+  "githubStats": {
+    "title": "Quick stats",
+    "subtitle": "A snapshot of my coding activity",
+    "note": "if you're not a developer this might look like gibberish, but I promise it's interesting"
+  },
+  "repos": {
+    "title": "Recent GitHub repositories",
+    "subtitle": "A few of my recent projects on GitHub, some still in progress ;)",
+    "buckets": {
+      "week": "What I've worked on this week",
+      "month": "What I've worked on this past month",
+      "sixMonths": "What I've worked on over the last six months",
+      "year": "What I've worked on this year",
+      "older": "Haven't touched this in over a year"
+    },
+    "seeMore": "See more",
+    "noDescription": "No description.",
+    "noLanguages": "No language detected",
+    "latestCommit": "Latest commit:",
+    "commitBy": "by {author} on {date}",
+    "viewCommit": "View commit",
+    "noCommit": "No commit information.",
+    "error": "Couldn't load GitHub repositories.",
+    "empty": "No repositories found."
+  }
+}

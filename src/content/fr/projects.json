@@ -1,11 +1,14 @@
 {
   "list": {
     "title": "Missions & projets",
-    "intro": "Depuis dix ans, je mets mes idées en pratique à travers des projets informatiques. Voici mes missions d'alternance chez Lysarc, puis une sélection de projets personnels et académiques, sur des thèmes et des compétences variés.",
+    "intro": "Je construis des projets depuis le lycée : des sites web, des outils, un homelab, des agents IA — et une année de missions data en alternance. En voici une sélection, des plus aboutis aux plus expérimentaux.",
     "iconHint": "Survolez les icônes des technologies pour afficher leur nom",
     "missionsHeading": "Missions d'alternance — Lysarc",
     "missionsSubheading": "Trois axes menés en parallèle sur le registre clinique national DESCAR-T, de la business intelligence vers l'ingénierie de la donnée.",
-    "othersHeading": "Projets personnels & académiques"
+    "academicHeading": "Projets académiques — IUT Lyon 1",
+    "academicSubheading": "Projets d'équipe menés pendant les trois ans de BUT Informatique.",
+    "personalHeading": "Projets personnels",
+    "personalSubheading": "Ce que je construis sur mon temps libre, pour apprendre ou pour m'en servir au quotidien."
   },
   "card": {
     "readMore": "Lire la suite",
@@ -96,12 +99,20 @@
       "keywords": ["IA", "ML", "k plus proches voisins", "classification"]
     },
     "home-server": {
-      "name": "Serveur maison",
-      "subtitle": "Projet personnel",
-      "summary": "Un Raspberry Pi 3B transformé en petit serveur web, qui héberge mes sites et mon calendrier.",
-      "description": "Configuration LAMP pour héberger mes différents sites, SSH et VPN sécurisés pour y accéder de partout. C'est le serveur qui héberge ce portfolio.",
-      "role": "Démarré en première année de BUT, toujours en service aujourd'hui.",
-      "keywords": ["LAMP", "serveur", "cybersécurité", "SSH", "conteneurs"]
+      "name": "Homelab",
+      "subtitle": "Projet personnel — deux serveurs auto-hébergés",
+      "summary": "Deux serveurs auto-hébergés, d'un Raspberry Pi en LAMP à un serveur Ubuntu conteneurisé qui fait tourner mes photos, mes fichiers, un agent IA et sa supervision.",
+      "description": [
+        "Tout a commencé en première année de BUT avec un Raspberry Pi 3B transformé en petit serveur web : configuration LAMP pour héberger mes sites (dont une première version de ce portfolio) et mon calendrier, accès distant sécurisé par SSH et VPN.",
+        "Il est depuis rejoint par un vrai serveur sous Ubuntu, cette fois entièrement conteneurisé : Docker pour les services, Traefik en reverse proxy pour le routage et les certificats TLS, et du Node.js pour la logique maison.",
+        "Le serveur Ubuntu héberge aujourd'hui un Immich (galerie photo auto-hébergée), un Nextcloud (fichiers et agenda), mon agent Hermes, et sert de serveur à tout faire. Une stack Grafana assure la supervision — état des conteneurs, ressources, disponibilité des services."
+      ],
+      "role": [
+        "J'ai tout mis en place et je maintiens l'ensemble : choix des services, configuration de Traefik et des réseaux Docker, sauvegardes, mises à jour, supervision.",
+        "Hermes est un agent personnel que je fais tourner sur le serveur. Il s'appuie sur un modèle exécuté localement avec Ollama pour les tâches courantes et pour tout ce qui doit rester privé, et bascule vers l'API OpenRouter quand une requête demande un modèle plus puissant. C'est mon terrain d'expérimentation sur l'orchestration de modèles et le compromis local / API.",
+        "Ce homelab est mon principal terrain d'apprentissage sur l'administration système, la conteneurisation et la supervision — les sujets que je veux approfondir à l'INSA."
+      ],
+      "keywords": ["auto-hébergement", "Docker", "reverse proxy", "supervision", "agent IA", "LAMP"]
     },
     "codeco": {
       "name": "Codeco",
@@ -138,9 +149,9 @@
     "mon-portfolio": {
       "name": "Ce portfolio",
       "subtitle": "Projet personnel",
-      "summary": "Le site sur lequel vous êtes. React, TypeScript, Tailwind, contenu en JSON par langue pour préparer la traduction.",
-      "description": "Design responsive, contenu géré dans des fichiers JSON par langue pour faciliter les mises à jour et la traduction, suivi de fréquentation avec Cronitor.",
-      "role": "Projet que je fais évoluer régulièrement pour ajouter projets et fonctionnalités.",
+      "summary": "Le site sur lequel vous êtes. React, TypeScript, Tailwind, bilingue français / anglais.",
+      "description": "Design responsive et sombre. Tout le contenu vit dans des fichiers JSON par langue, lus par une petite couche d'internationalisation maison — ce qui rend les mises à jour et la traduction triviales. Suivi de fréquentation avec Cronitor.",
+      "role": "Projet que je fais évoluer régulièrement pour ajouter projets, contenu et fonctionnalités.",
       "keywords": ["front-end", "portfolio", "design", "i18n"]
     }
   }

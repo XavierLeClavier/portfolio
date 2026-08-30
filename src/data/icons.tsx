@@ -7,7 +7,8 @@ import {
   SiJavascript, SiTypescript, SiFastapi, SiJupyter, SiPhpmyadmin, SiMysql,
   SiTailwindcss, SiOpenstreetmap, SiApachemaven, SiLooker, SiPostgresql,
   SiExpress, SiFoodpanda, SiSqlite, SiOllama, SiLangchain, SiQt, SiPandas,
-  SiNumpy, SiScikitlearn, SiGithub,
+  SiNumpy, SiScikitlearn, SiGithub, SiTraefikproxy, SiGrafana, SiNextcloud,
+  SiImmich, SiUbuntu,
 } from "react-icons/si";
 import { IoLogoFirebase } from "react-icons/io5";
 import { PiGraph } from "react-icons/pi";
@@ -71,11 +72,19 @@ export const techIcons: Record<string, ReactElement> = {
 
   // DevOps & tooling
   Linux: <FaLinux color="#ffffff" size={SIZE} />,
+  Ubuntu: <SiUbuntu color="#e95420" size={SIZE} />,
   Docker: <FaDocker color="#3b82f6" size={SIZE} />,
+  Traefik: <SiTraefikproxy color="#22d3ee" size={SIZE} />,
+  Grafana: <SiGrafana color="#f97316" size={SIZE} />,
   Git: <FaGitAlt color="#f97316" size={SIZE} />,
   GitHub: <SiGithub color="#ffffff" size={SIZE} />,
   "VS Code": <DiVisualstudio color="#3b82f6" size={SIZE} />,
   "Apache Server": <SiApachemaven color="#ef4444" size={SIZE} />,
+
+  // Self-hosted services
+  Nextcloud: <SiNextcloud color="#3b82f6" size={SIZE} />,
+  Immich: <SiImmich color="#a855f7" size={SIZE} />,
+  OpenRouter: <LuBrainCircuit color="#38bdf8" size={SIZE} />,
 
   // Specialised libraries & methods
   JSON: <BsFiletypeJson color="#fde047" size={SIZE} />,

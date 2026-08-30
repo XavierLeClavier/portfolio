@@ -4,13 +4,16 @@ Guidance for Claude Code when working in this repository.
 
 ## What this is
 
-Personal portfolio for **Xavier Lacroix**, and the academic deliverable for his
-S6 alternance defense (BUT Informatique, parcours **AGED** — Administration,
-Gestion et Exploitation des Données, IUT Lyon 1). Single-page React app; pulls
-live data from the GitHub API at runtime, all other content is local JSON.
+Personal portfolio for **Xavier Lacroix** — a computer science student at INSA
+Lyon (since Sept 2026) presenting his experience: a data apprenticeship at
+Lysarc, three years of the BUT Informatique at IUT Lyon 1 (parcours **AGED**),
+and personal projects. It is also the academic deliverable for his S6
+apprenticeship defense. Single-page React app; live GitHub API data at runtime,
+everything else is local JSON.
 
-**The site is in French.** English is a planned second locale (the mechanism is
-built for it) but not authored yet. See `docs/i18n/`.
+**Bilingual French / English.** `fr` is the default; a flag switcher (🇫🇷 / 🇦🇺)
+in the burger menu toggles the locale. Both locales are fully authored under
+`src/content/`. See `docs/i18n/`.
 
 Two companion docs at the repo root are **git-ignored** and contain confidential
 / working material — read them before writing public copy but never commit them
@@ -38,8 +41,8 @@ pnpm preview
 src/
   App.tsx              routes + <I18nProvider>
   i18n/                custom i18n layer (provider + useContent + useTranslation)
-  content/fr/          all user-facing copy, one JSON namespace per page
-  content/fr.ts        type contract — a future en.ts must satisfy `Content`
+  content/fr/, content/en/   all user-facing copy, one JSON namespace per page per locale
+  content/fr.ts        type contract; content/en.ts `satisfies Content`
   data/                language-neutral structural data + helpers
     site.ts            GitHub identity + social URLs (single source of truth)
     projects.json/.ts  project structural data + typed accessor
@@ -72,7 +75,9 @@ src/
 - `useTranslation().t("common.nav.0.label")` → dotted lookup with `{var}` interpolation, for one-off labels.
 - Structural facts (URLs, dates as `YYYY-MM`, tech lists, project ids) go in `src/data/`, joined to prose by a stable `id`.
 - Namespaces: `common`, `home`, `parcours`, `projects`, `competences`, `bilan`, `versionLog`.
-- Default locale `fr`, persisted to `localStorage`, synced to `<html lang>`. `I18nProvider.setLocale` is ready for when `en` is added.
+- Adding/renaming a key in `fr/` **breaks the `en.ts` build** until `en/` matches — that's the point.
+- Default locale `fr`, persisted to `localStorage`, synced to `<html lang>`. `LanguageSwitcher` (in `BurgerHeader`) calls `useTranslation().setLocale`.
+- `LOCALES` is in `src/i18n/config.ts`; the content registry is `CONTENT_BY_LOCALE` in `src/i18n/context.ts`.
 
 ### Conventions
 
