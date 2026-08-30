@@ -1,1 +1,46 @@
-{}
+{
+  "identity": {
+    "name": "Xavier Lacroix",
+    "role": "Développeur Data Analyst",
+    "brandline": "votre gars de la data"
+  },
+  "nav": [
+    { "to": "/", "label": "Accueil" },
+    { "to": "/me", "label": "Parcours" },
+    { "to": "/projects", "label": "Missions & projets" },
+    { "to": "/competences", "label": "Compétences" },
+    { "to": "/bilan", "label": "Bilan" }
+  ],
+  "menu": { "label": "Menu" },
+  "footer": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "rights": "© {year} Xavier Lacroix. Tous droits réservés.",
+    "changelog": "Journal des versions",
+    "home": "Accueil"
+  },
+  "a11y": {
+    "portrait": "Photo de Xavier Lacroix",
+    "scrollDown": "Défiler vers le bas",
+    "imageLoading": "Chargement…"
+  },
+  "buttons": {
+    "expandAll": "Tout déplier",
+    "collapseAll": "Tout replier",
+    "expand": "Déplier",
+    "collapse": "Replier",
+    "seeMore": "Voir plus",
+    "back": "Retour"
+  },
+  "loading": "Chargement…",
+  "pageTitles": {
+    "home": "Xavier Lacroix — Développeur Data Analyst",
+    "parcours": "Parcours — Xavier Lacroix",
+    "projects": "Missions & projets — Xavier Lacroix",
+    "projectDetail": "{name} — Xavier Lacroix",
+    "competences": "Compétences — Xavier Lacroix",
+    "bilan": "Bilan d'alternance — Xavier Lacroix",
+    "versionLog": "Journal des versions — Xavier Lacroix"
+  }
+}

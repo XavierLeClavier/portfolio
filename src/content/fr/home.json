@@ -1,1 +1,37 @@
-{}
+{
+  "hero": {
+    "name": "Xavier Lacroix",
+    "brandline": "votre gars de la data"
+  },
+  "links": [
+    { "to": "/me", "label": "Découvrir mon parcours", "icon": "user" },
+    { "to": "/projects", "label": "Voir mes missions & projets", "icon": "projects" },
+    { "to": "/competences", "label": "Explorer mon portefeuille de compétences", "icon": "skills" },
+    { "to": "/bilan", "label": "Lire mon bilan d'alternance", "icon": "report" }
+  ],
+  "githubStats": {
+    "title": "Statistiques rapides",
+    "subtitle": "Un aperçu de mon activité de développement",
+    "note": "si vous n'êtes pas développeur ça peut ressembler à du charabia, mais promis, c'est intéressant"
+  },
+  "repos": {
+    "title": "Dépôts GitHub récents",
+    "subtitle": "Quelques-uns de mes projets récents sur GitHub, dont certains encore en cours ;)",
+    "buckets": {
+      "week": "Ce sur quoi j'ai travaillé cette semaine",
+      "month": "Ce sur quoi j'ai travaillé ce dernier mois",
+      "sixMonths": "Ce sur quoi j'ai travaillé ces six derniers mois",
+      "year": "Ce sur quoi j'ai travaillé cette année",
+      "older": "Ce que je n'ai pas touché depuis plus d'un an"
+    },
+    "seeMore": "Voir plus",
+    "noDescription": "Pas de description.",
+    "noLanguages": "Aucun langage détecté",
+    "latestCommit": "Dernier commit :",
+    "commitBy": "par {author} le {date}",
+    "viewCommit": "Voir le commit",
+    "noCommit": "Aucune information de commit.",
+    "error": "Impossible de charger les dépôts GitHub.",
+    "empty": "Aucun dépôt trouvé."
+  }
+}

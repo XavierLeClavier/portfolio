@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useContent } from "../i18n";
 
 
 interface ImageWithPlaceholderProps {
@@ -21,6 +22,7 @@ export default function ImageWithPlaceholder({
   onLoad,
 }: ImageWithPlaceholderProps) {
   const [imgLoaded, setImgLoaded] = useState(false);
+  const { a11y } = useContent("common");
 
   let shapeClass = "";
   if (shape === "circle") shapeClass = "rounded-full";
@@ -36,7 +38,7 @@ export default function ImageWithPlaceholder({
       {!imgLoaded && (
         <img
           src={placeholder}
-          alt="Loading..."
+          alt={a11y.imageLoading}
           className={`absolute top-0 left-0 w-full h-full object-cover z-0 ${shapeClass}`}
         />
       )}

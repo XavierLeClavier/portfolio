@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useContent } from "../i18n";
+import { site, githubRepoPath } from "../data/site";
 
 type Commit = {
     sha: string;
@@ -17,36 +19,39 @@ type Commit = {
 };
 
 export default function VersionLog() {
+    const copy = useContent("versionLog");
     const [commits, setCommits] = useState<Commit[]>([]);
     const [loading, setLoading] = useState(true);
+    const repoUrl = `${site.social.github}/${site.github.repo}`;
 
     useEffect(() => {
         fetch(
-            "https://api.github.com/repos/xavierleclavier/portfolio/commits?per_page=20"
+            `https://api.github.com/repos/${githubRepoPath}/commits?per_page=20`
         )
             .then((res) => res.json())
             .then((data) => {
-                setCommits(data);
+                setCommits(Array.isArray(data) ? data : []);
                 setLoading(false);
-            });
+            })
+            .catch(() => setLoading(false));
     }, []);
 
     return (
         <div className="bg-gray-900 min-h-screen py-12 px-4 md:px-16 text-white">
-            <h1 className="text-3xl font-bold mb-4 text-purple-400">Version Log</h1>
+            <h1 className="text-3xl font-bold mb-4 text-purple-400">{copy.title}</h1>
             <p className="mb-6 text-gray-300">
-                Showing recent commits for{' '}
+                {copy.introPrefix}{" "}
                 <a
-                    href="https://github.com/xavierleclavier/portfolio"
+                    href={repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline text-purple-400 hover:text-purple-300"
                 >
-                    github.com/xavierleclavier/portfolio
+                    github.com/{githubRepoPath}
                 </a>
             </p>
             {loading ? (
-                <p className="text-lg text-gray-400">Loading commits...</p>
+                <p className="text-lg text-gray-400">{copy.loading}</p>
             ) : (
                 <ul className="list-none p-0">
                     {commits.map((commit) => (
@@ -64,7 +69,7 @@ export default function VersionLog() {
                                 )}
                                 <strong className="text-white">{commit.commit.author.name}</strong>
                                 <span className="ml-3 text-gray-400 text-sm">
-                                    {new Date(commit.commit.author.date).toLocaleString()}
+                                    {new Date(commit.commit.author.date).toLocaleString("fr-FR")}
                                 </span>
                             </div>
                             <div className="mt-2">
@@ -78,7 +83,7 @@ export default function VersionLog() {
                                 </a>
                             </div>
                             <div className="mt-1 text-xs text-gray-500">
-                                SHA: {commit.sha.slice(0, 7)}
+                                {copy.sha} {commit.sha.slice(0, 7)}
                             </div>
                         </li>
                     ))}

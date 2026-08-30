@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+import { I18nProvider } from "./i18n";
 
 const BurgerHeader = React.lazy(() => import("./Components/BurgerHeader"));
 const ScrollToTop = React.lazy(() => import("./Components/ScrollToTop"));
@@ -10,15 +11,12 @@ const Loading = React.lazy(() => import("./Components/Loading"));
 const Home = React.lazy(() => import("./Pages/Home"));
 const WhoAmI = React.lazy(() => import("./Pages/WhoAmI"));
 const Projects = React.lazy(() => import("./Pages/Projects"));
-const Skills = React.lazy(() => import("./Pages/Skills"));
 const ProjectDetailedView = React.lazy(() => import("./Pages/ProjectDetailedView"));
+const Competences = React.lazy(() => import("./Pages/Competences"));
+const Bilan = React.lazy(() => import("./Pages/Bilan"));
 const VersionLog = React.lazy(() => import("./Pages/VersionLog"));
-const Technologies = React.lazy(() => import("./Pages/Technologies"));
-const ExtraComponent = React.lazy(() => import("./Pages/ExtraComponent"));
 
 import * as Cronitor from '@cronitorio/cronitor-rum';
-
-import { I18nProvider } from "./i18n";
 
 
 function App() {
@@ -29,7 +27,7 @@ function App() {
       trackMode: 'off',
     });
   }, []);
-  
+
   return (
     <I18nProvider>
       <BrowserRouter>
@@ -40,11 +38,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/me" element={<WhoAmI />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/skills" element={<Skills />} />
             <Route path="/projects/:projectName" element={<ProjectDetailedView />} />
+            <Route path="/competences" element={<Competences />} />
+            <Route path="/bilan" element={<Bilan />} />
             <Route path="/version-log" element={<VersionLog />} />
-            <Route path="/technologies" element={<Technologies />} />
-            <Route path="/extra" element={<ExtraComponent />} />
+            <Route path="/skills" element={<Navigate to="/competences" replace />} />
           </Routes>
         </React.Suspense>
         <Footer />
