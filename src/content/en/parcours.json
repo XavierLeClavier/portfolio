@@ -22,14 +22,11 @@
       "A significant part of my documentation and training work was to make the distinction between these two chains explicit, so that operational figures are never confused with official statistical figures."
     ]
   },
-  "frise": {
-    "title": "My background",
+  "formation": {
+    "title": "Education",
     "steps": [
       { "period": "Since 2026", "label": "INSA Lyon — engineering school, computer science" },
-      { "period": "2023 – 2026", "label": "BUT Informatique — IUT Lyon 1, AGED track" },
-      { "period": "Summer 2025", "label": "Sailing instructor — CESM Saint-Florent (Corsica)" },
-      { "period": "Summer 2024", "label": "Sailing instructor — Sète Agglopôle Méditerranée" },
-      { "period": "Summers 2021 – 2023", "label": "Sailing instructor — Yacht Club de la Grande-Motte (YCGM)" }
+      { "period": "2023 – 2026", "label": "BUT Informatique — IUT Lyon 1, AGED track" }
     ]
   },
   "sections": {
@@ -62,6 +59,17 @@
           "Strict compliance with confidentiality rules and the regulations covering sensitive healthcare data"
         ],
         "note": "Second-year internship of the BUT Informatique, AGED track, at IUT Lyon 1."
+      },
+      "sailing-instructor": {
+        "title": "Sailing instructor",
+        "organization": "YCGM (La Grande-Motte), Sète Agglopôle Méditerranée, CESM Saint-Florent",
+        "period": "Summers 2021 – 2025",
+        "details": [
+          "Taught catamaran and dinghy courses at every level",
+          "Helped train new instructors",
+          "Courses taught in French, English and Spanish",
+          "Safety and running a fleet of up to twelve boats"
+        ]
       }
     }
   },

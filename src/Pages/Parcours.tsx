@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaBriefcase, FaHeart } from "react-icons/fa";
 import { TbStarsFilled } from "react-icons/tb";
-import { LuBuilding2, LuServer } from "react-icons/lu";
+import { LuBuilding2, LuServer, LuGraduationCap } from "react-icons/lu";
 import { useContent } from "../i18n";
 import ImageWithPlaceholder from "../Components/ImageWithPlaceholder";
 import workExperience from "../data/workExperience.json";
@@ -133,6 +133,25 @@ export default function Parcours() {
         </div>
       </div>
 
+      {/* Formation — reverse chronological, one line per entry */}
+      <div className="max-w-4xl mx-auto mb-12">
+        <h2 className="text-2xl font-bold flex items-center mb-6">
+          <LuGraduationCap className="text-purple-500 mr-3" />
+          <span className="border-b-2 border-purple-500 pb-1">{c.formation.title}</span>
+        </h2>
+        <ul className="border-t border-gray-800">
+          {c.formation.steps.map((step, i) => (
+            <li
+              key={i}
+              className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-4 py-3 border-b border-gray-800"
+            >
+              <span className="text-sm text-purple-300 sm:w-44 shrink-0">{step.period}</span>
+              <span className="text-gray-100">{step.label}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
       {/* Lysarc */}
       <div className="max-w-4xl mx-auto mb-12">
         <h2 className="text-2xl font-bold flex items-center mb-6">
@@ -156,24 +175,6 @@ export default function Parcours() {
         <ul className="text-gray-100 list-disc pl-5 space-y-2">
           {c.environnement.items.map((item, i) => (
             <li key={i}>{item}</li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Parcours — reverse chronological, one line per entry */}
-      <div className="max-w-4xl mx-auto mb-14">
-        <h2 className="text-2xl font-bold mb-6">
-          <span className="border-b-2 border-purple-500 pb-1">{c.frise.title}</span>
-        </h2>
-        <ul className="border-t border-gray-800">
-          {c.frise.steps.map((step, i) => (
-            <li
-              key={i}
-              className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-4 py-3 border-b border-gray-800"
-            >
-              <span className="text-sm text-purple-300 sm:w-44 shrink-0">{step.period}</span>
-              <span className="text-gray-100">{step.label}</span>
-            </li>
           ))}
         </ul>
       </div>

@@ -22,14 +22,11 @@
       "Une part importante de mon travail de documentation et de formation a consisté à rendre explicite la distinction entre ces deux chaînes, pour que les chiffres opérationnels ne soient jamais confondus avec les chiffres statistiques officiels."
     ]
   },
-  "frise": {
-    "title": "Mon parcours",
+  "formation": {
+    "title": "Formation",
     "steps": [
       { "period": "Depuis 2026", "label": "INSA Lyon — école d'ingénieur, spécialité informatique" },
-      { "period": "2023 – 2026", "label": "BUT Informatique — IUT Lyon 1, parcours AGED" },
-      { "period": "Été 2025", "label": "Moniteur de voile — CESM Saint-Florent (Haute-Corse)" },
-      { "period": "Été 2024", "label": "Moniteur de voile — Sète Agglopôle Méditerranée" },
-      { "period": "Étés 2021 – 2023", "label": "Moniteur de voile — Yacht Club de la Grande-Motte (YCGM)" }
+      { "period": "2023 – 2026", "label": "BUT Informatique — IUT Lyon 1, parcours AGED" }
     ]
   },
   "sections": {
@@ -62,6 +59,17 @@
           "Respect strict des règles de confidentialité et de la réglementation applicable aux données de santé sensibles"
         ],
         "note": "Stage de 2e année de BUT Informatique, parcours AGED, à l'IUT Lyon 1."
+      },
+      "sailing-instructor": {
+        "title": "Moniteur de voile",
+        "organization": "YCGM (La Grande-Motte), Sète Agglopôle Méditerranée, CESM Saint-Florent",
+        "period": "Étés 2021 – 2025",
+        "details": [
+          "Encadrement de cours de catamaran et de dériveur, tous niveaux",
+          "Participation à la formation de nouveaux moniteurs",
+          "Cours dispensés en français, en anglais et en espagnol",
+          "Sécurité et animation d'une flotte pouvant aller jusqu'à douze bateaux"
+        ]
       }
     }
   },
