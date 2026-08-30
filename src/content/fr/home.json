@@ -2,7 +2,7 @@
   "hero": {
     "name": "Xavier Lacroix",
     "brandline": "étudiant en informatique à l'INSA Lyon",
-    "sub": "Trois ans à l'IUT Lyon 1, une alternance data chez Lysarc, et beaucoup de projets personnels."
+    "sub": "Trois ans à l'IUT Lyon 1, une alternance data au Lysarc, et beaucoup de projets personnels."
   },
   "links": [
     { "to": "/me", "label": "Découvrir mon parcours", "icon": "user" },
