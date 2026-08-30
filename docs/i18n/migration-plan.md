@@ -1,3 +1,7 @@
+> **Historical.** This was the original English-first migration plan. The work
+> was actually done as a French rebuild + moderate restructure (see the approved
+> plan and `CLAUDE.md`). Kept for reference.
+
 # Migration plan — Phase 1
 
 Ordered so the site stays green after every step. Do one step, run

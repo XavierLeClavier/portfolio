@@ -1,203 +1,81 @@
-# Architecture
+# Architecture (as built)
 
 ## Folder layout
 
 ```
 src/
   i18n/
-    I18nProvider.tsx     # context provider, holds current locale
-    useTranslation.ts    # t(path) — flat dotted lookup with fallback
-    useContent.ts        # useContent('home') — returns the typed namespace object
-    locales.ts           # locale registry + <html lang> + localStorage helpers
-    types.ts             # Locale union, Namespace union, content type helpers
-    index.ts             # re-exports
+    config.ts          Locale union, LOCALES, DEFAULT_LOCALE, storage key
+    context.ts         I18nContext + CONTENT_BY_LOCALE
+    I18nProvider.tsx   locale state, localStorage, <html lang> sync
+    hooks.ts           useI18n / useContent / useTranslation
+    index.ts           re-exports
 
   content/
-    en/
-      common.json        # nav, footer, buttons, loading/error text, shared labels
-      home.json
-      whoami.json
-      projects.json      # list-page + detail-page UI strings + per-project prose
-      skills.json        # competency cards, technical-skill group headings, intros
-      technologies.json  # graph page: panel, how-to, info-box labels, category + tech descriptions
+    fr/
+      common.json      identity, nav, footer, a11y, buttons, loading, pageTitles
+      home.json        hero, link cards, GitHub stats/repos strings
+      parcours.json    bio, Lysarc, technical environment, S4→S6 timeline, work/volunteer/hobbies prose
+      projects.json    list + detail labels, per-project prose (rich for missions)
+      competences.json 6 RNCP blocks + stack technique
+      bilan.json       bilan technique/professionnel/humain, projet post-BUT
       versionLog.json
-    en.ts                # imports every en/*.json, exports one typed object (see below)
+    fr.ts              imports the JSON, exports `fr` + `type Content` + `type Namespace`
 
-  data/                  # locale-neutral structural data (was src/experiences/*.json)
-    projects.json
-    workExperience.json
-    volunteerExperience.json
-    hobbies.json
-    techGraph.json       # nodes/links for the force graph (structure only)
-    techMeta.json        # per-tech: category + related project ids (no prose)
-    icons.tsx            # single unified icon map (merge of icons.tsx + getTechIcon.tsx)
-    site.ts              # GitHub username, repo, social URLs, avatar — one source of truth
+  data/
+    site.ts            GitHub username/repo/avatar + social URLs
+    projects.json      per project: id, category, featured, order, url, image, github, startDate/endDate (YYYY-MM), ongoing, technologies
+    projects.ts        typed accessor: projects, featuredProjects, otherProjects, findProject
+    competencies.json  per block: id, code (RNCP35477BC0x), niveauVise, niveauAutoEval, order, projectIds
+    competencies.ts    typed accessor
+    workExperience.json, volunteerExperience.json   id, dates, ongoing, order
+    hobbies.json       id, image key, order
+    icons.tsx          techIcons registry + getIcon(name)
+
+  lib/
+    slug.ts            slugify()
+    dates.ts           formatMonthYear(), formatRange()
 ```
-
-`src/experiences/` is deleted once everything is moved out of it.
 
 ## The content / data split
 
-Every list item (project, job, hobby, skill, technology) gets a **stable string
-`id`**. Structural fields are keyed by that id in `src/data/`; translatable prose
-is keyed by the same id in `src/content/<locale>/`. The component joins them.
+Every list item (project, job, hobby, competency) has a stable string `id`.
+Structural fields keyed by that id in `src/data/`; translatable prose keyed by
+the same id in `src/content/<locale>/`. Components join them.
 
-### Example: projects
+Example — a project card:
 
-`src/data/projects.json` — never duplicated per locale:
-
-```json
-[
-  {
-    "id": "didactypo",
-    "url": "https://didactypo.gamberge.org",
-    "image": "https://github.com/Team-Maitrobe/DidactypoFront/blob/master/src/img/logoDidactypo.png?raw=true",
-    "github": "https://github.com/Team-Maitrobe/DidactypoFront",
-    "startDate": "2024-09",
-    "endDate": "2025-05",
-    "ongoing": false,
-    "technologies": ["React", "TypeScript", "FastAPI", "Firebase", "Python", "CSS", "Scrum"],
-    "order": 1
-  }
-]
-```
-
-`src/content/en/projects.json`:
-
-```json
-{
-  "list": {
-    "title": "My projects",
-    "intro": "For the last 10 years, I've been putting my ideas into practice…",
-    "iconHint": "Hover over the tech icons to get their name"
-  },
-  "detail": {
-    "sectionDescription": "Description",
-    "sectionTechnologies": "Technologies",
-    "sectionWork": "Work",
-    "sectionKeywords": "Keywords",
-    "visitWebsite": "Visit Website",
-    "githubRepo": "GitHub Repository",
-    "back": "Back to Projects",
-    "notFound": "Project not found",
-    "dateRangeOngoing": "{start} – present",
-    "dateRange": "{start} – {end}"
-  },
-  "items": {
-    "didactypo": {
-      "name": "Didactypo",
-      "subtitle": "Team project",
-      "description": "Didactypo is a free, open-source website…",
-      "implication": "Didactypo was a 4-person project where I was one of 2 developers…",
-      "keywords": ["fullstack", "education", "typing", "gamification"]
-    }
-  }
-}
+```tsx
+const c = useContent("projects");
+const data = findProject(id);          // src/data — dates, url, tech, image
+const item = c.items[id];              // src/content/fr — name, summary, prose
 ```
 
 Rules:
-
-- **Keyed objects, not arrays, for translatable lists.** Reordering or adding a
-  locale never breaks alignment, and a missing translation is an obvious missing
-  key. Ordering for display comes from an `order` field in `src/data/` (or the
-  array order there).
-- `keywords` and `subtitle` are treated as **content** (they are English phrases
-  a reader sees). `technologies` stays **data** (they key into the icon map).
-- Dates become ISO-ish `YYYY-MM` in data; the display string is formatted by the
-  component using the `dateRange` / `dateRangeOngoing` templates. The old magic
-  value `"now"` becomes `"ongoing": true`.
-- `organization` names and proper nouns (LYSARC, Scouts et Guides de France,
-  Paris 2024) stay in **content** — they can legitimately differ by locale and
-  they are prose, not keys.
+- Keyed objects, not arrays, for translatable lists (reorder-safe, missing keys visible).
+- Display order comes from an `order` field in `src/data/`.
+- Dates are `YYYY-MM` in data; `src/lib/dates.ts` formats them in French.
+- Project `id` == URL slug (route param `:projectName` is the id directly).
 
 ## The hook API
-
-Two accessors. Prefer `useContent` for anything structured; use `t` for one-off
-labels.
 
 ```tsx
 import { useContent, useTranslation } from "../i18n";
 
-function ProjectsList() {
-  const c = useContent("projects");      // fully typed from en/projects.json
-  return <h1>{c.list.title}</h1>;
-}
-
-function BackButton() {
-  const { t } = useTranslation();
-  return <button>{t("projects.detail.back")}</button>;   // "namespace.path.to.key"
-}
+const c = useContent("competences");          // typed namespace object
+const { t, locale, setLocale } = useTranslation();
+t("common.footer.rights", { year: 2026 });    // dotted lookup + {var}, warns on miss
 ```
-
-- `t(path, vars?)` — splits on `.`, first segment is the namespace. Supports
-  `{name}` interpolation via the optional `vars` record. Returns the key itself
-  (and `console.warn`s) if not found, so a miss is visible but never crashes.
-- `useContent(ns)` — returns the raw object for that namespace, typed. This is
-  what pages use for lists, nested sections, arrays.
-- `useTranslation()` also returns `{ locale, setLocale, locales }` for the future
-  language switcher.
 
 ## Types
 
-`src/content/en.ts` is the type anchor:
+`src/content/fr.ts` is the type anchor: `type Content = typeof fr`. A future
+`src/content/en.ts` must be `satisfies Content`, making every missing English key
+a compile error.
 
-```ts
-import common from "./en/common.json";
-import home from "./en/home.json";
-import whoami from "./en/whoami.json";
-import projects from "./en/projects.json";
-import skills from "./en/skills.json";
-import technologies from "./en/technologies.json";
-import versionLog from "./en/versionLog.json";
+## Loading
 
-export const en = { common, home, whoami, projects, skills, technologies, versionLog };
-export type Content = typeof en;
-export type Namespace = keyof Content;
-```
-
-`tsconfig.app.json` already resolves JSON imports (`"resolveJsonModule"` is
-implied by Vite + `"module": "ESNext"`; add it explicitly if `tsc -b` complains).
-Because `en` is the type, **`en` is the contract** — a future `fr.ts` must
-`satisfies Content`, which turns every missing French key into a compile error.
-
-## Loading strategy
-
-**Now (English only):** import everything statically in `src/content/en.ts`.
-Vite bundles the JSON; no async, no flash. The provider just holds
-`locale = "en"` and serves `en`.
-
-**When French is added:** switch the provider to
-
-```ts
-const loaders = import.meta.glob("./content/*/*.json");
-```
-
-and lazy-load the active locale's namespaces, keeping `en` eagerly bundled as the
-fallback. The hook API does not change. This is Phase 3 — do not build it now,
-but do not architect anything that would block it (e.g. don't `import` locale
-JSON directly inside a page component; always go through the hook).
-
-## Provider wiring
-
-`src/App.tsx`:
-
-```tsx
-<I18nProvider>
-  <BrowserRouter>
-    …
-  </BrowserRouter>
-</I18nProvider>
-```
-
-`I18nProvider` on mount: read `localStorage.getItem("locale")` → fall back to
-`"en"` → set `document.documentElement.lang`. `setLocale` writes all three
-(state, `localStorage`, `<html lang>`).
-
-## What stays in code
-
-- Tailwind class names, layout, animation config.
-- Icon components and the `techIcons` map (keyed by technology name — those keys
-  are shared vocabulary between `data/` and the icon map, not UI copy).
-- Route paths in `App.tsx`.
-- `aria-label`s: move them to content too (`common.a11y.*`) — they are
-  user-facing and translatable.
+English-only-later means everything is imported statically in `fr.ts` (Vite
+bundles the JSON, no async, no flash). When `en` is added, switch the provider
+to lazy-load the active locale; the hook API is unchanged. Do not `import` locale
+JSON directly in a component — always go through the hook.

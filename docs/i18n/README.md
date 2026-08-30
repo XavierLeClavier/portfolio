@@ -1,61 +1,46 @@
-# Content externalization — overview
+# Content layer & i18n
 
-## Goal
+**Status: implemented.** All user-facing copy now lives in `src/content/fr/`,
+read through a small custom hook. Structural data is split into `src/data/`.
 
-Move **every** piece of user-facing text out of the `.tsx` files and into
-structured JSON, so that:
+## Why
 
 1. Copy can be edited without touching component code.
-2. The site can be translated later by adding a sibling locale folder.
+2. The site can be translated later by adding a sibling `src/content/en/` folder.
 3. There is a single, reviewable inventory of what the site says.
 
-This is a prerequisite for the two follow-up efforts:
+## Decisions (as built)
 
-- **Phase 2 — rewrite the copy** (`content-rewrite.md`). Much easier once every
-  string is in one place.
-- **Phase 3 — add French** (not scheduled). The architecture is built for it now
-  but no `fr/` folder is created yet.
+| Question | Choice |
+|----------|--------|
+| Translation layer | Lightweight custom — a React context + `useTranslation()` / `useContent()` hook reading plain JSON. No `react-i18next`. |
+| File layout | Per-locale, per-page: `src/content/fr/home.json`, etc. |
+| Data vs prose | Split. Structural fields (URLs, `YYYY-MM` dates, tech lists, project ids) in `src/data/`; translatable prose in `src/content/<locale>/`, joined by a stable `id`. |
+| Locales | **French only.** `fr` is the default and only authored locale. The provider, `setLocale`, `<html lang>` sync and `localStorage` persistence are all in place for `en`. |
 
-## Decisions (locked)
+## Namespaces
 
-| Question | Choice | Why |
-|----------|--------|-----|
-| Translation layer | **Lightweight custom** — a React context + `useTranslation()` / `useContent()` hook that reads plain JSON. No `react-i18next` / `react-intl`. | Small static site, no pluralization/ICU needs, keeps the dependency list short, full control. |
-| File layout | **Per-locale, per-page**: `src/content/en/home.json`, `src/content/en/projects.json`, … | Small files, clean diffs, translate one page at a time, lazy-loadable per route later. |
-| Existing data files | **Split data from prose.** Structural fields (URLs, dates, tech lists, graph edges) go to `src/data/` (locale-neutral). Translatable prose (descriptions, `implication`, `details`, hobby text) moves into `src/content/en/`. | URLs and dates must not be duplicated per locale or they drift. |
-| Locales now | **English only.** Build the whole mechanism, ship `en`, add the language switcher + `fr` later. | No half-translated site; lowest risk. |
+`common`, `home`, `parcours`, `projects`, `competences`, `bilan`, `versionLog`
+— see `src/content/fr.ts`.
 
-## Phases
+## Adding English later (Phase 3)
 
-### Phase 1 — mechanism + migration (this effort)
+1. Create `src/content/en/` mirroring `fr/`, and `src/content/en.ts`
+   `satisfies Content` (missing keys become compile errors).
+2. Register it in `src/i18n/context.ts` (`CONTENT_BY_LOCALE`) and
+   `src/i18n/config.ts` (`LOCALES`).
+3. Add a `LanguageSwitcher` component calling `useTranslation().setLocale`.
+4. Optionally switch the provider to lazy-load locale bundles via
+   `import.meta.glob`.
 
-1. Build `src/i18n/` (provider + hooks + types).
-2. Create `src/content/en/` and `src/data/`.
-3. Migrate page by page, in the order given in `migration-plan.md`.
-4. Delete the old hard-coded strings and the `src/experiences/*.json` data files as each is fully moved.
-5. `pnpm build` + `pnpm lint` clean, every route visually unchanged.
+The hook API does not change.
 
-**Definition of done:** grep the `src/` tree for user-facing string literals in
-JSX and find only `src/content/` and `src/data/`. See
-`migration-plan.md` for the exact grep checklist.
-
-### Phase 2 — content rewrite
-
-Revise the actual wording. Tracked separately in `content-rewrite.md`. Do not
-start until Phase 1 is merged.
-
-### Phase 3 — French (future)
-
-Add `src/content/fr/`, a `LanguageSwitcher` component, `localStorage`
-persistence, and `<html lang>` syncing. The hook already supports `setLocale`;
-this phase just fills in the data and UI.
-
-## Document index
+## Documents
 
 | File | Purpose |
 |------|---------|
-| `README.md` | this file — goals, decisions, phases |
-| `architecture.md` | folder layout, JSON shapes, the hook API, typing, loading strategy |
-| `content-inventory.md` | every string in the app today, mapped to its destination key |
-| `migration-plan.md` | ordered task list with per-step acceptance criteria |
-| `content-rewrite.md` | Phase 2 — copy revision checklist |
+| `README.md` | this file |
+| `architecture.md` | the mechanism, folder layout, hook API, typing |
+| `content-rewrite.md` | Phase 2 — revising the French copy |
+| `content-inventory.md` | *(historical)* pre-migration string inventory |
+| `migration-plan.md` | *(historical)* the original English-first migration plan |

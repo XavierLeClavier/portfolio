@@ -1,3 +1,8 @@
+> **Historical.** This inventory was written before the migration, against the
+> old English pages. It has been carried out (with a French rebuild and a
+> moderate restructure). Kept for reference; current state is in
+> `architecture.md` and `CLAUDE.md`.
+
 # Content inventory
 
 Every user-facing string in the app today, with its destination. Line numbers

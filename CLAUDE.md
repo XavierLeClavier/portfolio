@@ -4,100 +4,89 @@ Guidance for Claude Code when working in this repository.
 
 ## What this is
 
-Personal portfolio site for Xavier Lacroix ("your data guy"). Single-page React
-app, no backend of its own — it pulls live data from the GitHub API at runtime
-and reads all other content from local JSON.
+Personal portfolio for **Xavier Lacroix**, and the academic deliverable for his
+S6 alternance defense (BUT Informatique, parcours **AGED** — Administration,
+Gestion et Exploitation des Données, IUT Lyon 1). Single-page React app; pulls
+live data from the GitHub API at runtime, all other content is local JSON.
+
+**The site is in French.** English is a planned second locale (the mechanism is
+built for it) but not authored yet. See `docs/i18n/`.
+
+Two companion docs at the repo root are **git-ignored** and contain confidential
+/ working material — read them before writing public copy but never commit them
+or their figures:
+- `xavier-context.md` — the alternance missions, tiered by what may be published.
+- `docs/portfolio-todo.md` — what Xavier still needs to supply/confirm.
 
 ## Stack
 
-- **React 19** + **TypeScript** (`.tsx` everywhere, strict mode on)
-- **Vite 6** build / dev server
-- **Tailwind CSS v4** (via `@tailwindcss/vite`, imported in `src/index.css` — there is no `tailwind.config.js`)
-- **React Router v7** (`BrowserRouter`, routes declared in `src/App.tsx`)
-- **Framer Motion** for entrance animations
-- **react-force-graph-2d** for the interactive tech-stack graph
-- **react-icons** for all technology / brand icons
-- **Cronitor RUM** for visitor analytics
-- Hosted on **Vercel** (`vercel.json` rewrites everything to `index.html`) and also self-hosted on a Raspberry Pi (LAMP).
-
-## Commands
-
-Package manager is **pnpm** (`pnpm-lock.yaml` + `pnpm-workspace.yaml` are the source of truth; a stale `package-lock.json` is also checked in and should be removed).
+- **React 19** + **TypeScript** (`.tsx`, strict), **Vite 6**, **Tailwind v4** (via `@tailwindcss/vite`, no config file), **React Router v7**, **Framer Motion**, **react-icons**, **Cronitor RUM**.
+- Package manager: **pnpm** (`pnpm-lock.yaml`). Hosted on Vercel + self-hosted (Raspberry Pi, LAMP).
+- No test suite, no CI. Verify with `pnpm build` (runs `tsc -b`) and `pnpm lint`.
 
 ```bash
 pnpm install
-pnpm dev        # vite dev server
-pnpm build      # tsc -b && vite build
-pnpm lint       # eslint .
-pnpm preview    # serve the production build
+pnpm dev
+pnpm build
+pnpm lint
+pnpm preview
 ```
 
-There is **no test suite** and no CI. Verify changes with `pnpm build` (catches
-type errors) and `pnpm lint`.
-
-## Layout
+## Architecture
 
 ```
 src/
-  App.tsx            # routes + lazy-loaded page/layout components
-  main.tsx           # React root
-  index.css          # Tailwind import + one `.active` NavLink style
-  Pages/             # one component per route
-  Components/         # shared UI (header, footer, cards, loaders, image helper)
-  experiences/       # content + data JSON, plus the two icon maps
-  img/               # local images imported by bundler
-public/              # static assets served as-is (placeholder.svg, .htaccess)
+  App.tsx              routes + <I18nProvider>
+  i18n/                custom i18n layer (provider + useContent + useTranslation)
+  content/fr/          all user-facing copy, one JSON namespace per page
+  content/fr.ts        type contract — a future en.ts must satisfy `Content`
+  data/                language-neutral structural data + helpers
+    site.ts            GitHub identity + social URLs (single source of truth)
+    projects.json/.ts  project structural data + typed accessor
+    competencies.json/.ts   the 6 RNCP blocks + evidence project ids
+    workExperience.json, volunteerExperience.json, hobbies.json
+    icons.tsx          unified technology icon registry + getIcon()
+  lib/                 slug.ts, dates.ts
+  Pages/               Home, Parcours, Projects, ProjectDetailedView,
+                       Competences, Bilan, VersionLog
+  Components/          shared UI
 ```
 
-### Routes (`src/App.tsx`)
+### Routes
 
-| Path | Page | Notes |
-|------|------|-------|
-| `/` | `Home` | hero + GitHub stats/repos (live API) |
-| `/me` | `WhoAmI` | bio, work, volunteer, hobbies |
-| `/projects` | `Projects` | card grid from `experiences/projects.json` |
-| `/projects/:projectName` | `ProjectDetailedView` | slug = project name with spaces → hyphens, case-insensitive |
-| `/skills` | `Skills` | 6 competency cards + technical-skill groups |
-| `/technologies` | `Technologies` | force-directed graph |
-| `/version-log` | `VersionLog` | last 20 commits from GitHub API |
-| `/extra` | `ExtraComponent` | **stub** ("Nouveau texte !"), not linked in nav |
+| Path | Page | |
+|------|------|---|
+| `/` | Home | hero + GitHub stats/repos (live API) |
+| `/me` | Parcours | bio, Lysarc context, technical environment, S4→S6 timeline, experience accordions |
+| `/projects` | Projects | 3 featured Lysarc missions, then personal/school projects |
+| `/projects/:projectName` | ProjectDetailedView | param is the project **id**; rich section set for missions, simple set for the rest |
+| `/competences` | Competences | portefeuille de compétences — 6 RNCP blocks + stack technique |
+| `/bilan` | Bilan | bilan technique / professionnel / humain + projet post-BUT |
+| `/version-log` | VersionLog | commits from the GitHub API |
+| `/skills` | → redirect to `/competences` | |
 
-## Conventions
+### Content / i18n
 
-- **Dark theme only.** Backgrounds `bg-gray-800` / `bg-gray-900`, accent `purple-400` / `purple-500`, body text `text-gray-100` / `text-gray-300`.
-- **Lazy loading.** Pages and heavy layout components are `React.lazy` + `Suspense` with the `Loading` fallback. Keep new pages on this pattern.
-- **Staged rendering.** Several pages (`Home`, `WhoAmI`) reveal sections progressively with `useState` flags and `requestAnimationFrame` / image `onLoad`. Preserve this when editing those files.
-- **Data lives in JSON, not in components** — see the in-progress refactor below. New user-facing text should never be hard-coded in a `.tsx` file.
-- **Icons** come from `experiences/icons.tsx` (`techIcons` map) or `experiences/getTechIcon.tsx` (`getTechIcon` switch). These two are duplicates that should be unified into one module.
+- **Never hard-code user-facing text in a `.tsx` file.** It lives in `src/content/fr/<namespace>.json`.
+- `useContent("home")` → the typed namespace object (use for anything structured).
+- `useTranslation().t("common.nav.0.label")` → dotted lookup with `{var}` interpolation, for one-off labels.
+- Structural facts (URLs, dates as `YYYY-MM`, tech lists, project ids) go in `src/data/`, joined to prose by a stable `id`.
+- Namespaces: `common`, `home`, `parcours`, `projects`, `competences`, `bilan`, `versionLog`.
+- Default locale `fr`, persisted to `localStorage`, synced to `<html lang>`. `I18nProvider.setLocale` is ready for when `en` is added.
 
-## Active refactor: externalize all content
+### Conventions
 
-The site is mid-migration from hard-coded JSX strings to a locale-keyed content
-layer so it can be translated later. **Before touching any page or its text,
-read `docs/i18n/`:**
-
-1. `docs/i18n/README.md` — goals, decisions, phase overview
-2. `docs/i18n/architecture.md` — the content/data split, folder layout, the `useTranslation` / `useContent` hook
-3. `docs/i18n/content-inventory.md` — every string in the app and where it should move
-4. `docs/i18n/migration-plan.md` — ordered, checkable task list
-5. `docs/i18n/content-rewrite.md` — phase 2: revising the copy itself (do not start until phase 1 lands)
-
-Decisions already locked in: lightweight custom hook (no i18n library),
-per-locale + per-page JSON files under `src/content/<locale>/`, structural data
-split out into `src/data/`, English-only for now with the mechanism ready for
-more locales.
+- Dark theme only: `bg-gray-800/900`, accent `purple-400/500`, text `gray-100/300`.
+- Pages are `React.lazy` under a Suspense boundary in `App.tsx`.
+- Icons: `getIcon(name)` from `src/data/icons.tsx` — returns `null` for unknown names, callers fall back to text.
+- The 6 competency blocks use the official RNCP35477 names. `niveauLibelle` and `apprentissagesCritiques` in `competences.json` are drafts marked `(à confirmer)` — Xavier replaces them from his référentiel.
 
 ## Known issues / gotchas
 
-- **Env vars are likely broken.** Code reads `import.meta.env.VITE_CRONITOR_API_KEY`, `VITE_GITHUB_TOKEN`, `VITE_GITHUB_TOKEN`, but `.env` defines `CRONITOR_API_KEY` / `GITHUB_TOKEN` without the `VITE_` prefix Vite requires. Confirm the Vercel env before assuming the token works; unauthenticated GitHub API calls are rate-limited to 60/hour.
-- **GitHub identity is inconsistent.** `XavierLeClavier` (Home avatar, `GitHubStats`, `LatestGithubRepos`, `projects.json`), `XavierLeClavier` in `Footer`, and `xavierleclavier/portfolio` (lowercased) in `VersionLog`. Centralize into one site-config module.
-- **`projectNameToSlug` is duplicated** in `Skills.tsx`, `Components/Project.tsx`, and reimplemented inline in `ProjectDetailedView.tsx`. The project `"DESCAR T"` only has a space because the slug logic can't handle hyphens. Give projects a stable `id`/`slug` field and one shared helper.
-- **`Components/Project.tsx` keyword colors** use `Math.random()` in render, so they change on every re-render. Not content — fix separately if touched.
-- `VersionLog` and `LatestGithubRepos` do no error handling on `res.json()` shape; a rate-limit response will render as a crash or empty state.
-- `Components/ContactMe.tsx` and `Pages/ExtraComponent.tsx` are empty/stub. `ExtraComponent` is exported as `function Home()`.
+- **Env vars**: code reads `import.meta.env.VITE_CRONITOR_API_KEY` / `VITE_GITHUB_TOKEN`; `.env` defines them **without** the `VITE_` prefix Vite requires. Confirm the Vercel env; unauthenticated GitHub API is rate-limited to 60/h.
+- Mission tiles 2 & 3 use `/placeholder.svg` — Xavier should supply non-confidential visuals.
+- `LatestGithubRepos` makes many sequential GitHub API calls (N+1 per repo); a rate-limit response degrades to the error state.
 
-## What not to touch without being asked
+## Do not touch without being asked
 
-- `public/.htaccess` (Raspberry Pi Apache config)
-- `vercel.json`
-- The force-graph math in `Technologies.tsx` (`buildThreeLevelGraph`, d3 force tuning) unless the task is specifically about the graph
+`public/.htaccess`, `vercel.json`. Do not commit `xavier-context.md` or `docs/portfolio-todo.md`.
