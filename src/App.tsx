@@ -9,7 +9,7 @@ const Footer = React.lazy(() => import("./Components/Footer"));
 const Loading = React.lazy(() => import("./Components/Loading"));
 
 const Home = React.lazy(() => import("./Pages/Home"));
-const WhoAmI = React.lazy(() => import("./Pages/WhoAmI"));
+const Parcours = React.lazy(() => import("./Pages/Parcours"));
 const Projects = React.lazy(() => import("./Pages/Projects"));
 const ProjectDetailedView = React.lazy(() => import("./Pages/ProjectDetailedView"));
 const Competences = React.lazy(() => import("./Pages/Competences"));
@@ -36,7 +36,7 @@ function App() {
         <React.Suspense fallback={<Loading fullscreen={true} />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/me" element={<WhoAmI />} />
+            <Route path="/me" element={<Parcours />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:projectName" element={<ProjectDetailedView />} />
             <Route path="/competences" element={<Competences />} />

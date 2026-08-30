@@ -1,0 +1,5 @@
+[
+  { "id": "voile", "image": "xavoile", "order": 1 },
+  { "id": "hackathons", "image": "nuitinfo", "order": 2 },
+  { "id": "benevolat", "image": "xavchef", "order": 3 }
+]
