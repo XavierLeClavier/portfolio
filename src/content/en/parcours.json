@@ -25,26 +25,11 @@
   "frise": {
     "title": "My background",
     "steps": [
-      {
-        "period": "2023 – 2026",
-        "label": "BUT Informatique — IUT Lyon 1",
-        "text": "Three years on the AGED track (data administration, management and exploitation). Fundamentals of development, algorithms and databases, and a series of team projects."
-      },
-      {
-        "period": "April – July 2024",
-        "label": "S4 internship — Lysarc",
-        "text": "A discovery internship. First contact with the DESCAR-T registry: extracting, transforming and cleaning data with SAS and SQL, first Power BI dashboards, under the team's guidance."
-      },
-      {
-        "period": "September 2025 – 2026",
-        "label": "S6 apprenticeship — Lysarc",
-        "text": "The apprenticeship, in full ownership. Designing the methodology and the BI architecture, building Python applications to automate quality control, a local conversational-agent POC, supporting the team. A shift from execution to design."
-      },
-      {
-        "period": "Since September 2026",
-        "label": "INSA Lyon",
-        "text": "Continuing into an engineering school, computer science specialism. The goal: broaden my foundations and go deeper into data engineering, systems and AI."
-      }
+      { "period": "Since 2026", "label": "INSA Lyon — engineering school, computer science" },
+      { "period": "2023 – 2026", "label": "BUT Informatique — IUT Lyon 1, AGED track" },
+      { "period": "Summer 2025", "label": "Sailing instructor — CESM Saint-Florent (Corsica)" },
+      { "period": "Summer 2024", "label": "Sailing instructor — Sète Agglopôle Méditerranée" },
+      { "period": "Summers 2021 – 2023", "label": "Sailing instructor — Yacht Club de la Grande-Motte (YCGM)" }
     ]
   },
   "sections": {
@@ -77,17 +62,6 @@
           "Strict compliance with confidentiality rules and the regulations covering sensitive healthcare data"
         ],
         "note": "Second-year internship of the BUT Informatique, AGED track, at IUT Lyon 1."
-      },
-      "sailing-instructor": {
-        "title": "Sailing instructor",
-        "organization": "Several sailing clubs in Corsica and the south of France",
-        "period": "2021 – 2025 (two months every summer)",
-        "details": [
-          "Taught catamaran and dinghy courses at every level",
-          "Helped train new instructors",
-          "Courses taught in French, English and Spanish",
-          "Safety and running a fleet of up to twelve boats"
-        ]
       }
     }
   },

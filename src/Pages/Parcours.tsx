@@ -160,20 +160,22 @@ export default function Parcours() {
         </ul>
       </div>
 
-      {/* Frise S4 -> S6 */}
+      {/* Parcours — reverse chronological, one line per entry */}
       <div className="max-w-4xl mx-auto mb-14">
         <h2 className="text-2xl font-bold mb-6">
           <span className="border-b-2 border-purple-500 pb-1">{c.frise.title}</span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <ul className="border-t border-gray-800">
           {c.frise.steps.map((step, i) => (
-            <div key={i} className="bg-gray-800 rounded-lg p-6 border-l-4 border-purple-500">
-              <div className="text-sm uppercase tracking-wide text-purple-300">{step.label}</div>
-              <div className="text-gray-400 text-sm mb-3">{step.period}</div>
-              <p className="text-gray-100">{step.text}</p>
-            </div>
+            <li
+              key={i}
+              className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-4 py-3 border-b border-gray-800"
+            >
+              <span className="text-sm text-purple-300 sm:w-44 shrink-0">{step.period}</span>
+              <span className="text-gray-100">{step.label}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
       {/* Expand / collapse all */}
