@@ -1,0 +1,5 @@
+[
+  { "id": "lysarc-alternance", "startDate": "2025-09", "endDate": "", "ongoing": true, "order": 1 },
+  { "id": "lysarc-stage", "startDate": "2024-04", "endDate": "2024-07", "ongoing": false, "order": 2 },
+  { "id": "sailing-instructor", "startDate": "2021-07", "endDate": "2025-08", "ongoing": false, "order": 3 }
+]

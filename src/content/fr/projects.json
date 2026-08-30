@@ -1,0 +1,158 @@
+{
+  "list": {
+    "title": "Missions & projets",
+    "intro": "Je construis des projets depuis le lycée : des sites web, des outils, un homelab, des agents IA, et une année de missions data en alternance. En voici une sélection.",
+    "iconHint": "Survolez les icônes pour afficher le nom de la technologie",
+    "missionsHeading": "Missions d'alternance, Lysarc",
+    "missionsSubheading": "Trois axes menés en parallèle sur le registre clinique national DESCAR-T.",
+    "academicHeading": "Projets académiques, IUT Lyon 1",
+    "academicSubheading": "Projets d'équipe menés pendant le BUT Informatique.",
+    "personalHeading": "Projets personnels",
+    "personalSubheading": "Ce que je construis sur mon temps libre, pour apprendre ou pour m'en servir."
+  },
+  "card": {
+    "readMore": "Lire la suite",
+    "visit": "Voir le projet",
+    "github": "GitHub",
+    "technologies": "Technologies",
+    "keywords": "Mots-clés"
+  },
+  "detail": {
+    "back": "Retour aux projets",
+    "notFound": "Projet introuvable",
+    "visitWebsite": "Voir le site",
+    "githubRepo": "Dépôt GitHub",
+    "sections": {
+      "description": "Description",
+      "technologies": "Technologies",
+      "role": "Mon rôle",
+      "keywords": "Mots-clés",
+      "context": "Contexte",
+      "objectives": "Objectif",
+      "realisation": "Ce que j'ai fait",
+      "projectManagement": "Méthode de travail",
+      "technical": "Technique",
+      "outcome": "Résultat",
+      "progression": "Du stage à l'alternance"
+    }
+  },
+  "items": {
+    "plateforme-decisionnelle": {
+      "name": "Plateforme décisionnelle sur registre clinique",
+      "subtitle": "Alternance Lysarc, registre national DESCAR-T",
+      "summary": "Une solution Power BI sur la qualité des données et l'activité du registre clinique national DESCAR-T, pour deux publics : biostatisticiens et chefs de projet.",
+      "context": "DESCAR-T est le registre national des patients traités par cellules CAR-T. Sa difficulté n'est pas le volume mais la structure : un cahier d'observation qui a beaucoup changé, des variables valables seulement pour certains patients, et chaque donnée collectée de nombreuses fois. Avant, les indicateurs de qualité étaient des tableaux figés et un gros classeur Excel refait à la main chaque semaine. Les scores de qualité existaient déjà ; mon travail était de les rendre exploitables.",
+      "objectives": "Donner aux deux publics une lecture autonome et fiable de la qualité et de l'activité du registre, sans passer par un intermédiaire technique.",
+      "realisation": "Ateliers de recueil du besoin avec chaque public. Maquette validée, puis modèle de données en étoile, indicateurs en DAX, transformation en amont sous SAS et Power Query, publication sur Power BI Cloud. Chaque indicateur vérifié face aux extractions de référence. Documentation et formation des utilisateurs à la fin.",
+      "projectManagement": "Livraison itérative. Une première version incomplète mise en ligne tôt, puis améliorée chaque semaine sur les retours d'usage. Cadrage de la sécurité et de la confidentialité avec le DSI et le DPO. Données pseudonymisées, travail sous méthodologie MR-004.",
+      "technical": "SAS, Power Query, Power BI Desktop, DAX, Power BI Cloud. Le modèle en étoile rend explicite la granularité de chaque indicateur (patient, traitement ou événement), ce qui est indispensable vu la structure du registre.",
+      "outcome": "Les utilisateurs produisent leurs propres vues sans intermédiaire. Le temps de préparation des réunions a baissé et les définitions d'indicateurs sont harmonisées. Le travail a été présenté en interne lors d'un café scientifique.",
+      "progression": "En stage, je réalisais des tableaux de bord à partir de consignes. En alternance, j'ai pris toute la démarche en main : méthode, modèle de données, cadrage réglementaire, formation. Je suis passé de la production de tableaux de bord à la conception d'une solution.",
+      "keywords": ["décisionnel", "modélisation en étoile", "qualité des données", "données de santé", "RGPD"]
+    },
+    "outils-qualite-python": {
+      "name": "Outils Python de contrôle qualité",
+      "subtitle": "Alternance Lysarc, département de biostatistique",
+      "summary": "Quatre applications Python pour automatiser des tâches manuelles répétitives de l'équipe. La principale, un générateur de rapports de contrôle qualité, est utilisée en production.",
+      "context": "Le contrôle qualité de chaque livraison d'analyse se faisait à la main : parcourir l'arborescence, lire les logs, retrouver les programmes appelés, mettre en forme un rapport standardisé. D'autres tâches proches prenaient aussi du temps, comme remplir un dictionnaire de tables et variables ou repérer les doublons dans plus de 500 macros SAS.",
+      "objectives": "Rendre ces contrôles rapides et reproductibles, et libérer du temps aux programmeurs et aux biostatisticiens.",
+      "realisation": "QC Report Builder est une application de bureau en architecture MVC. Elle lit les logs, détecte les erreurs, résout les dépendances entre programmes et génère un rapport Word au format du service. Une configuration permet de la réutiliser d'une étude à l'autre. Elle est distribuée en paquet Python et en exécutable autonome. Deux autres outils complètent l'ensemble : un remplisseur de dictionnaire et un scanner de doublons de macros.",
+      "projectManagement": "Même méthode pour chaque outil : recueil du besoin, version livrée tôt, cycles d'amélioration jusqu'à stabilisation, documentation de maintenance.",
+      "technical": "Python, PySide6 pour les interfaces, python-docx, pytest, empaquetage en exécutable, architecture MVC, analyse de logs et de sources SAS. J'ai porté tout le cycle de vie : besoin, architecture, développement, tests, documentation, déploiement, maintenance.",
+      "outcome": "QC Report Builder est éprouvé en production. Les deux autres outils sont validés sur un premier périmètre. J'ai appris à concevoir un outil interne pour qu'il soit repris par d'autres, pas seulement pour qu'il marche.",
+      "keywords": ["automatisation", "architecture MVC", "cycle de vie logiciel", "contrôle qualité", "Python"]
+    },
+    "poc-agent-conversationnel": {
+      "name": "POC d'agent conversationnel local",
+      "subtitle": "Alternance Lysarc, appui à l'innovation",
+      "summary": "Un prototype qui transforme une question en langage naturel en analyse sur les données du registre. Tout s'exécute sur l'infrastructure interne de Lysarc.",
+      "context": "Même avec les tableaux de bord en place, les questions ponctuelles demandaient toujours un biostatisticien ou un développeur. Le POC devait tester si on pouvait automatiser ce chemin.",
+      "objectives": "Évaluer la faisabilité d'un pipeline : comprendre la demande, trouver les bonnes variables, générer une requête SQL. Contrainte forte : aucune donnée ne sort de l'infrastructure de Lysarc.",
+      "realisation": "Conception de l'architecture et des premiers composants. Données préparées par ETL vers une base SQLite d'expérimentation. Modèles de langage déployés en local avec Ollama, orchestration avec LangChain, aucun appel à un service externe.",
+      "projectManagement": "Cadré comme une preuve de concept, avec une conclusion attendue plutôt qu'un produit. Le POC a été arrêté quand le hub d'innovation a lancé son propre appel à projets IA et redéfini les priorités.",
+      "technical": "Python, Ollama, LangChain, SQLite, génération de SQL. L'architecture entièrement locale est le point clé, imposé par la confidentialité.",
+      "outcome": "La compréhension des données et la génération de requêtes sont prometteuses. La robustesse et le temps de réponse restent le point bloquant. En parallèle, j'ai accompagné l'équipe sur Visual Studio Code et Git et animé des formations. J'ai appris à assumer l'arrêt d'un projet quand sa conclusion est claire.",
+      "keywords": ["preuve de concept", "LLM local", "prompt-to-SQL", "ETL", "confidentialité"]
+    },
+    "didactypo": {
+      "name": "Didactypo",
+      "subtitle": "Projet d'équipe, BUT Informatique",
+      "summary": "Un site libre et open source pour apprendre la dactylographie aux élèves de primaire, de façon ludique.",
+      "description": "Des leçons suivies d'exercices interactifs pour la vitesse et la précision de frappe. Les enseignants créent des classes et suivent la progression des élèves. Le site propose aussi des défis hebdomadaires avec classements et badges.",
+      "role": "Projet à quatre, deux développeurs back-end dont moi, et j'étais scrum master. J'ai participé à la base de données et intégré seul la messagerie avec Firebase. Un projet d'école devenu projet passion : toute l'école jouait les défis.",
+      "keywords": ["fullstack", "éducation", "dactylographie", "gamification"]
+    },
+    "self-tracker": {
+      "name": "Self Tracker",
+      "subtitle": "Projet personnel",
+      "summary": "Une application web pour suivre les repas de mes collègues et moi pendant les journées de travail, avec analyse nutritionnelle par IA.",
+      "description": "Les utilisateurs enregistrent leurs repas, l'application fournit statistiques et classements. Les calories, protéines et lipides sont estimés automatiquement par IA. Front React, back Express, stockage PostgreSQL.",
+      "role": "Construit de zéro en quelques semaines, surtout pour me familiariser avec Express, PostgreSQL et l'intégration d'IA.",
+      "keywords": ["fullstack", "IA", "base de données", "suivi", "statistiques"]
+    },
+    "breast-cancer-detector": {
+      "name": "Détecteur de cancer du sein",
+      "subtitle": "Projet personnel",
+      "summary": "Un projet de machine learning sur le jeu de données de référence du cancer du sein, avec scikit-learn.",
+      "description": "Prétraitement des données, entraînement et évaluation de modèles pour prédire l'issue à partir du jeu de données bien connu du cancer du sein.",
+      "role": "Petit projet d'apprentissage réalisé seul, dans le cadre du cours Applied Machine Learning in Python de l'université du Michigan.",
+      "keywords": ["IA", "ML", "k plus proches voisins", "classification"]
+    },
+    "home-server": {
+      "name": "Homelab",
+      "subtitle": "Projet personnel, deux serveurs auto-hébergés",
+      "summary": "Deux serveurs auto-hébergés, d'un Raspberry Pi en LAMP à un serveur Ubuntu conteneurisé qui fait tourner mes photos, mes fichiers, un agent IA et sa supervision.",
+      "description": [
+        "Ça a commencé en première année de BUT avec un Raspberry Pi 3B en serveur web. Configuration LAMP pour héberger mes sites et mon calendrier, accès distant par SSH et VPN.",
+        "Il a été rejoint par un serveur sous Ubuntu, cette fois conteneurisé. Docker pour les services, Traefik en reverse proxy pour le routage et les certificats TLS, du Node.js pour la logique maison.",
+        "Le serveur Ubuntu héberge un Immich pour les photos, un Nextcloud pour les fichiers, mon agent Hermes, et sert de serveur à tout faire. Une stack Grafana suit l'état des conteneurs et des services."
+      ],
+      "role": [
+        "J'ai tout mis en place et je maintiens l'ensemble : choix des services, configuration de Traefik et des réseaux Docker, sauvegardes, mises à jour, supervision.",
+        "Hermes est un agent personnel qui tourne sur le serveur. Il utilise un modèle local avec Ollama pour le quotidien et ce qui doit rester privé, et bascule vers l'API OpenRouter quand une requête demande un modèle plus gros.",
+        "Ce homelab est mon terrain d'apprentissage sur l'administration système, la conteneurisation et la supervision."
+      ],
+      "keywords": ["auto-hébergement", "Docker", "reverse proxy", "supervision", "agent IA", "LAMP"]
+    },
+    "codeco": {
+      "name": "Codeco",
+      "subtitle": "Projet personnel",
+      "summary": "Un site pour décoder et créer des messages secrets, pour les jeux de piste et les animations de groupe.",
+      "description": "Un outil pour les passionnés de codes et d'énigmes : chiffrer, déchiffrer, préparer des activités autour des messages secrets.",
+      "role": "Construit en une semaine de vacances entre deux semestres de première année, sans connaître les frameworks JS. Je m'en sers encore comme chef scout pour préparer des activités.",
+      "keywords": ["front-end", "décodage", "énigmes"]
+    },
+    "fou2food": {
+      "name": "Fou2Food",
+      "subtitle": "Projet d'école, BUT Informatique",
+      "summary": "Un blog pour les passionnés de cuisine, pour partager des avis sur les restaurants.",
+      "description": "Création de compte, rédaction d'avis, interactions entre utilisateurs. L'idée était une petite communauté qui échange conseils et recommandations.",
+      "role": "Projet à trois pour le cours de PHP de deuxième année. J'ai conçu la base de données et travaillé surtout sur le CRUD.",
+      "keywords": ["fullstack", "cuisine", "blog", "communauté", "CRUD"]
+    },
+    "secured-air-enforcer": {
+      "name": "Secured Air Enforcer",
+      "subtitle": "Projet d'école, BUT Informatique",
+      "summary": "Une simulation de gestion du trafic aérien au-dessus de la France, en Java.",
+      "description": "Le projet utilise les bibliothèques GraphStream et OpenStreetMap pour représenter les routes aériennes au-dessus de la France.",
+      "role": "Le plus gros projet de ma première année. J'ai travaillé sur les algorithmes de coloration de graphe et de plus courts chemins. Nos algorithmes ont figuré parmi les meilleurs d'un concours inter-écoles.",
+      "keywords": ["graphes", "algorithmique", "application"]
+    },
+    "shared-coffee-project": {
+      "name": "Shared Coffee Project",
+      "subtitle": "Projet d'école, cours d'anglais",
+      "summary": "Une campagne étudiante pour offrir un café et un abri au chaud aux personnes dans le besoin, sur le modèle du café suspendu.",
+      "description": "On peut payer un café pour quelqu'un qui ne peut pas se le permettre. Le site propose aussi une carte des cafés participants.",
+      "role": "Réalisé en quelques jours pour un projet d'anglais qui simulait l'organisation d'un événement caritatif.",
+      "keywords": ["UX/UI", "design", "communauté"]
+    },
+    "mon-portfolio": {
+      "name": "Ce portfolio",
+      "subtitle": "Projet personnel",
+      "summary": "Le site sur lequel vous êtes. React, TypeScript, Tailwind, bilingue français et anglais.",
+      "description": "Design responsive et sombre. Tout le contenu vit dans des fichiers JSON par langue, lus par une petite couche d'internationalisation maison. Suivi de fréquentation avec Cronitor.",
+      "role": "Un projet que je fais évoluer régulièrement pour ajouter projets et fonctionnalités.",
+      "keywords": ["front-end", "portfolio", "design", "i18n"]
+    }
+  }
+}

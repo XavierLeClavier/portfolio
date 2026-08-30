@@ -1,0 +1,50 @@
+[
+  {
+    "id": "realiser",
+    "code": "Réaliser",
+    "niveauVise": "Niveau 3",
+    "niveauAutoEval": 85,
+    "order": 1,
+    "projectIds": ["plateforme-decisionnelle", "outils-qualite-python", "didactypo", "self-tracker"]
+  },
+  {
+    "id": "optimiser",
+    "code": "Optimiser",
+    "niveauVise": "Niveau 3",
+    "niveauAutoEval": 65,
+    "order": 2,
+    "projectIds": ["outils-qualite-python", "plateforme-decisionnelle", "poc-agent-conversationnel", "secured-air-enforcer"]
+  },
+  {
+    "id": "administrer",
+    "code": "Administrer",
+    "niveauVise": "Niveau 3",
+    "niveauAutoEval": 60,
+    "order": 3,
+    "projectIds": ["outils-qualite-python", "home-server", "poc-agent-conversationnel"]
+  },
+  {
+    "id": "gerer-donnees",
+    "code": "Gérer",
+    "niveauVise": "Niveau 3",
+    "niveauAutoEval": 85,
+    "order": 4,
+    "projectIds": ["plateforme-decisionnelle", "poc-agent-conversationnel", "breast-cancer-detector", "fou2food"]
+  },
+  {
+    "id": "conduire",
+    "code": "Conduire",
+    "niveauVise": "Niveau 3",
+    "niveauAutoEval": 80,
+    "order": 5,
+    "projectIds": ["plateforme-decisionnelle", "outils-qualite-python", "didactypo"]
+  },
+  {
+    "id": "equipe",
+    "code": "Collaborer",
+    "niveauVise": "Niveau 3",
+    "niveauAutoEval": 85,
+    "order": 6,
+    "projectIds": ["plateforme-decisionnelle", "poc-agent-conversationnel", "didactypo"]
+  }
+]

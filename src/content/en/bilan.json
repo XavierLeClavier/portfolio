@@ -1,0 +1,38 @@
+{
+  "title": "Apprenticeship review",
+  "intro": "My apprenticeship at Lysarc followed one thread: a mission that started in business intelligence and moved towards data engineering and software development. Here is what I take from it, on the technical, professional and personal side.",
+  "sections": [
+    {
+      "title": "Technical review",
+      "body": [
+        "I covered a broad chain: data modelling and decision-support indicators, data processing in SAS, Python application development (MVC, tests, packaging), and an exploration of a fully local AI architecture. The common thread: real-world data, imperfect and under confidentiality constraints.",
+        "My main progression was moving from execution to design: choosing an architecture, justifying it, documenting it, and keeping it alive over time.",
+        "What I still want to improve: putting AI tools into production, and industrialising data pipelines."
+      ]
+    },
+    {
+      "title": "Professional review",
+      "body": [
+        "I was the only Data Analyst in the organisation. That autonomy forced me to formalise my choices for a non-specialist audience, and to make documentation and training part of every deliverable.",
+        "I learned to run three projects in parallel on different rhythms, to trade off between new features and stabilising existing ones, and to accept a project being paused when priorities change.",
+        "I worked with data managers, SAS programmers, biostatisticians, project managers, a doctor, the CIO and the DPO. Adapting my vocabulary to each person was a constant exercise."
+      ]
+    },
+    {
+      "title": "Personal review",
+      "body": [
+        "Being the only referent for a role, with no technical safety net, was demanding but formative. I gained confidence in my ability to decide and to own my choices.",
+        "Working on data about cancer patients gives concrete meaning to the demands of quality and confidentiality.",
+        "My commitments alongside, sailing instructor and scout camp director, feed the same things as my work: leading, passing on, organising."
+      ]
+    }
+  ],
+  "devenu": {
+    "title": "The professional I've become",
+    "body": "I arrived on the internship as a student running analysis tasks. I finish the apprenticeship having designed and defended a method, a data architecture and a small suite of tools, and having supported a team. I now sit between data analysis, data engineering and software development."
+  },
+  "projetPostBut": {
+    "title": "After the BUT",
+    "body": "Since September 2026 I've been at an engineering school, INSA Lyon, aiming for Data Engineer and AI Engineer roles. Industrialising data processing, system administration, and the local architecture I keep experimenting with on my homelab are exactly what I want to go deeper on."
+  }
+}

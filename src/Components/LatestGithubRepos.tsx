@@ -1,7 +1,8 @@
-import { getTechIcon } from "../experiences/getTechIcon";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
-import { techIcons } from "../experiences/icons";
+import { useContent } from "../i18n";
+import { site } from "../data/site";
+import { getIcon } from "../data/icons";
 
 interface Repo {
   name: string;
@@ -20,6 +21,7 @@ const CACHE_KEY = "latest_github_repos";
 const CACHE_TTL = 60 * 60 * 1000; // 1 hour
 
 export default function LatestGithubRepos() {
+  const copy = useContent("home").repos;
   const [showAll, setShowAll] = useState(false);
   const [repos, setRepos] = useState<Repo[] | null>(null);
   const [loading, setLoading] = useState(true);
@@ -42,22 +44,23 @@ export default function LatestGithubRepos() {
       try {
         const token = import.meta.env.VITE_GITHUB_TOKEN;
         const headers: Record<string, string> = token ? { Authorization: `token ${token}` } : {};
+        const user = site.github.username;
 
         // 1. Get my own public repos
         const repoRes = await fetch(
-          "https://api.github.com/users/XavierLeClavier/repos?per_page=100",
+          `https://api.github.com/users/${user}/repos?per_page=100`,
           { headers }
         );
-        if (!repoRes.ok) throw new Error("Failed to fetch repositories");
+        if (!repoRes.ok) throw new Error("repos");
         const repoData = await repoRes.json();
 
         // 2. Get latest public commits by me (across all repos)
         const commitHeaders = { ...headers, Accept: "application/vnd.github.cloak-preview" };
         const commitRes = await fetch(
-          `https://api.github.com/search/commits?q=author:XavierLeClavier&sort=author-date&order=desc&per_page=10`,
+          `https://api.github.com/search/commits?q=author:${user}&sort=author-date&order=desc&per_page=10`,
           { headers: commitHeaders }
         );
-        if (!commitRes.ok) throw new Error("Failed to fetch contributions");
+        if (!commitRes.ok) throw new Error("contributions");
         const commitData = await commitRes.json();
 
         // 3. Build a set of unique repos from my commits and my own repos
@@ -147,11 +150,7 @@ export default function LatestGithubRepos() {
           JSON.stringify({ data: last6Repos, timestamp: Date.now() })
         );
       } catch (err) {
-        if (err instanceof Error) {
-          setError(err.message);
-        } else {
-          setError("Unknown error");
-        }
+        setError(err instanceof Error ? err.message : "unknown");
       } finally {
         setLoading(false);
       }
@@ -163,12 +162,12 @@ export default function LatestGithubRepos() {
   if (error)
     return (
       <div className="bg-red-100 text-red-700 p-4 rounded shadow text-center">
-        <p>Failed to load GitHub repositories.</p>
+        <p>{copy.error}</p>
         <p className="text-xs">{error}</p>
       </div>
     );
   if (!repos || repos.length === 0)
-    return <div className="text-gray-400 text-center">No repositories found.</div>;
+    return <div className="text-gray-400 text-center">{copy.empty}</div>;
 
   // Categorize repos by last commit date
   const now = Date.now();
@@ -204,79 +203,78 @@ export default function LatestGithubRepos() {
   const categories: { label: string; repos: Repo[] }[] = [];
   let count = 0;
   if (week.length > 0 && count <= 6) {
-    categories.push({ label: "What I've been working on for the last week", repos: week.slice(0, 6 - count) });
+    categories.push({ label: copy.buckets.week, repos: week.slice(0, 6 - count) });
     count += week.length;
   }
   if (month.length > 0 && count <= 6) {
-    categories.push({ label: "This is what I've been working on for the last month", repos: month.slice(0, 6 - count) });
+    categories.push({ label: copy.buckets.month, repos: month.slice(0, 6 - count) });
     count += month.length;
   }
   if (sixMonth.length > 0 && count <= 6) {
-    categories.push({ label: "What I've been working on for the last 6 months", repos: sixMonth.slice(0, 6 - count) });
+    categories.push({ label: copy.buckets.sixMonths, repos: sixMonth.slice(0, 6 - count) });
     count += sixMonth.length;
   }
   if (year.length > 0 && count <= 6) {
-    categories.push({ label: "This year I worked on this", repos: year.slice(0, 6 - count) });
+    categories.push({ label: copy.buckets.year, repos: year.slice(0, 6 - count) });
     count += year.length;
   }
   if (older.length > 0 && count <= 6) {
-    categories.push({ label: "I haven't touched this for more than a year", repos: older.slice(0, 6 - count) });
+    categories.push({ label: copy.buckets.older, repos: older.slice(0, 6 - count) });
     count += older.length;
   }
 
+  const renderCommit = (repo: Repo) =>
+    repo.latestCommit ? (
+      <div className="text-xs text-gray-400">
+        <span className="font-semibold text-purple-300">{copy.latestCommit}</span> {repo.latestCommit.message}
+        <br />
+        <span>
+          {copy.commitBy
+            .replace("{author}", repo.latestCommit.author)
+            .replace("{date}", new Date(repo.latestCommit.date).toLocaleString("fr-FR"))}
+        </span>
+        <br />
+        <a href={repo.latestCommit.url} target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">
+          {copy.viewCommit}
+        </a>
+      </div>
+    ) : (
+      <div className="text-xs text-gray-400">{copy.noCommit}</div>
+    );
+
+  const renderLanguages = (repo: Repo) => (
+    <div className="flex flex-wrap gap-2 mb-2 items-center">
+      {repo.languages.length > 0 ? (
+        repo.languages.map((lang) => (
+          <span key={lang} className="flex items-center gap-1 bg-purple-700 text-white px-2 py-1 rounded text-xs">
+            {getIcon(lang) && <span className="inline-block align-middle">{getIcon(lang)}</span>}
+            {lang}
+          </span>
+        ))
+      ) : (
+        <span className="text-gray-400 text-xs">{copy.noLanguages}</span>
+      )}
+    </div>
+  );
+
   return (
     <>
-    <h2 className="text-2xl font-bold text-purple-400 mb-4">Latest GitHub Repositories</h2>
-      <p className="text-gray-400 mb-4">Here are some of my latest projects on GitHub, some of which are still in progress ;)</p>
+    <h2 className="text-2xl font-bold text-purple-400 mb-4">{copy.title}</h2>
+      <p className="text-gray-400 mb-4">{copy.subtitle}</p>
     <div className="bg-gray-900 rounded-xl p-6 shadow-lg max-w-2xl mx-auto mb-6">
-      
+
       {categories.slice(0, 2).map(cat => (
         <div key={cat.label} className="mb-6">
           <h3 className="text-lg font-semibold text-purple-300 mb-2">{cat.label}</h3>
           <ul className="space-y-6">
             {cat.repos.map((repo) => (
               <li key={repo.name} className="bg-gray-800 rounded-lg p-4 shadow">
-                <a
-                  href={repo.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-lg font-semibold text-purple-300 hover:underline"
-                >
+                <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-purple-300 hover:underline">
                   {repo.name}
                 </a>
-                <p className="text-gray-300 mb-2">{repo.description || "No description."}</p>
-                <div className="flex flex-wrap gap-2 mb-2 items-center">
-                  {repo.languages.length > 0 ? (
-                    repo.languages.map((lang) => (
-                      <span key={lang} className="flex items-center gap-1 bg-purple-700 text-white px-2 py-1 rounded text-xs">
-                        {getTechIcon(lang) ? (
-                          <span className="inline-block align-middle">{getTechIcon(lang)}</span>
-                        ) : null}
-                        {lang}
-                      </span>
-                    ))
-                  ) : (
-                    <span className="text-gray-400 text-xs">No languages detected</span>
-                  )}
-                </div>
-                {repo.latestCommit ? (
-                  <div className="text-xs text-gray-400">
-                    <span className="font-semibold text-purple-300">Latest commit:</span> {repo.latestCommit.message}
-                    <br />
-                    <span>by {repo.latestCommit.author} on {new Date(repo.latestCommit.date).toLocaleString()}</span>
-                    <br />
-                    <a
-                      href={repo.latestCommit.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-purple-400 hover:underline"
-                    >
-                      View commit
-                    </a>
-                  </div>
-                ) : (
-                  <div className="text-xs text-gray-400">No commit info available.</div>
-                )}
+                <p className="text-gray-300 mb-2">{repo.description || copy.noDescription}</p>
+                {renderLanguages(repo)}
+                {renderCommit(repo)}
               </li>
             ))}
           </ul>
@@ -289,7 +287,7 @@ export default function LatestGithubRepos() {
             className="px-2 py-1 bg-transparent text-purple-400 border border-purple-400 rounded text-sm shadow-none font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 hover:bg-purple-600/70 active:bg-purple-900/10"
             onClick={() => setShowAll(true)}
           >
-            See more
+            {copy.seeMore}
           </button>
         </div>
       )}
@@ -297,61 +295,20 @@ export default function LatestGithubRepos() {
         className={`transition-all duration-500 ${showAll ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}
         style={{ overflow: 'hidden' }}
       >
-        {showAll && (() => {
-          // Show all 6 repos regardless of category
-          const allRepos = repos || [];
-          return (
-            <div>
-              <ul className="space-y-6">
-                {allRepos.map((repo) => (
-                  <li key={repo.name} className="bg-gray-800 rounded-lg p-4 shadow">
-                    <a
-                      href={repo.html_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-lg font-semibold text-purple-300 hover:underline"
-                    >
-                      {repo.name}
-                    </a>
-                    <p className="text-gray-300 mb-2">{repo.description || "No description."}</p>
-                    <div className="flex flex-wrap gap-2 mb-2 items-center">
-                      {repo.languages.length > 0 ? (
-                        repo.languages.map((lang) => (
-                          <span key={lang} className="flex items-center gap-1 bg-purple-700 text-white px-2 py-1 rounded text-xs">
-                            {techIcons[lang] ? (
-                              <span className="inline-block align-middle">{techIcons[lang]}</span>
-                            ) : null}
-                            {lang}
-                          </span>
-                        ))
-                      ) : (
-                        <span className="text-gray-400 text-xs">No languages detected</span>
-                      )}
-                    </div>
-                    {repo.latestCommit ? (
-                      <div className="text-xs text-gray-400">
-                        <span className="font-semibold text-purple-300">Latest commit:</span> {repo.latestCommit.message}
-                        <br />
-                        <span>by {repo.latestCommit.author} on {new Date(repo.latestCommit.date).toLocaleString()}</span>
-                        <br />
-                        <a
-                          href={repo.latestCommit.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-purple-400 hover:underline"
-                        >
-                          View commit
-                        </a>
-                      </div>
-                    ) : (
-                      <div className="text-xs text-gray-400">No commit info available.</div>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          );
-        })()}
+        {showAll && (
+          <ul className="space-y-6">
+            {(repos || []).map((repo) => (
+              <li key={repo.name} className="bg-gray-800 rounded-lg p-4 shadow">
+                <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-purple-300 hover:underline">
+                  {repo.name}
+                </a>
+                <p className="text-gray-300 mb-2">{repo.description || copy.noDescription}</p>
+                {renderLanguages(repo)}
+                {renderCommit(repo)}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
     </>

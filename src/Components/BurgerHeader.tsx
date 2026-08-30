@@ -1,7 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { useContent } from "../i18n";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function BurgerHeader() {
+  const common = useContent("common");
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -41,7 +44,7 @@ export default function BurgerHeader() {
         {/* Burger Icon */}
         <div
           className="absolute top-0 right-0 flex flex-col items-center justify-center w-14 h-14 space-y-2 bg-gray-800 rounded-xl cursor-pointer transition-transform duration-300 hover:scale-110 hover:shadow-lg hover:bg-gray-700"
-          aria-label="Menu"
+          aria-label={common.menu.label}
           onClick={handleClick}
         >
           <span className="block w-8 h-1 bg-white"></span>
@@ -58,53 +61,25 @@ export default function BurgerHeader() {
             transformOrigin: "top right",
           }}
         >
-          <ul className="flex flex-col p-5 space-y-4 text-gray-200">
-            <li>
-              <NavLink
-                to="/"
-                className="block px-4 py-3 rounded-md hover:bg-gray-800 hover:text-purple-400 transition-colors duration-200"
-                onClick={() => { if (isMobile) setIsOpen(false); }}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/me"
-                className="block px-4 py-3 rounded-md hover:bg-gray-800 hover:text-purple-400 transition-colors duration-200"
-                onClick={() => { if (isMobile) setIsOpen(false); }}
-              >
-                Who am I ?
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/projects"
-                className="block px-4 py-3 rounded-md hover:bg-gray-800 hover:text-purple-400 transition-colors duration-200"
-                onClick={() => { if (isMobile) setIsOpen(false); }}
-              >
-                Projects
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/skills"
-                className="block px-4 py-3 rounded-md hover:bg-gray-800 hover:text-purple-400 transition-colors duration-200"
-                onClick={() => { if (isMobile) setIsOpen(false); }}
-              >
-                Skills
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/technologies"
-                className="block px-4 py-3 rounded-md hover:bg-gray-800 hover:text-purple-400 transition-colors duration-200"
-                onClick={() => { if (isMobile) setIsOpen(false); }}
-              >
-                My tech stack
-              </NavLink>
-            </li>
+          <ul className="flex flex-col p-5 pb-2 space-y-4 text-gray-200">
+            {common.nav.map((item) => (
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  end={item.to === "/"}
+                  className="block px-4 py-3 rounded-md hover:bg-gray-800 hover:text-purple-400 transition-colors duration-200"
+                  onClick={() => {
+                    if (isMobile) setIsOpen(false);
+                  }}
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
           </ul>
+          <div className="mx-5 mb-3 pt-2 border-t border-gray-700/70">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </div>

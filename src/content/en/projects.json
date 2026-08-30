@@ -1,0 +1,158 @@
+{
+  "list": {
+    "title": "Work & projects",
+    "intro": "I've been building things since secondary school: websites, tools, a homelab, AI agents, and a year of data work on an apprenticeship. Here is a selection.",
+    "iconHint": "Hover over an icon to see the technology name",
+    "missionsHeading": "Apprenticeship work, Lysarc",
+    "missionsSubheading": "Three tracks run in parallel on the national DESCAR-T clinical registry.",
+    "academicHeading": "Academic projects, IUT Lyon 1",
+    "academicSubheading": "Team projects from the BUT Informatique.",
+    "personalHeading": "Personal projects",
+    "personalSubheading": "What I build in my own time, to learn or to actually use."
+  },
+  "card": {
+    "readMore": "Read more",
+    "visit": "Visit project",
+    "github": "GitHub",
+    "technologies": "Technologies",
+    "keywords": "Keywords"
+  },
+  "detail": {
+    "back": "Back to projects",
+    "notFound": "Project not found",
+    "visitWebsite": "Visit website",
+    "githubRepo": "GitHub repository",
+    "sections": {
+      "description": "Description",
+      "technologies": "Technologies",
+      "role": "My role",
+      "keywords": "Keywords",
+      "context": "Context",
+      "objectives": "Goal",
+      "realisation": "What I did",
+      "projectManagement": "How I worked",
+      "technical": "Technical",
+      "outcome": "Outcome",
+      "progression": "From internship to apprenticeship"
+    }
+  },
+  "items": {
+    "plateforme-decisionnelle": {
+      "name": "Decision-support platform on a clinical registry",
+      "subtitle": "Lysarc apprenticeship, national DESCAR-T registry",
+      "summary": "A Power BI solution on the data quality and activity of the national DESCAR-T clinical registry, for two audiences: biostatisticians and project managers.",
+      "context": "DESCAR-T is the national registry of patients treated with CAR-T cells. Its difficulty is not volume but structure: a case report form that has changed a lot, variables that only apply to some patients, and each item collected many times. Before, the quality indicators were static tables and a large Excel workbook rebuilt by hand every week. The quality scores already existed; my job was to make them usable.",
+      "objectives": "Give both audiences an autonomous, reliable view of the registry's quality and activity, without going through a technical intermediary.",
+      "realisation": "Requirements workshops with each audience. A validated mockup, then a star-schema data model, indicators in DAX, upstream transformation in SAS and Power Query, publication to Power BI Cloud. Every indicator checked against the reference extractions. Documentation and user training at the end.",
+      "projectManagement": "Iterative delivery. An early, incomplete version put online, then improved every week from usage feedback. Security and confidentiality framed with the CIO and the DPO. Pseudonymised data, work under the MR-004 methodology.",
+      "technical": "SAS, Power Query, Power BI Desktop, DAX, Power BI Cloud. The star schema makes the granularity of each indicator explicit (patient, treatment or event), which is essential given the registry's structure.",
+      "outcome": "Users now produce their own views without an intermediary. Meeting preparation time went down and indicator definitions are harmonised. The work was presented internally at a science café.",
+      "progression": "On the internship I built dashboards from instructions. On the apprenticeship I took the whole approach in hand: method, data model, regulatory framing, training. I moved from producing dashboards to designing a solution.",
+      "keywords": ["business intelligence", "star schema", "data quality", "healthcare data", "GDPR"]
+    },
+    "outils-qualite-python": {
+      "name": "Python quality-control tools",
+      "subtitle": "Lysarc apprenticeship, biostatistics department",
+      "summary": "Four Python applications to automate repetitive manual tasks for the team. The main one, a quality-control report generator, is used in production.",
+      "context": "Quality control on each analysis delivery was done by hand: walking the directory tree, reading logs, tracing the programs being called, formatting a standard report. Other similar tasks also took time, like filling a dictionary of tables and variables, or spotting duplicates across more than 500 SAS macros.",
+      "objectives": "Make these checks fast and reproducible, and free up time for the programmers and biostatisticians.",
+      "realisation": "QC Report Builder is a desktop application in MVC architecture. It reads the logs, detects errors, resolves dependencies between programs and generates a Word report in the department's format. A config lets it be reused from one study to the next. It ships as a Python package and a standalone executable. Two other tools round it out: a dictionary populator and a macro-duplicate scanner.",
+      "projectManagement": "The same method for each tool: gather the need, ship early, improve in cycles until stable, write maintenance documentation.",
+      "technical": "Python, PySide6 for the interfaces, python-docx, pytest, executable packaging, MVC architecture, SAS log and source parsing. I owned the whole lifecycle: need, architecture, development, tests, documentation, deployment, maintenance.",
+      "outcome": "QC Report Builder is proven in production. The two other tools are validated on a first perimeter. I learned to design an internal tool so someone else can pick it up, not just so it works.",
+      "keywords": ["automation", "MVC architecture", "software lifecycle", "quality control", "Python"]
+    },
+    "poc-agent-conversationnel": {
+      "name": "Local conversational-agent POC",
+      "subtitle": "Lysarc apprenticeship, innovation support",
+      "summary": "A prototype that turns a natural-language question into an analysis over the registry data. Everything runs on Lysarc's internal infrastructure.",
+      "context": "Even with the dashboards in place, ad-hoc questions still needed a biostatistician or a developer. The POC was there to test whether that path could be automated.",
+      "objectives": "Assess the feasibility of a pipeline: understand the request, find the right variables, generate a SQL query. Hard constraint: no data leaves Lysarc's infrastructure.",
+      "realisation": "Architecture design and the first components. Data prepared by ETL into a SQLite experimentation database. Language models deployed locally with Ollama, orchestration with LangChain, no call to any external service.",
+      "projectManagement": "Framed as a proof of concept, with an expected conclusion rather than a product. The POC was stopped when the innovation hub launched its own AI call for projects and reset the priorities.",
+      "technical": "Python, Ollama, LangChain, SQLite, SQL generation. The fully local architecture is the key point, forced by confidentiality.",
+      "outcome": "Data comprehension and query generation are promising. Robustness and response time remain the blocker. Alongside this I supported the team on Visual Studio Code and Git and ran training sessions. I learned to own a project being stopped when its conclusion is clear.",
+      "keywords": ["proof of concept", "local LLM", "prompt-to-SQL", "ETL", "confidentiality"]
+    },
+    "didactypo": {
+      "name": "Didactypo",
+      "subtitle": "Team project, BUT Informatique",
+      "summary": "A free, open-source site for teaching touch typing to primary-school children in a playful way.",
+      "description": "Lessons followed by interactive exercises for typing speed and accuracy. Teachers create classes and track their pupils' progress. The site also runs weekly challenges with leaderboards and badges.",
+      "role": "A four-person project, two back-end developers including me, and I was scrum master. I helped with the database and integrated the chat rooms on my own with Firebase. A school project that became a passion project: the whole school played the challenges.",
+      "keywords": ["full-stack", "education", "typing", "gamification"]
+    },
+    "self-tracker": {
+      "name": "Self Tracker",
+      "subtitle": "Personal project",
+      "summary": "A web app to track what my colleagues and I eat during workdays, with AI nutritional analysis.",
+      "description": "Users log their meals, the app gives statistics and rankings. Calories, protein and fat are estimated automatically by AI. React front end, Express back end, PostgreSQL storage.",
+      "role": "Built from scratch in a few weeks, mainly to get familiar with Express, PostgreSQL and AI integration.",
+      "keywords": ["full-stack", "AI", "database", "tracking", "statistics"]
+    },
+    "breast-cancer-detector": {
+      "name": "Breast cancer detector",
+      "subtitle": "Personal project",
+      "summary": "A machine-learning project on the well-known breast cancer dataset, with scikit-learn.",
+      "description": "Data preprocessing, model training and evaluation to predict outcomes from the well-known breast cancer dataset.",
+      "role": "A small learning project done on my own, as part of the University of Michigan's Applied Machine Learning in Python course.",
+      "keywords": ["AI", "ML", "k-nearest neighbours", "classification"]
+    },
+    "home-server": {
+      "name": "Homelab",
+      "subtitle": "Personal project, two self-hosted servers",
+      "summary": "Two self-hosted servers, from a Raspberry Pi running LAMP to a containerised Ubuntu server that runs my photos, my files, an AI agent and its monitoring.",
+      "description": [
+        "It started in my first year of the BUT with a Raspberry Pi 3B as a web server. A LAMP setup hosting my sites and my calendar, remote access over SSH and a VPN.",
+        "It was joined by an Ubuntu server, this time containerised. Docker for the services, Traefik as a reverse proxy for routing and TLS certificates, some Node.js for home-grown logic.",
+        "The Ubuntu server hosts an Immich for photos, a Nextcloud for files, my Hermes agent, and acts as a general-purpose server. A Grafana stack tracks the state of the containers and services."
+      ],
+      "role": [
+        "I set it all up and I maintain it: choice of services, Traefik and Docker network config, backups, updates, monitoring.",
+        "Hermes is a personal agent that runs on the server. It uses a local model with Ollama for everyday tasks and anything that must stay private, and switches to the OpenRouter API when a request needs a bigger model.",
+        "This homelab is my learning ground for system administration, containerisation and monitoring."
+      ],
+      "keywords": ["self-hosting", "Docker", "reverse proxy", "monitoring", "AI agent", "LAMP"]
+    },
+    "codeco": {
+      "name": "Codeco",
+      "subtitle": "Personal project",
+      "summary": "A site to decode and create secret messages, for treasure hunts and group activities.",
+      "description": "A tool for people who love codes and puzzles: encrypt, decrypt, prepare activities around secret messages.",
+      "role": "Built over a one-week break between two first-year semesters, with no prior knowledge of JS frameworks. I still use it as a scout leader to prepare activities.",
+      "keywords": ["front-end", "decoding", "puzzles"]
+    },
+    "fou2food": {
+      "name": "Fou2Food",
+      "subtitle": "School project, BUT Informatique",
+      "summary": "A blog for food lovers, to share reviews of restaurants.",
+      "description": "Account creation, writing reviews, interacting with other users. The idea was a small community exchanging tips and recommendations.",
+      "role": "A three-person project for the second-year PHP course. I designed the database and worked mostly on the CRUD.",
+      "keywords": ["full-stack", "food", "blog", "community", "CRUD"]
+    },
+    "secured-air-enforcer": {
+      "name": "Secured Air Enforcer",
+      "subtitle": "School project, BUT Informatique",
+      "summary": "A simulation of air-traffic management over France, in Java.",
+      "description": "The project uses the GraphStream and OpenStreetMap libraries to represent flight routes over France.",
+      "role": "The biggest project of my first year. I worked on the graph-colouring and shortest-path algorithms. Our algorithms ranked among the best in an inter-school competition.",
+      "keywords": ["graphs", "algorithms", "application"]
+    },
+    "shared-coffee-project": {
+      "name": "Shared Coffee Project",
+      "subtitle": "School project, English course",
+      "summary": "A student campaign to offer a coffee and a warm place to people in need, based on the suspended-coffee model.",
+      "description": "You can pay for a coffee for someone who can't afford it. The site also has a map of participating cafés.",
+      "role": "Built in a few days for an English course that simulated running a charity event.",
+      "keywords": ["UX/UI", "design", "community"]
+    },
+    "mon-portfolio": {
+      "name": "This portfolio",
+      "subtitle": "Personal project",
+      "summary": "The site you're on. React, TypeScript, Tailwind, bilingual French and English.",
+      "description": "Responsive dark design. All the content lives in per-language JSON files read by a small home-made internationalisation layer. Visitor tracking with Cronitor.",
+      "role": "A project I keep evolving to add projects and features.",
+      "keywords": ["front-end", "portfolio", "design", "i18n"]
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "header": {
+    "name": "Xavier Lacroix",
+    "role": "Computer science student at INSA Lyon",
+    "bio": "I've been a computer science student at INSA Lyon since September 2026. Before that, three years of the BUT Informatique at IUT Lyon 1 (AGED track), including a one-year apprenticeship as a Data Analyst at Lysarc on a national clinical registry. Alongside that I build a lot of personal projects: websites, a homelab, AI agents. What I'm into: data, systems, and turning an idea into something that runs. My aim: Data Engineer and AI Engineer roles."
+  },
+  "lysarc": {
+    "title": "The company: Lysarc",
+    "body": [
+      "Lysarc is a non-profit that coordinates academic research on lymphomas. It is based at CHU Lyon Sud and launches a few new clinical trials each year, alongside around fifty ongoing studies.",
+      "During my apprenticeship the organisation changed leadership and reorganised: a new roadmap, an innovation hub, and a new department for clinical data engineering. That is what made my missions shift over the year.",
+      "I was the only Data Analyst in the organisation. No colleague in the same role, no method to inherit, no referent on my tools. That autonomy forced me to document and justify every choice, which is why documentation and training come with each of my deliverables."
+    ]
+  },
+  "environnement": {
+    "title": "Technical environment",
+    "intro": "The registry data fits on a workstation, so it's not a volume problem. The work is organised around two refresh chains, at two speeds.",
+    "items": [
+      "A weekly export from the clinical data-capture tool, which feeds the Power BI dashboards and operational steering.",
+      "A SAS processing chain, roughly every six months, which produces the datasets for the official statistical reports.",
+      "Windows workstation, SAS and Power BI for analysis, Power BI Cloud for distribution, Visual Studio Code and Git for Python, internal infrastructure for running language models locally.",
+      "Part of my documentation work was to keep these two chains clearly separate, so that operational figures are never confused with official ones."
+    ]
+  },
+  "formation": {
+    "title": "Education",
+    "steps": [
+      { "period": "Since 2026", "label": "INSA Lyon, engineering school, computer science" },
+      { "period": "2023-2026", "label": "BUT Informatique, IUT Lyon 1, AGED track" }
+    ]
+  },
+  "sections": {
+    "work": "Professional experience",
+    "volunteer": "Volunteering",
+    "hobbies": "Interests"
+  },
+  "work": {
+    "items": {
+      "lysarc-alternance": {
+        "title": "Data Analyst (apprenticeship)",
+        "organization": "Lysarc",
+        "period": "Since September 2025",
+        "details": [
+          "Designed and built a Power BI decision-support solution on the quality and activity of the national DESCAR-T registry",
+          "Built four Python applications to automate quality control of statistical analyses",
+          "Prototyped a conversational agent running on internal infrastructure (Ollama, LangChain, SQLite)",
+          "Supported the team on Visual Studio Code, Git and documentation standards"
+        ],
+        "note": "Third-year apprenticeship of the BUT Informatique, AGED track, IUT Lyon 1."
+      },
+      "lysarc-stage": {
+        "title": "Data Analyst (internship)",
+        "organization": "Lysarc",
+        "period": "April to July 2024",
+        "details": [
+          "Extracted, transformed and cleaned healthcare data with SAS and SQL",
+          "Built dashboards and indicators in Power BI for the medical teams and pharmaceutical partners",
+          "Worked on a database of more than 5,000 patients across France",
+          "Strict compliance with healthcare data confidentiality rules"
+        ],
+        "note": "Second-year internship of the BUT Informatique, AGED track, IUT Lyon 1."
+      },
+      "sailing-instructor": {
+        "title": "Sailing instructor",
+        "organization": "YCGM (La Grande-Motte), Sète Agglopôle Méditerranée, CESM Saint-Florent",
+        "period": "Summers 2021 to 2025",
+        "details": [
+          "Catamaran and dinghy courses at every level",
+          "Helped train new instructors",
+          "Courses in French, English and Spanish",
+          "Safety and running a fleet of up to twelve boats"
+        ]
+      }
+    }
+  },
+  "volunteer": {
+    "items": {
+      "scouts-camp-director": {
+        "title": "Camp director",
+        "organization": "Scouts et Guides de France",
+        "period": "Since 2022",
+        "details": [
+          "Ran camps for children aged 8 to 14",
+          "Coordinated a team of six leaders aged 17 to 21",
+          "Responsible for the safety and wellbeing of the children",
+          "Designed an educational project suited to the group each year"
+        ]
+      },
+      "paris-2024": {
+        "title": "Measurement technician",
+        "organization": "Paris 2024 Olympic Games, in Marseille",
+        "period": "July to August 2024",
+        "details": [
+          "Deployed and operated the wind and sea measurement equipment for the sailing events",
+          "Worked with international race officials on buoy placement",
+          "Monitored real-time weather data for race management",
+          "Maintained and calibrated measurement instruments in a marine environment"
+        ]
+      }
+    }
+  },
+  "hobbies": {
+    "items": {
+      "voile": {
+        "title": "Sailing",
+        "description": "I've been sailing since before I could walk. It's a passion I love passing on. There aren't many places I'd rather be than out on the water, except maybe behind my keyboard."
+      },
+      "hackathons": {
+        "title": "Hackathons",
+        "description": "I love doing hackathons with friends, solving challenges under pressure. It sharpens problem-solving and gets me to try new technologies."
+      },
+      "benevolat": {
+        "title": "Volunteering",
+        "description": "I need to get out into nature. Since secondary school I've spent a large share of my weekends and holidays giving a breath of fresh air to kids who get fewer chances at it."
+      }
+    }
+  }
+}
