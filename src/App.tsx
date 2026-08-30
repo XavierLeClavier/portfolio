@@ -18,6 +18,8 @@ const ExtraComponent = React.lazy(() => import("./Pages/ExtraComponent"));
 
 import * as Cronitor from '@cronitorio/cronitor-rum';
 
+import { I18nProvider } from "./i18n";
+
 
 function App() {
   // Only load Cronitor after app is mounted
@@ -29,23 +31,25 @@ function App() {
   }, []);
   
   return (
-    <BrowserRouter>
-      <BurgerHeader />
-      <ScrollToTop />
-      <React.Suspense fallback={<Loading fullscreen={true} />}> 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/me" element={<WhoAmI />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects/:projectName" element={<ProjectDetailedView />} />
-          <Route path="/version-log" element={<VersionLog />} />
-          <Route path="/technologies" element={<Technologies />} />
-          <Route path="/extra" element={<ExtraComponent />} />
-        </Routes>
-      </React.Suspense>
-      <Footer />
-    </BrowserRouter>
+    <I18nProvider>
+      <BrowserRouter>
+        <BurgerHeader />
+        <ScrollToTop />
+        <React.Suspense fallback={<Loading fullscreen={true} />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/me" element={<WhoAmI />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects/:projectName" element={<ProjectDetailedView />} />
+            <Route path="/version-log" element={<VersionLog />} />
+            <Route path="/technologies" element={<Technologies />} />
+            <Route path="/extra" element={<ExtraComponent />} />
+          </Routes>
+        </React.Suspense>
+        <Footer />
+      </BrowserRouter>
+    </I18nProvider>
   );
 }
 
