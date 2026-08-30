@@ -2,12 +2,13 @@ import { useState } from "react";
 import { FaBriefcase, FaHeart } from "react-icons/fa";
 import { TbStarsFilled } from "react-icons/tb";
 import { LuBuilding2, LuServer, LuGraduationCap } from "react-icons/lu";
-import { useContent } from "../i18n";
+import { useContent, useTranslation } from "../i18n";
 import ImageWithPlaceholder from "../Components/ImageWithPlaceholder";
 import workExperience from "../data/workExperience.json";
 import volunteerExperience from "../data/volunteerExperience.json";
 import hobbiesData from "../data/hobbies.json";
 import xavsupersympose from "../img/xavsupersympose.jpg";
+import xavcorpo from "../img/xavcorpo.jpeg";
 import xavoile from "../img/xavoile.jpg";
 import xavchef from "../img/xavchef.jpg";
 import nuitinfo from "../img/nuitinfo.jpg";
@@ -27,6 +28,8 @@ type SectionKey = "work" | "volunteer" | "hobbies";
 export default function Parcours() {
   const c = useContent("parcours");
   const { buttons } = useContent("common");
+  const { locale } = useTranslation();
+  const headerPhoto = locale === "fr" ? xavcorpo : xavsupersympose;
 
   const [collapsed, setCollapsed] = useState<Record<SectionKey, boolean>>({
     work: false,
@@ -119,7 +122,8 @@ export default function Parcours() {
       <div className="max-w-4xl mx-auto mb-12 text-center">
         <div className="mb-6 relative w-48 h-48 mx-auto">
           <ImageWithPlaceholder
-            src={xavsupersympose}
+            key={locale}
+            src={headerPhoto}
             alt={c.header.name}
             className="w-48 h-48 mx-auto border-4 border-purple-500 object-cover"
             shape="circle"
